@@ -47,14 +47,15 @@
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="about.html">Lowongan</a></li>
 			    <li class="nav-item"><a class="nav-link" href="service.html">Perusahaan</a></li>
-				<li class="nav-item"><a class="nav-link" href="project.html">Dashboard</a></li>
+				<li class="nav-item"><a class="nav-link" href="service.html">Tentang Kami</a></li>
+				<li class="nav-item"><a class="nav-link" href="service.html">Kontak</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  User
+					  Login
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="#"><i class="fas fa-user m-1"></i> Profil</a>
-					  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
+					  <a class="dropdown-item" href="#"><i class="fas fa-building m-1"></i>Perusahaan</a>
+					  <a class="dropdown-item" href="#"><i class="fas fa-user m-1"></i>Pelamar</a>
 					</div>
 				  </li> 
 			</ul>
@@ -79,13 +80,13 @@
 			</div>
 			<div class="col-lg-2 col-md-6 col-sm-6">
 				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Tentang</h4>
+					<h4 class="text-capitalize mb-4">Tentang Kami</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Team</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#">Lowongan</a></li>
+						<li><a href="#">Perusahaan</a></li>
+						<li><a href="#">Tentang Kami</a></li>
+						<li><a href="#">Kontak</a></li>
 					</ul>
 				</div>
 			</div>

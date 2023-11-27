@@ -11,8 +11,17 @@
 |
 */
 
+// Landing Page //
 Route::get('/', function () {
-    return view('pelamar/pelamar');
+    return view('landing_page.index');
+});
+Route::get('/about', function () {
+    return view('landing_page.about');
+});
+
+
+Route::get('/pelamar', function () {
+    return view('pelamar/index');
 });
 Route::get('/admin', function () {
     return view('admin/admin');
