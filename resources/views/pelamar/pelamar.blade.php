@@ -1,4 +1,4 @@
-@extends('layouts.master-pelamar')
+@extends('layouts.landing.master')
 
 @section('content')
 <section class="banner d-flex align-items-center">
