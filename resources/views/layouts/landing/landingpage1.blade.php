@@ -71,11 +71,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 mr-auto col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
+				<div class="widget mb-2 mb-lg-0">
 					<div class="logo mb-4">
-						<h3>Loker_IT.id</h3>
+						<h3>LokerIT.id</h3>
 					</div>
-					<p>Portal lowongan pekerjaan IT di indonesia</p>
+					<p>Portal lowongan pekerjaan IT di indonesia. Cari profesi IT mu di LokerIT.id</p>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-6 col-sm-6">
@@ -83,8 +83,6 @@
 					<h4 class="text-capitalize mb-4">Tentang Kami</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Lowongan</a></li>
-						<li><a href="#">Perusahaan</a></li>
 						<li><a href="#">Tentang Kami</a></li>
 						<li><a href="#">Kontak</a></li>
 					</ul>
@@ -92,20 +90,18 @@
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Support</h4>
+					<h4 class="text-capitalize mb-4">Jobseeker</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Terms & Conditions</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Lowongan</a></li>
+						<li><a href="#">Perusahaan</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="widget widget-contact mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Get in Touch</h4>
-					<h6><a href="tel:+23-345-67890" > <i class="ti-headphone-alt mr-3"></i>Support@megakit.com</a></h6>
+					<h4 class="text-capitalize mb-4">Hubungi Kami</h4>
+					<h6><a href="tel:+23-345-67890" > <i class="ti-headphone-alt mr-3"></i>lokerit_id@gmail.com</a></h6>
 					<h6><a href="mailto:support@gmail.com" > <i class="ti-mobile mr-3"></i>+23-456-6588</a></h6>
 
 					<ul class="list-inline footer-socials mt-5">
@@ -121,7 +117,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="copyright">
-						&copy; Copyright Reserved to <span class="text-color">Orbitor</span> by <a href="https://themefisher.com/" target="_blank">Themefisher</a>
+						&copy; Copyright Reserved to <span class="text-color">LokerIT.id</span>
 					</div>
 				</div>
 			</div>

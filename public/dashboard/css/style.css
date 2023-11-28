@@ -2260,6 +2260,19 @@ input[type="button"].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem; }
 
+  .dbtn{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #3498db; /* Warna dan ketebalan border yang dapat disesuaikan */
+    border-radius: 4px; /* Bentuk sudut yang dapat disesuaikan */
+    color: #ffffff; /* Warna teks tombol */
+    background-color: #3498db
+  }
+
 .dropdown-menu-right {
   right: 0;
   left: auto; }
@@ -2911,7 +2924,8 @@ input[type="button"].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem; }
+  padding: 0.5rem 1rem; 
+}
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
   .nav-link.disabled {
@@ -7555,7 +7569,7 @@ sub {
   color: #abafb3; }
 
 .footer {
-  padding-left: 15.1875rem;
+  padding-left: 15rem;
   background-color: #fff; }
   .footer .copyright {
     padding: 0.9375rem;
