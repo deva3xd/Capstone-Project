@@ -12,22 +12,22 @@
   <title>Home</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="landing/images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('landing/images/logo.png') }}" />
 
   <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="landing/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/bootstrap/css/bootstrap.min.css') }}">
   <!-- Icon Font Css -->
-  <link rel="stylesheet" href="landing/plugins/themify/css/themify-icons.css">
-  <link rel="stylesheet" href="landing/plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="landing/plugins/magnific-popup/dist/magnific-popup.css">
-    <link rel="stylesheet" href="landing/plugins/modal-video/modal-video.css">
-    <link rel="stylesheet" href="landing/plugins/animate-css/animate.css">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/themify/css/themify-icons.css') }}">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/fontawesome/css/all.css') }}">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/magnific-popup/dist/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/plugins/modal-video/modal-video.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/plugins/animate-css/animate.css') }}">
   <!-- Slick Slider  CSS -->
-  <link rel="stylesheet" href="landing/plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="landing/plugins/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/slick-carousel/slick/slick.css') }}">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/slick-carousel/slick/slick-theme.css') }}">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="landing/css/style.css">
+  <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}">
 
 </head>
 
@@ -35,7 +35,7 @@
 	<nav class="navbar navbar-expand-lg py-4 navigation header-padding nav-text-white" id="navbar">
 		<div class="container-fluid">
 		  <a class="navbar-brand" href="index.html">
-			<img src="{{ asset('landing/images/logo-w.png') }}" alt="" class="img-fluid">
+			<img src="{{ asset('landing/images/logo.png') }}" alt="" width="50px" height="10px" class="img-fluid">
 		  </a>
 		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="fa fa-bars"></span>
@@ -43,14 +43,14 @@
 		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
 			<ul class="navbar-nav m-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="{{ route('LandingPage') }}">Home <span class="sr-only">(current)</span></a>
 			  </li>
-			   <li class="nav-item"><a class="nav-link" href="about.html">Lowongan</a></li>
-			    <li class="nav-item"><a class="nav-link" href="service.html">Perusahaan</a></li>
-				<li class="nav-item"><a class="nav-link" href="service.html">Tentang Kami</a></li>
-				<li class="nav-item"><a class="nav-link" href="service.html">Kontak</a></li>
+			  <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}">Tentang Kami</a></li>
+			  <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}">Kontak</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
+			    <li class="nav-item"><a class="nav-link" href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link nav-link-button border rounded"" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					  Login
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -83,8 +83,8 @@
 					<h4 class="text-capitalize mb-4">Tentang Kami</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Tentang Kami</a></li>
-						<li><a href="#">Kontak</a></li>
+						<li><a href="{{ route('LandingPage') }}">Tentang Kami</a></li>
+						<li><a href="{{ route('LandingPage') }}">Kontak</a></li>
 					</ul>
 				</div>
 			</div>
@@ -93,8 +93,8 @@
 					<h4 class="text-capitalize mb-4">Jobseeker</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">Lowongan</a></li>
-						<li><a href="#">Perusahaan</a></li>
+						<li><a href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
+						<li><a href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
 					</ul>
 				</div>
 			</div>

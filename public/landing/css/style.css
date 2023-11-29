@@ -648,7 +648,11 @@ ul.dropdown-menu li {
   letter-spacing: 2px;
 }
 
-.text-color {
+.text-primary {
+  color: rgb(32, 99, 224);
+}
+
+.text-p {
   color: #FF715B;
 }
 

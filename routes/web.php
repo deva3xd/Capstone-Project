@@ -12,17 +12,27 @@
 */
 
 // Landing Page //
-Route::get('/', function () {
-    return view('landing_page.index');
-});
-Route::get('/about', function () {
-    return view('landing_page.about');
-});
+Route::get('/', 'LandingPageController@index')->name('LandingPage');
+Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
+Route::get('/Cariperusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
 
 
 Route::get('/pelamar', function () {
     return view('pelamar/index');
 });
+Route::get('/pelamar/Carilowongan', function () {
+    return view('pelamar.cari_pekerjaan');
+});
+Route::get('/pelamar/Cariperusahaan', function () {
+    return view('pelamar.cari_perusahaan');
+});
+Route::get('/pelamar/Carilowongan/detail', function () {
+    return view('pelamar.detail_perkerjaan');
+});
+Route::get('/pelamar/Cariperusahaan/detail', function () {
+    return view('pelamar.detail_perusahaan');
+});
+
 Route::get('/admin', function () {
     return view('admin/admin');
 });

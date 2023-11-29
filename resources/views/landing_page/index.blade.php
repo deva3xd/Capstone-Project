@@ -8,7 +8,7 @@
 			<div class="col-lg-10 col-md-12 col-xl-8">
 				<div class="block">
 					<span class="text-uppercase text-sm letter-spacing ">Solusi anda dalam mencari lowongan pekerjaan IT</span>
-					<h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di Loker_IT.id</h1>
+					<h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h1>
 					<p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
 					<a href="about.html" target="_blank" class="btn btn-main">Learn more<i class="fa fa-angle-right ml-2"></i></a>
 				</div>
@@ -170,9 +170,9 @@
           <h1 class="text-capitalize mb-5 text-lg text-white">Hubungi Kami</h1>
 
           <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><a href="#" class="text-white">Home</a></li>
             <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Kontak</a></li>
+            <li class="list-inline-item"><a href="#kontak" class="text-white-50">Kontak</a></li>
           </ul>
         </div>
       </div>

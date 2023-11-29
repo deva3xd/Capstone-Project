@@ -24,18 +24,18 @@
     <link rel="stylesheet" href="{{ asset('landing/plugins/animate-css/animate.css') }}">
   <!-- Slick Slider  CSS -->
   <link rel="stylesheet" href="{{ asset('landing/plugins/slick-carousel/slick/slick.css') }}">
-<link rel="stylesheet" href="{{ asset('landing/plugins/slick-carousel/slick/slick-theme.css') }}">
+  <link rel="stylesheet" href="{{ asset('landing/plugins/slick-carousel/slick/slick-theme.css') }}">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="landing/css/style.css">
+  <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}">
 
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
+	<nav class="navbar navbar-expand-lg py-4 navigation header-padding nav-text-white" id="navbar">
 		<div class="container-fluid">
 		  <a class="navbar-brand" href="index.html">
-		  	<img src="{{ asset('landing/images/logo-flat.png') }}" alt="" width="90px" class="img-fluid">
+			<img src="{{ asset('landing/images/logo.png') }}" alt="" width="50px" height="10px" class="img-fluid">
 		  </a>
 		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="fa fa-bars"></span>
@@ -46,7 +46,7 @@
 				<a class="nav-link" href="/pelamar">Home <span class="sr-only">(current)</span></a>
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="/pelamar/Carilowongan">Lowongan</a></li>
-			    <li class="nav-item"><a class="nav-link" href="pelamar/Cariperusahaan">Perusahaan</a></li>
+			    <li class="nav-item"><a class="nav-link" href="/pelamar/Cariperusahaan">Perusahaan</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					  User
@@ -55,8 +55,9 @@
 					  <a class="dropdown-item" href="#"><i class="fas fa-building m-1"></i>Profil</a>
 					  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
 					</div>
-				  </li>			  
-			</ul>			
+				  </li>		
+			</ul>
+			
 		  </div>
 		</div>
 	</nav>
@@ -80,8 +81,8 @@
 					<h4 class="text-capitalize mb-4">Tentang Kami</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#tentang_kami">Tentang Kami</a></li>
-						<li><a href="#kontak">Kontak</a></li>
+						<li><a href="{{ route('LandingPage') }}">Tentang Kami</a></li>
+						<li><a href="{{ route('LandingPage') }}">Kontak</a></li>
 					</ul>
 				</div>
 			</div>
@@ -90,15 +91,15 @@
 					<h4 class="text-capitalize mb-4">Jobseeker</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="">Lowongan</a></li>
-						<li><a href="">Perusahaan</a></li>
+						<li><a href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
+						<li><a href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="widget widget-contact mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">Get in Touch</h4>
-					<h6><a href="tel:+23-345-67890" > <i class="ti-headphone-alt mr-3"></i>Support@megakit.com</a></h6>
+					<h4 class="text-capitalize mb-4">Hubungi Kami</h4>
+					<h6><a href="tel:+23-345-67890" > <i class="ti-headphone-alt mr-3"></i>lokerit_id@gmail.com</a></h6>
 					<h6><a href="mailto:support@gmail.com" > <i class="ti-mobile mr-3"></i>+23-456-6588</a></h6>
 
 					<ul class="list-inline footer-socials mt-5">
