@@ -25,7 +25,7 @@ class CreateLokersTable extends Migration
             $table->string('syarat');
             $table->string('tanggung_jawab');
             $table->text('deskripsi');
-            $table->string('batas_lamaran');
+            $table->date('batas_lamaran');
             $table->text('alamat');
             $table->timestamps();
         });

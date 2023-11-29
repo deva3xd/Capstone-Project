@@ -15,8 +15,6 @@
 Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
 Route::get('/Cariperusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
-
-
 Route::get('/pelamar', function () {
     return view('pelamar/index');
 });
@@ -36,6 +34,11 @@ Route::get('/pelamar/Cariperusahaan/detail', function () {
 Route::get('/admin', function () {
     return view('admin/admin');
 });
-Route::get('/perusahaan', function () {
-    return view('perusahaan/perusahaan');
-});
+
+// loker
+Route::get('/loker', 'LokerController@index')->name('daftarLoker');
+Route::get('/loker/create', 'LokerController@create')->name('createLoker');
+Route::post('/loker/create', 'LokerController@store')->name('storeLoker');
+Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
+Route::post('/loker/{loker}/edit', 'LokerController@update')->name('updateLoker');
+Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoker');
