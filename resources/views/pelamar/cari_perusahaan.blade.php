@@ -9,7 +9,7 @@
             <h1 class="text-capitalize mb-5 text-white text-lg">Perusahaan</h1>
   
             <ul class="list-inline breadcumb-nav">
-              <li class="list-inline-item"><a href="{{ route('LandingPage') }}" class="text-white">Home</a></li>
+              <li class="list-inline-item"><a href="{{ route('Pelamar') }}" class="text-white">Home</a></li>
               <li class="list-inline-item"><span class="text-white">/</span></li>
               <li class="list-inline-item"><a href="#" class="text-white-50">Perusahaan</a></li>
             </ul>
@@ -40,7 +40,7 @@
   
                   <p class="mb-1 text-success">Jakarta</p>
   
-                  <a href="/pelamar/Cariperusahaan/detail" class="btn btn-small btn-main ">Detail</a>
+                  <a href="{{ route('PelamarDetailperusahaan') }}" class="btn btn-small btn-main ">Detail</a>
               </div>
           </div>
       </div>

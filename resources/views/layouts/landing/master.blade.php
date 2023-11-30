@@ -43,16 +43,16 @@
 		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
 			<ul class="navbar-nav m-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="/pelamar">Home <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="{{ route('Pelamar') }}">Home <span class="sr-only">(current)</span></a>
 			  </li>
-			   <li class="nav-item"><a class="nav-link" href="/pelamar/Carilowongan">Lowongan</a></li>
-			    <li class="nav-item"><a class="nav-link" href="pelamar/Cariperusahaan">Perusahaan</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{ route('PelamarCaripekerjaan') }}">Lowongan</a></li>
+			    <li class="nav-item"><a class="nav-link" href="{{ route('PelamarCariperusahaan') }}">Perusahaan</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					  User
 					</a>
 					<div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="#"><i class="fas fa-building m-1"></i>Profil</a>
+					  <a class="dropdown-item" href="{{ route('Profil') }}"><i class="fas fa-building m-1"></i>Profil</a>
 					  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
 					</div>
 				  </li>			  
@@ -90,8 +90,8 @@
 					<h4 class="text-capitalize mb-4">Jobseeker</h4>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="">Lowongan</a></li>
-						<li><a href="">Perusahaan</a></li>
+						<li><a href="{{ route('PelamarCaripekerjaan') }}">Lowongan</a></li>
+						<li><a href="{{ route('PelamarCariperusahaan') }}">Perusahaan</a></li>
 					</ul>
 				</div>
 			</div>
