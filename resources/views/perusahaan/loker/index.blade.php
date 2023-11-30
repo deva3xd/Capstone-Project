@@ -61,6 +61,7 @@
                                         <td class="d-flex">
                                             <a href="{{route('editLoker', ['id' => $loker->id])}}" class="btn btn-warning btn-sm" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deleteLoker', ['id' => $loker->id])}}" class="btn btn-danger btn-sm" role="button">Hapus</a>
+                                            <!-- <a href="{{route('deleteLoker', ['id' => $loker->id])}}" class="btn btn-danger" data-confirm-delete="true" role="button">Delete</a> -->
                                         </td>
                                     </tr>
                                     @endforeach
@@ -79,7 +80,7 @@
 <script>
     confirmDelete = function(button) {
         var url = $(button).data('url');
-        Swal.fire({
+        swal({
             'title' : 'Konfirmasi Hapus',
             'text' : 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
             'dangermode' : true,
