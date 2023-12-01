@@ -22,7 +22,8 @@ class CreateProfilPelamarsTable extends Migration
             $table->bigInteger('no_telp');
             $table->string('email');
             $table->string('password');
-            $table->string('riwayat_pendidikan');
+            $table->string('pendidikan');
+            $table->string('nama_institusi');
             $table->text('pengalaman_organisasi');
             $table->text('pengalaman_kerja');
             $table->string('skill');
