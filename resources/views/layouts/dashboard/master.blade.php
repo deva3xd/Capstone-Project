@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <!-- Preloader start -->
     <div id="preloader">
         <div class="loader">
@@ -29,7 +28,6 @@
 
     <!-- Main wrapper start -->
     <div id="main-wrapper">
-
         <!-- Nav header start -->
         <div class="nav-header d-flex justify-content-center align-items-center">
             <div class="brand-logo">
@@ -63,20 +61,18 @@
                                     <ul>
                                         <li>
                                             <a href="app-profile.html"><i class="icon-user"></i>
-                                                <span>Profile</span></a>
+                                            <span>Profile</span></a>
                                         </li>
                                         <li>
                                             <a href="email-inbox.html"><i class="icon-envelope-open"></i>
-                                                <span>Inbox</span>
-                                                <div class="badge gradient-3 badge-pill badge-primary">3</div>
+                                            <span>Inbox</span>
+                                            <div class="badge gradient-3 badge-pill badge-primary">3</div>
                                             </a>
                                         </li>
                                         <hr class="my-2">
                                         <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
-                                                    Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                                            <a href="page-login.html"><i class="icon-key"></i>
+                                            <span>Logout</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -90,26 +86,7 @@
 
         <!-- Sidebar start -->
         <div class="nk-sidebar">
-            <div class="nk-nav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
-                    <li>
-                        <a href="{{route('dashboard')}}">
-                            <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('daftarLoker')}}">
-                            <i class="icon-"></i><span class="nav-text">Loker</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon-speedometer"></i><span class="nav-text">Wawancara</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            @yield('sidebar')
         </div>
         <!-- Sidebar end -->
 
@@ -117,8 +94,8 @@
         <div class="content-body">
             @yield('content')
         </div>
+        <!-- Content body end -->
     </div>
-    <!-- Content body end -->
 
 
     <!-- Footer start -->
