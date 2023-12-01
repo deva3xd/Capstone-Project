@@ -63,20 +63,18 @@
                                     <ul>
                                         <li>
                                             <a href="app-profile.html"><i class="icon-user"></i>
-                                                <span>Profile</span></a>
+                                            <span>Profile</span></a>
                                         </li>
                                         <li>
                                             <a href="email-inbox.html"><i class="icon-envelope-open"></i>
-                                                <span>Inbox</span>
-                                                <div class="badge gradient-3 badge-pill badge-primary">3</div>
+                                            <span>Inbox</span>
+                                            <div class="badge gradient-3 badge-pill badge-primary">3</div>
                                             </a>
                                         </li>
                                         <hr class="my-2">
                                         <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
-                                                    Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                                            <a href="page-login.html"><i class="icon-key"></i>
+                                            <span>Logout</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -100,12 +98,12 @@
                     </li>
                     <li>
                         <a href="{{route('daftarLoker')}}">
-                            <i class="icon-"></i><span class="nav-text">Loker</span>
+                            <i class="icon-notebook"></i><span class="nav-text">Loker</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="icon-speedometer"></i><span class="nav-text">Wawancara</span>
+                            <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                         </a>
                     </li>
                 </ul>
