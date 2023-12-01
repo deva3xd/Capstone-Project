@@ -5,12 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>LokerIt.id - {{ $title }}</title>
+    <title>LokerIt.id -</title>
     <!-- theme meta -->
-    <meta name="theme-name" content="quixlab" />
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('dashboard/images/favicon.png')}}">
-    <!-- Data Table -->
+    <meta name="theme-name" content="quixlab" />    <!-- Data Table -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/logo.png') }}" />
     <link rel="stylesheet" href="{{asset('dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{asset('dashboard/css/style.css')}}">
@@ -36,10 +34,10 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="{{asset('dashboard/images/logo.png')}}" alt=""> </b>
+                    <b class="logo-abbr"><img src="{{ asset('landing/images/logo.png') }}" alt=""></b>
                     <span class="logo-compact"><img src="{{asset('dashboard/images/logo-compact.png')}}" alt=""></span>
                     <span class="brand-title">
-                        <img src="{{asset('dashboard/images/logo-text.png')}}" alt="">
+                        <img src="{{ asset('landing/images/logo-flat.png') }}" width="100px" alt="">
                     </span>
                 </a>
             </div>
@@ -239,7 +237,7 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Dashboard</li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('dashboard')}}">
                             <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
