@@ -35,9 +35,9 @@ Route::get('/pelamar/Cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/a/dashboard', function () {
     $title = 'dashboard';
-    return view('perusahaan.index');
+    return view('perusahaan.index', ['title' => $title]);
 })->name('dashboard');
 
 // loker
