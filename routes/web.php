@@ -47,3 +47,11 @@ Route::post('/loker/create', 'LokerController@store')->name('storeLoker');
 Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
 Route::post('/loker/{loker}/edit', 'LokerController@update')->name('updateLoker');
 Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoker');
+
+//wawancara
+Route::get('/wawancara', 'WawancaraController@index')->name('daftarWawancara');
+Route::get('/wawancara/create', 'WawancaraController@create')->name('createWawancara');
+Route::post('wawancara/create', 'WawancaraController@store')->name('storeWawancara');
+Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
+Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
+Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
