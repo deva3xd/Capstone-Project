@@ -1,4 +1,27 @@
-@extends('layouts.dashboard.master-perusahaan')
+@extends('layouts.dashboard.master')
+
+@section('sidebar')
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            <li class="nav-label">Dashboard</li>
+            <li>
+                <a href="{{route('dashboard')}}">
+                    <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('daftarLoker')}}">
+                    <i class="icon-notebook"></i><span class="nav-text">Loker</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-note"></i><span class="nav-text">Wawancara</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+@endsection
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -75,21 +98,22 @@
     </div>
     <!-- Content body end -->
 @endsection
+
 @section('addJavascript')
-<script src="{{ asset('js/sweetalert.min.js') }}"></script>
-<script>
-    confirmDelete = function(button) {
-        var url = $(button).data('url');
-        swal({
-            'title' : 'Konfirmasi Hapus',
-            'text' : 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
-            'dangermode' : true,
-            'buttons' : true
-        }).then(function(value) {
-            if(value) {
-                window.location = url;
-            }
-        })
-    }
-</script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script>
+        confirmDelete = function(button) {
+            var url = $(button).data('url');
+            swal({
+                'title' : 'Konfirmasi Hapus',
+                'text' : 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
+                'dangermode' : true,
+                'buttons' : true
+            }).then(function(value) {
+                if(value) {
+                    window.location = url;
+                }
+            })
+        }
+    </script>
 @endsection

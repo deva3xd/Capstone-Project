@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <!-- Preloader start -->
     <div id="preloader">
         <div class="loader">
@@ -29,7 +28,6 @@
 
     <!-- Main wrapper start -->
     <div id="main-wrapper">
-
         <!-- Nav header start -->
         <div class="nav-header d-flex justify-content-center align-items-center">
             <div class="brand-logo">
@@ -88,26 +86,7 @@
 
         <!-- Sidebar start -->
         <div class="nk-sidebar">
-            <div class="nk-nav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
-                    <li>
-                        <a href="{{route('dashboard')}}">
-                            <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('daftarLoker')}}">
-                            <i class="icon-notebook"></i><span class="nav-text">Loker</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon-note"></i><span class="nav-text">Wawancara</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            @yield('sidebar')
         </div>
         <!-- Sidebar end -->
 
@@ -115,8 +94,8 @@
         <div class="content-body">
             @yield('content')
         </div>
+        <!-- Content body end -->
     </div>
-    <!-- Content body end -->
 
 
     <!-- Footer start -->
