@@ -10,6 +10,7 @@ class WawancaraController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * @param  \App\Wawancara  $wawancara
      */
     public function index()
     {
@@ -38,13 +39,13 @@ class WawancaraController extends Controller
     public function store(Request $request)
     {
         $validateData = validator($request->all(), [
-            'id_loker' => 'required|string|max:255',
-            'id_profil_pelamar' => 'required|string|max:255',
+            'id_loker' => 'required|string|max:11',
+            'id_profil_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
         ])->validate();
 
-        $wawancara = new \App\Wawancara($validateData);
+        $wawancara = new Wawancara($validateData);
         $wawancara->save();
 
         return redirect(route('daftarWawancara'));
@@ -104,7 +105,7 @@ class WawancaraController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Wawancara  $wawancara
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
