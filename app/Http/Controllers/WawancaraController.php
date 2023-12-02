@@ -87,9 +87,9 @@ class WawancaraController extends Controller
     public function update(Request $request, Wawancara $wawancara)
     {
         $validateData = validator($request->all(), [
-            'id_loker' => 'required|string|max:255',
-            'id_profil_pelamar' => 'required|string|max:255',
-            'jadwal' => 'required|date|max',
+            'id_loker' => 'required|string|max:11',
+            'id_profil_pelamar' => 'required|string|max:11',
+            'jadwal' => 'required|date',
             'catatan' => 'required|string',
         ])->validate();
 
