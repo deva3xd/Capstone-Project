@@ -86,7 +86,8 @@
 
         <!-- Sidebar start -->
         <div class="nk-sidebar">
-            @yield('sidebar')
+            @yield('sidebar-admin')
+            @yield('sidebar-perusahaan')
         </div>
         <!-- Sidebar end -->
 

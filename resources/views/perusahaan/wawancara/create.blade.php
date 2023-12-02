@@ -1,4 +1,5 @@
-@extends('layouts.dashboard.master-perusahaan')
+@extends('layouts.dashboard.master')
+@extends('layouts.dashboard.sidebar-perusahaan')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -53,39 +54,6 @@
                                     <a href="#" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
-                                <!-- <fieldset class="form-group">
-                                    <div class="row">
-                                        <label class="col-form-label col-sm-2 pt-0">Radios</label>
-                                        <div class="col-sm-10">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="checked">
-                                                <label class="form-check-label">First radio</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" value="option2">
-                                                <label class="form-check-label">Second radio</label>
-                                            </div>
-                                            <div class="form-check disabled">
-                                                <input class="form-check-input" type="radio" name="gridRadios" value="option3" disabled="disabled">
-                                                <label class="form-check-label">Third disabled radio</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <div class="form-group row">
-                                    <div class="col-sm-2">Checkbox</div>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox">
-                                            <label class="form-check-label">Example checkbox</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-dark">Sign in</button>
-                                    </div>
-                                </div> -->
                             </form>
                         </div>
                     </div>

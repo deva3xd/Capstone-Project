@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use \App\Wawancara;
 use Illuminate\Http\Request;
 
 class WawancaraController extends Controller
@@ -10,11 +11,10 @@ class WawancaraController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * @param  \App\Wawancara  $wawancara
      */
     public function index()
     {
-        $wawancaras = \App\Wawancara::all();
+        $wawancaras = Wawancara::all();
         $title = 'Data Wawancara';
         return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras]);
     }
@@ -54,10 +54,10 @@ class WawancaraController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Wawancara  $wawancara
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Wawancara $wawancara)
     {
         //
     }
@@ -65,10 +65,10 @@ class WawancaraController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Wawancara  $wawancara
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Wawancara $wawancara)
     {
         $title = 'Edit Wawancara';
         return view('perusahaan.wawancara.edit', [
@@ -81,10 +81,10 @@ class WawancaraController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Wawancara  $wawancara
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Wawancara $wawancara)
     {
         $validateData = validator($request->all(), [
             'id_loker' => 'required|string|max:255',
@@ -108,7 +108,7 @@ class WawancaraController extends Controller
      * @param  \App\Wawancara  $wawancara
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Wawancara $wawancara)
     {
         $wawancara->delete();
         return redirect(route('daftarWawancara'))->with('success', 'Data Berhasil Dihapus');

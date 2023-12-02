@@ -1,26 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('sidebar')
-    <div class="nk-nav-scroll">
-        <ul class="metismenu" id="menu">
-            <li class="nav-label">Dashboard</li>
-            <li>
-                <a href="{{route('dashboard')}}">
-                    <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('daftarLoker')}}">
-                    <i class="icon-notebook"></i><span class="nav-text">Loker</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="icon-note"></i><span class="nav-text">Wawancara</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-@endsection
+@extends('layouts.dashboard.sidebar-perusahaan')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -69,7 +48,6 @@
                                         <td class="d-flex">
                                             <a href="{{route('editWawancara', ['id' => $wawancara->id])}}" class="btn btn-warning btn-sm" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deleteWawancara', ['id' => $wawancara->id])}}" class="btn btn-danger btn-sm" role="button">Hapus</a>
-                                            <!-- <a href="{{route('deleteLoker', ['id' => $loker->id])}}" class="btn btn-danger" data-confirm-delete="true" role="button">Delete</a> -->
                                         </td>
                                     </tr>
                                     @endforeach
