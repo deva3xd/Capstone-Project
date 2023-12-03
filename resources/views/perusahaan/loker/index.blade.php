@@ -1,4 +1,5 @@
-@extends('layouts.dashboard.master-perusahaan')
+@extends('layouts.dashboard.master')
+@extends('layouts.dashboard.sidebar-perusahaan')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -75,21 +76,22 @@
     </div>
     <!-- Content body end -->
 @endsection
+
 @section('addJavascript')
-<script src="{{ asset('js/sweetalert.min.js') }}"></script>
-<script>
-    confirmDelete = function(button) {
-        var url = $(button).data('url');
-        swal({
-            'title' : 'Konfirmasi Hapus',
-            'text' : 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
-            'dangermode' : true,
-            'buttons' : true
-        }).then(function(value) {
-            if(value) {
-                window.location = url;
-            }
-        })
-    }
-</script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script>
+        confirmDelete = function(button) {
+            var url = $(button).data('url');
+            swal({
+                'title' : 'Konfirmasi Hapus',
+                'text' : 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
+                'dangermode' : true,
+                'buttons' : true
+            }).then(function(value) {
+                if(value) {
+                    window.location = url;
+                }
+            })
+        }
+    </script>
 @endsection
