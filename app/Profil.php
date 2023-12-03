@@ -14,9 +14,8 @@ class Profil extends Model
         'ttl',
         'jk',
         'no_telp',
-        'email',
-        'password',
-        'riwayat_pendidikan',
+        'pendidikan',
+        'nama_institusi',
         'pengalaman_organisasi',
         'pengalaman_kerja',
         'skill',
@@ -27,5 +26,11 @@ class Profil extends Model
         'npwp',
         'nik',
         'status_nikah',
-    ]; 
+    ];
+
+    // Field yang tidak diisi secara massal
+    protected $guarded = [
+        'email',
+        'password',
+    ];
 }

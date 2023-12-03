@@ -24,6 +24,7 @@ Route::get('/pelamar/Cariperusahaan1', 'PelamarController@cariPerusahaan')->name
 Route::get('/pelamar/Cariperusahaan1/Detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
 Route::get('/pelamar/Caripekerjaan/Detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
 Route::get('/pelamar/profil', 'ProfilController@index')->name('Profil');
+Route::post('/pelamar/profil/submit', 'ProfilController@submitFormProfil')->name('Profilsubmit');
 
 Route::get('/pelamar/Cariperusahaan', function () {
     return view('pelamar.cari_perusahaan');

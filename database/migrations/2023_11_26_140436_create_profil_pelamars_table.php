@@ -26,7 +26,7 @@ class CreateProfilPelamarsTable extends Migration
             $table->string('nama_institusi');
             $table->text('pengalaman_organisasi');
             $table->text('pengalaman_kerja');
-            $table->string('skill');
+            $table->text('skill');
             $table->string('sertifikasi');
             $table->integer('gaji_diinginkan');
             $table->string('lampiran');

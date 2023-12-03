@@ -2,84 +2,66 @@
 
 namespace App\Http\Controllers;
 
-use App\Profil;
 use Illuminate\Http\Request;
+use App\Profil;
 
 class ProfilController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+    public function index(){
         return view('pelamar.form_pribadi');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function submitFormProfil(Request $request)
     {
-        //
+        // Validasi input sesuai kebutuhan Anda
+        $request->validate([
+        'nama' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'ttl' => 'required|date',
+        'jk' => 'required|in:Laki-Laki,Perempuan',
+        'no_telp' => 'required|string',
+        'pendidikan' => 'required|string',
+        'nama_institusi' => 'required|string',
+        'pengalaman_organisasi' => 'nullable|string',
+        'pengalaman_kerja' => 'nullable|string',
+        'skill' => 'nullable|string',
+        'sertifikasi' => 'nullable|string',
+        'nik' => 'required|string',
+        'npwp' => 'nullable|string',
+        'cv' => 'required|mimes:pdf,doc,docx|max:2048', // Ubah sesuai format yang diizinkan
+        'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Ubah sesuai format yang diizinkan
+    ]);
+
+    // Proses penyimpanan file CV
+    $cvPath = $request->file('cv')->store('cv');
+
+    // Proses penyimpanan file foto
+    $fotoPath = $request->file('foto')->store('foto');
+
+    // Simpan data ke dalam database
+    $profil = new Profil();
+    $profil->nama = $request->input('nama');
+    $profil->alamat = $request->input('alamat');
+    $profil->ttl = $request->input('ttl');
+    $profil->jk = $request->input('jk');
+    $profil->no_telp = $request->input('no_telp');
+    $profil->pendidikan = $request->input('pendidikan');
+    $profil->nama_institusi = $request->input('nama_institusi');
+    $profil->pengalaman_organisasi = $request->input('pengalaman_organisasi');
+    $profil->pengalaman_kerja = $request->input('pengalaman_kerja');
+    $profil->skill = $request->input('skill');
+    $profil->sertifikasi = $request->input('sertifikasi');
+    $profil->nik = $request->input('nik');
+    $profil->npwp = $request->input('npwp');
+    $profil->cv_path = $cvPath;
+    $profil->foto_path = $fotoPath;
+
+    $profil->save();
+
+    // Lakukan apa pun yang diperlukan dengan data yang telah divalidasi dan file yang disimpan
+
+    return redirect()->back()->with('success', 'Form submitted successfully.');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Profil  $profil
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Profil $profil)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Profil  $profil
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Profil $profil)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Profil  $profil
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Profil $profil)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Profil  $profil
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Profil $profil)
-    {
-        //
-    }
 }
