@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \App\Wawancara;
+use Mpdf\Mpdf;
 use Illuminate\Http\Request;
 
 class WawancaraController extends Controller
@@ -17,6 +18,13 @@ class WawancaraController extends Controller
         $wawancaras = Wawancara::all();
         $title = 'Data Wawancara';
         return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras]);
+    }
+
+    public function pdf() {
+        $mpdf = new Mpdf();
+        $wawancaras = Wawancara::all();
+        $mpdf->WriteHTML(view('perusahaan.wawancara.pdf', ['wawancaras' => $wawancaras]));
+        $mpdf->Output();
     }
 
     /**

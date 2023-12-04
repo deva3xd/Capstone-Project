@@ -22,6 +22,7 @@
             <div class="col-12">
                     <div class="card">
                         <div class="card-header text-right pb-0" style="padding-top: 1.88rem;">
+                            <a href="{{route('pdfWawancara')}}" class="btn btn-success" role="button" target="_blank"><i class="fa fa-download"></i></a>
                             <a href="{{route('createWawancara')}}" class="btn btn-primary" role="button">Tambah Data</a>
                         </div>
                     <div class="card-body pt-0">

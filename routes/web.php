@@ -52,6 +52,7 @@ Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoke
 
 //wawancara
 Route::get('/wawancara', 'WawancaraController@index')->name('daftarWawancara');
+Route::get('/wawancara/pdf', 'WawancaraController@pdf')->name('pdfWawancara');
 Route::get('/wawancara/create', 'WawancaraController@create')->name('createWawancara');
 Route::post('wawancara/create', 'WawancaraController@store')->name('storeWawancara');
 Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
