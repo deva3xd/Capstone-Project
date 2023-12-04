@@ -7,26 +7,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Download PDF Data Wawancara</title>
 </head>
+
 <style type="text/css">
-	.table1 {
-    font-family: sans-serif;
-    color: #232323;
-    border-collapse: collapse;
-    text-align: center;
-}
- 
-.table1, th, td {
-    border: 1px solid black;
-    padding: 8px 20px;
-}
-h2 {
-    text-align: center;
-}  
+	table, th, td {
+		padding: 8px 20px;
+		text-align: center;
+		font-family: sans-serif;
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	h2 {
+		text-align: center;
+	}
+	th {
+		background-color: #d4d4d4;
+	}
 </style>
 
 <body>
-<h2>DATA WAWANCARA</h2>
-    <table class="table1">
+	<h2>DATA WAWANCARA</h2>
+    <table>
         <thead>
             <tr>
                 <th>No.</th>
