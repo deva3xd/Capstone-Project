@@ -19,6 +19,14 @@ class LokerController extends Controller
         return view('perusahaan.loker.index', ['title' => $title, 'lokers' => $lokers]);
     }
 
+    public function pdf() {
+        $mpdf = new \Mpdf\Mpdf();
+        $lokers = Loker::all();
+        $title = 'Data Loker';
+        $mpdf->WriteHTML(view('perusahaan.loker.index', ['title' => $title, 'lokers' => $lokers]));
+        $mpdf->Output();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
