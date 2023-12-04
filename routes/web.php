@@ -42,8 +42,8 @@ Route::get('/a/dashboard', function () {
 })->name('dashboard');
 
 // loker
-Route::get('/loker/pdf', 'LokerController@pdf')->name('daftarLoker');
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
+Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
 Route::get('/loker/create', 'LokerController@create')->name('createLoker');
 Route::post('/loker/create', 'LokerController@store')->name('storeLoker');
 Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
