@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Loker;
+use Mpdf\Mpdf;
 use Illuminate\Http\Request;
 
 class LokerController extends Controller
@@ -17,6 +18,13 @@ class LokerController extends Controller
         $lokers = Loker::all();
         $title = 'Data Loker';
         return view('perusahaan.loker.index', ['title' => $title, 'lokers' => $lokers]);
+    }
+
+    public function pdf() {
+        $mpdf = new Mpdf();
+        $lokers = Loker::all();
+        $mpdf->WriteHTML(view('perusahaan.loker.pdf', ['lokers' => $lokers]));
+        $mpdf->Output();
     }
 
     /**
