@@ -5,11 +5,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Download PDF</title>
+    <title>Download PDF Data Loker</title>
 </head>
+<style type="text/css">
+	.table1 {
+    font-family: sans-serif;
+    color: #232323;
+    border-collapse: collapse;
+    text-align: center;
+}
+ 
+.table1, th, td {
+    border: 1px solid black;
+    padding: 8px 20px;
+}
+h2 {
+    text-align: center;
+}  
+</style>
 
 <body>
-    <table class="table table-striped table-bordered zero-configuration">
+<h2>DATA LOKER</h2>
+    <table class="table1">
         <thead>
             <tr>
                 <th>No.</th>
