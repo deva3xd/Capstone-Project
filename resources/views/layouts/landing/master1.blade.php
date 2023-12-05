@@ -52,7 +52,9 @@
 					  User
 					</a>
 					<div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="{{ route('Profil') }}"><i class="fas fa-building m-1"></i>Profil</a>
+						@foreach ($profil as $profil)
+						<a class="dropdown-item" href="{{ route('Profilindex') }}"><i class="fas fa-building m-1"></i>Profil</a>
+						@endforeach
 					  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
 					</div>
 				  </li>		
@@ -149,6 +151,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
     
     <script src="landing/js/script.js"></script>
+	<script src="landing/plugins/bootstrap/js/popper.js"></script>
+	<script src="landing/plugins/bootstrap/js/bootstrap.min.js"></script>
 
   </body>
   </html>

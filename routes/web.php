@@ -23,8 +23,11 @@ Route::get('/pelamar/Caripekerjaan', 'PelamarController@cariPekerjaan')->name('P
 Route::get('/pelamar/Cariperusahaan1', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
 Route::get('/pelamar/Cariperusahaan1/Detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
 Route::get('/pelamar/Caripekerjaan/Detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
-Route::get('/pelamar/profil', 'ProfilController@index')->name('Profil');
-
+Route::get('/pelamar/profil', 'ProfilController@index')->name('Profilindex');
+Route::get('/pelamar/{profil}/akun', 'ProfilController@Gantipassword')->name('Passwordedit');
+Route::post('/pelamar/{profil}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
+Route::get('/pelamar/{profil}/profil', 'ProfilController@edit')->name('Profiledit');
+Route::post('/pelamar/{profil}/profil/update', 'ProfilController@update')->name('Profilupdate');
 Route::get('/pelamar/Cariperusahaan', function () {
     return view('pelamar.cari_perusahaan');
 });
@@ -42,6 +45,7 @@ Route::get('/a/dashboard', function () {
 
 // loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
+Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
 Route::get('/loker/create', 'LokerController@create')->name('createLoker');
 Route::post('/loker/create', 'LokerController@store')->name('storeLoker');
 Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
@@ -50,6 +54,7 @@ Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoke
 
 //wawancara
 Route::get('/wawancara', 'WawancaraController@index')->name('daftarWawancara');
+Route::get('/wawancara/pdf', 'WawancaraController@pdf')->name('pdfWawancara');
 Route::get('/wawancara/create', 'WawancaraController@create')->name('createWawancara');
 Route::post('wawancara/create', 'WawancaraController@store')->name('storeWawancara');
 Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
