@@ -54,8 +54,8 @@
 					  Login
 					</a>
 					<div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="#"><i class="fas fa-building m-1"></i>Perusahaan</a>
-					  <a class="dropdown-item" href="#"><i class="fas fa-user m-1"></i>Pelamar</a>
+					  <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
+					  <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-user m-1"></i>Pelamar</a>
 					</div>
 				  </li>			  
 			</ul>			

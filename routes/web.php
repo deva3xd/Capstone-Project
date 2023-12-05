@@ -55,3 +55,21 @@ Route::post('wawancara/create', 'WawancaraController@store')->name('storeWawanca
 Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
 Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
 Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
+
+//login regis
+Route::get('/login', 'AuthController@showLoginForm')->name('login');
+Route::post('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
+Route::post('/register', 'AuthController@register');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/pelamar', function () {
+        return view('landing.master');
+    })->name('pelamar');
+
+    Route::get('/perusahaan', function () {
+        return view('perusahaan.index');
+    })->name('perusahaan');
+});
+
+
