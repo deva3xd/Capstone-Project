@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Loker;
+use Mpdf\Mpdf;
 use Illuminate\Http\Request;
 
 class LokerController extends Controller
@@ -19,9 +20,16 @@ class LokerController extends Controller
         return view('perusahaan.loker.index', ['title' => $title, 'lokers' => $lokers]);
     }
 
+    public function pdf() {
+        $mpdf = new Mpdf();
+        $lokers = Loker::all();
+        $mpdf->WriteHTML(view('perusahaan.loker.pdf', ['lokers' => $lokers]));
+        $mpdf->Output();
+    }
+
     /**
      * Show the form for creating a new resource.
-     *
+     *git
      * @return \Illuminate\Http\Response
      */
     public function create()
