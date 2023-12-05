@@ -16,11 +16,11 @@ class AuthController extends Controller
 
 public function login(Request $request)
 {
-    $credentials = $request->only('email', 'password', 'type');
+    $credentials = $request->only('email', 'password', 'role');
 
     if (Auth::attempt($credentials)) {
-        $type = Auth::user()->type;
-        return redirect("/{$type}");
+        $role = Auth::user()->role;
+        return redirect("/{$role}");
     }
 
     return back()->withErrors(['email' => 'Invalid credentials']);
@@ -34,6 +34,7 @@ public function register(Request $request)
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users',
         'password' => 'required|string|min:8',
+        'role' => 'required|in:pelamar,perusahaan',
     ]);
 
     // Jika validasi gagal, kembali ke halaman registrasi dengan pesan error
@@ -48,6 +49,7 @@ public function register(Request $request)
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = Hash::make($request->password);
+    $user->role = $request->role;
     $user->save();
 
     // Redirect ke halaman login dengan pesan sukses

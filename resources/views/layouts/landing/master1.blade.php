@@ -52,9 +52,9 @@
 					  User
 					</a>
 					<div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-						@foreach ($profil as $profil)
+					
 						<a class="dropdown-item" href="{{ route('Profilindex') }}"><i class="fas fa-building m-1"></i>Profil</a>
-						@endforeach
+					
 					  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
 					</div>
 				  </li>		
