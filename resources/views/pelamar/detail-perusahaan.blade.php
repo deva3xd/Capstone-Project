@@ -1,4 +1,5 @@
-@extends('layouts.landing.master1')
+@extends('layouts.landing.master')
+@extends('layouts.landing.navbar')
 
 @section('content')
 <section class="page-title bg-1">

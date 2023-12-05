@@ -11,17 +11,17 @@ class PelamarController extends Controller
     }
 
     public function cariPekerjaan(){
-        return view('pelamar.cari_pekerjaan');
+        return view('pelamar.cari-pekerjaan');
     }
 
     public function cariPerusahaan(){
-        return view('pelamar.cari_perusahaan');
+        return view('pelamar.cari-perusahaan');
     }
 
     public function detailPekerjaan(){
-        return view('pelamar.detail_pekerjaan');
+        return view('pelamar.detail-pekerjaan');
     }
     public function detailPerusahaan(){
-        return view('pelamar.detail_perusahaan');
+        return view('pelamar.detail-perusahaan');
     }
 }

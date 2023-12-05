@@ -32,36 +32,6 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
-		<div class="container-fluid">
-		  <a class="navbar-brand" href="index.html">
-		  	<img src="{{ asset('landing/images/logo-flat.png') }}" alt="" width="90px" class="img-fluid">
-		  </a>
-		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="fa fa-bars"></span>
-		  </button>
-		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
-			<ul class="navbar-nav m-auto">
-			  <li class="nav-item active">
-				<a class="nav-link" href="{{ route('LandingPage') }}">Home <span class="sr-only">(current)</span></a>
-			  </li>
-			  <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
-			  <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-			   <li class="nav-item"><a class="nav-link" href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
-			    <li class="nav-item"><a class="nav-link" href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
-				<li class="nav-item dropdown">
-					<a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  Login
-					</a>
-					<div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
-					  <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-user m-1"></i>Pelamar</a>
-					</div>
-				  </li>			  
-			</ul>			
-		  </div>
-		</div>
-	</nav>
 
 @yield('content')
 
