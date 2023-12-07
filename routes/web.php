@@ -43,6 +43,12 @@ Route::get('/a/dashboard', function () {
     return view('perusahaan.index', ['title' => $title]);
 })->name('dashboard');
 
+// admin
+Route::get('/admin', function() {
+    $title = 'admin';
+    return view('admin.index', ['title' => $title]);
+});
+
 // loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
 Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
