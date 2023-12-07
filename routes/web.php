@@ -73,14 +73,14 @@ Route::post('/login', 'AuthController@login');
 Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
 Route::post('/register', 'AuthController@register');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/pelamar', function () {
-        return view('landing.master');
-    })->name('pelamar');
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/pelamar', function () {
+//         return view('landing.master');
+//     })->name('pelamar');
 
-    Route::get('/perusahaan', function () {
-        return view('perusahaan.index');
-    })->name('perusahaan');
-});
+//     Route::get('/perusahaan', function () {
+//         return view('perusahaan.index');
+//     })->name('perusahaan');
+// });
 
 
