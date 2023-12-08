@@ -19,14 +19,12 @@ class CreateLokersTable extends Migration
             $table->string('nama');
             $table->string('jabatan');
             $table->string('lulusan');
-            $table->string('jurusan');
-            $table->string('skill');
-            $table->text('pengalaman_kerja');
             $table->string('syarat');
             $table->string('tanggung_jawab');
             $table->text('deskripsi');
             $table->date('batas_lamaran');
             $table->text('alamat');
+            $table->string('status');
             $table->timestamps();
         });
     }

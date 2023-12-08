@@ -50,24 +50,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Jurusan</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="jurusan" name="jurusan" id="jurusan" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Skill</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="skill" name="skill" id="skill" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Pengalaman Kerja</label>
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control h-150px" rows="6" placeholder="pengalaman kerja" name="pengalaman_kerja" id="pengalaman_kerja" required="required"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Syarat</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" placeholder="syarat" name="syarat" id="syarat" required="required">
@@ -96,6 +78,7 @@
                                     <div class="col-sm-10">
                                         <textarea class="form-control h-150px" rows="6" placeholder="alamat" name="alamat" id="alamat" required="required"></textarea>
                                     </div>
+                                    <input type="hidden" class="form-control" placeholder="status" name="status" id="status" value="aktif" required="required">
                                 </div>
                                 <div class="text-right">
                                     <a href="#" class="btn btn-outline-secondary mr-2" role="button">Batal</a>

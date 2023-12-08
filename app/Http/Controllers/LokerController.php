@@ -51,14 +51,12 @@ class LokerController extends Controller
             'nama' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
-            'jurusan' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string',
             'syarat' => 'required|string|max:255',
             'tanggung_jawab' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'batas_lamaran' => 'required|date',
-            'alamat' => 'required|string'
+            'alamat' => 'required|string',
+            'status' => 'required|string'
         ])->validate();
 
         $loker = new Loker($validateData);
@@ -107,28 +105,24 @@ class LokerController extends Controller
             'nama' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
-            'jurusan' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string',
             'syarat' => 'required|string|max:255',
             'tanggung_jawab' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'batas_lamaran' => 'required|date',
-            'alamat' => 'required|string'
+            'alamat' => 'required|string',
+            'status' => 'required|string'
         ])->validate();
 
         $loker->id_perusahaan = $validateData['id_perusahaan'];
         $loker->nama = $validateData['nama'];
         $loker->jabatan = $validateData['jabatan'];
         $loker->lulusan = $validateData['lulusan'];
-        $loker->jurusan = $validateData['jurusan'];
-        $loker->skill = $validateData['skill'];
-        $loker->pengalaman_kerja = $validateData['pengalaman_kerja'];
         $loker->syarat = $validateData['syarat'];
         $loker->tanggung_jawab = $validateData['jabatan'];
         $loker->deskripsi = $validateData['deskripsi'];
         $loker->batas_lamaran = $validateData['batas_lamaran'];
         $loker->alamat = $validateData['alamat'];
+        $loker->status = $validateData['status'];
         $loker->save();
 
         return redirect(route('daftarLoker'));
