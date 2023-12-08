@@ -30,7 +30,7 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
+                <th>Kategori</th>
                 <th>Jabatan</th>
                 <th>Lulusan</th>
                 <th>Syarat</th>
@@ -45,7 +45,7 @@
             @foreach($lokers as $loker)
             <tr>
                 <td>{{ $loop->index + 1 }}</td>
-                <td>{{ $loker->nama }}</td>
+                <td>{{ $loker->kategori }}</td>
                 <td>{{ $loker->jabatan }}</td>
                 <td>{{ $loker->lulusan }}</td>
                 <td>{{ $loker->syarat }}</td>

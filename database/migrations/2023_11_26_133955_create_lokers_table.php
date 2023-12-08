@@ -16,7 +16,7 @@ class CreateLokersTable extends Migration
         Schema::create('loker', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_perusahaan');
-            $table->string('nama');
+            $table->string('kategori');
             $table->string('jabatan');
             $table->string('lulusan');
             $table->string('syarat');

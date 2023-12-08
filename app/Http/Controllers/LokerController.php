@@ -48,7 +48,7 @@ class LokerController extends Controller
     {
         $validateData = validator($request->all(), [
             'id_perusahaan' => 'required|string|max:255',
-            'nama' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
             'syarat' => 'required|string|max:255',
@@ -102,7 +102,7 @@ class LokerController extends Controller
     {
         $validateData = validator($request->all(), [
             'id_perusahaan' => 'required|string|max:255',
-            'nama' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
             'syarat' => 'required|string|max:255',
@@ -114,7 +114,7 @@ class LokerController extends Controller
         ])->validate();
 
         $loker->id_perusahaan = $validateData['id_perusahaan'];
-        $loker->nama = $validateData['nama'];
+        $loker->kategori = $validateData['kategori'];
         $loker->jabatan = $validateData['jabatan'];
         $loker->lulusan = $validateData['lulusan'];
         $loker->syarat = $validateData['syarat'];

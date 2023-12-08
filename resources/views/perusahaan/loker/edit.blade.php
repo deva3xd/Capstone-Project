@@ -26,17 +26,25 @@
                             <form action="{{ route('updateLoker', ['id' => $loker->id]) }}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ip</label>
+                                    <label class="col-sm-2 col-form-label">Id Perusahaan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="nama" name="id_perusahaan"
+                                        <input type="text" class="form-control" placeholder="id" name="id_perusahaan"
                                             id="id_perusahaan" required="required" value="{{ $loker->id_perusahaan }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Nama</label>
+                                    <label class="col-sm-2 col-form-label">Kategori</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="nama" name="nama"
-                                            id="nama" required="required" value="{{ $loker->nama }}">
+                                        <select class="form-control" id="kategori" name="kategori">
+                                            <option value="data scientist" {{ $loker->kategori == 'data scientist' ? 'selected' : '' }}>Data Scientist</option>
+                                            <option value="game developer" {{ $loker->kategori == 'game developer' ? 'selected' : '' }}>Game Developer</option>
+                                            <option value="it support" {{ $loker->kategori == 'it support' ? 'selected' : '' }}>IT Support</option>
+                                            <option value="mobile app developer" {{ $loker->kategori == 'mobile app developer' ? 'selected' : '' }}>Mobile App Developer</option>
+                                            <option value="security engineer" {{ $loker->kategori == 'security engineer' ? 'selected' : '' }}>Security Engineer</option>
+                                            <option value="software developer" {{ $loker->kategori == 'software developer' ? 'selected' : '' }}>Software Developer</option>
+                                            <option value="ui/ux designer" {{ $loker->kategori == 'ui/ux designer' ? 'selected' : '' }}>UI/UX Designer</option>
+                                            <option value="web developer" {{ $loker->kategori == 'web developer' ? 'selected' : '' }}>Web Developer</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
