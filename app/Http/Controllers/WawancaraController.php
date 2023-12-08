@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use \App\Wawancara;
+use App\Wawancara;
 use Mpdf\Mpdf;
 use Illuminate\Http\Request;
 

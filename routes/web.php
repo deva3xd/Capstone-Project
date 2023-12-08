@@ -38,10 +38,7 @@ Route::get('/pelamar/Cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/a/dashboard', function () {
-    $title = 'dashboard';
-    return view('perusahaan.index', ['title' => $title]);
-})->name('dashboard');
+Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboard');
 
 // admin
 Route::get('/admin', function() {

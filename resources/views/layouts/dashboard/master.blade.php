@@ -31,7 +31,7 @@
         <!-- Nav header start -->
         <div class="nav-header d-flex justify-content-center align-items-center">
             <div class="brand-logo">
-                <a href="index.html">
+                <a>
                     <b class="logo-abbr"><img src="{{ asset('landing/images/logo.png') }}" alt=""></b>
                     <span class="brand-title">
                         <img src="{{ asset('landing/images/logo-flat.png') }}" width="110px" alt="">

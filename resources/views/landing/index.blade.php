@@ -3,7 +3,7 @@
 @section('content')
     <nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand">
                 <img src="{{ asset('landing/images/logo-flat.png') }}" alt="" width="90px" class="img-fluid">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
@@ -13,8 +13,7 @@
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('LandingPage') }}">Home <span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('LandingPage') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
@@ -44,10 +43,9 @@
                     <div class="block">
                         <span class="text-uppercase text-sm letter-spacing ">Solusi anda dalam mencari lowongan pekerjaan
                             IT</span>
-                        <h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h1>
-                            <p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
-                            <a href="about.html" target="_blank" class="btn btn-main">Learn more<i
-                                    class="fa fa-angle-right ml-2"></i></a>
+                        <h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h2>
+                        <p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
+                        <a href="about.html" target="_blank" class="btn btn-main">Learn more<i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -55,16 +53,14 @@
     </section>
     <section class="section about">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 ">
+            <div class="row border-top border-danger">
+                <div class="col-lg-4 col-md-6">
                     <div class="about-item mb-5 mb-lg-5">
                         <div class="icon">
                             <i class="ti-light-bulb"></i>
                         </div>
-
                         <div class="content">
                             <h4 class="mt-3 mb-3">Banyak Pilihan Pekerjaan IT Sesuai Skill Kamu</h4>
-                            <a href="#"> Read More </a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +72,6 @@
                         </div>
                         <div class="content">
                             <h4 class="mt-3 mb-3">Dengan Banyak Perusahaan Ternama</h4>
-                            <a href="#"> Read More </a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +83,6 @@
                         </div>
                         <div class="content">
                             <h4 class="mt-3 mb-3">Lengkapi data diri kamu dan mulai mencari pekerjaanmu</h4>
-                            <a href="#"> Read More </a>
                         </div>
                     </div>
                 </div>
