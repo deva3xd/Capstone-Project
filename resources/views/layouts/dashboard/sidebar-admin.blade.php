@@ -8,6 +8,11 @@
                 </a>
             </li>
             <li>
+                <a>
+                    <i class="icon-user"></i><span class="nav-text">Profile</span>
+                </a>
+            </li>
+            <li>
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="icon-note"></i><span class="nav-text">Kelola Akun</span>
                 </a>
@@ -25,11 +30,6 @@
             <li>
                 <a href="{{route('daftarWawancara')}}">
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="icon-user"></i><span class="nav-text">Profile</span>
                 </a>
             </li>
         </ul>
