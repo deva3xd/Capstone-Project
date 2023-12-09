@@ -69,7 +69,7 @@
                                         <th>Id Perusahaan</th>
                                         <th>Kategori</th>
                                         <th>Posisi</th>
-                                        <th>Deskripsi</th>
+                                        <th>Lulusan</th>
                                         <th>Batas Lamaran</th>
                                     </tr>
                                 </thead>
