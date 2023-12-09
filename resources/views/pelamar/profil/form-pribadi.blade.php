@@ -116,15 +116,15 @@
                                 <input readonly class="form-control" type="text" value="{{ $profil->gaji_diinginkan }}">
                             </div>
 
-                            {{-- <div class="form-floating m-3">
+                            <div class="form-floating m-3">
                                 <label class="p-1">CV</label>
                                 <input readonly class="form-control" type="text" value="{{ $profil->cv }}">
-                            </div> --}}
+                            </div>
 
-                            {{-- <div class="form-floating m-3">
-                                <label class="p-1">Foto</label>
-                                <input readonly class="form-control" type="text" value="{{ $profil->foto }}">
-                            </div> --}}
+                            <div class="form-floating m-3">
+                                <label class="p-1">Lampiran</label>
+                                <input readonly class="form-control" type="text" value="{{ $profil->lampiran }}">
+                            </div>
                             <a href="{{ route('Profiledit', ['id' => $profil->id]) }}" class="btn btn-warning m-3">
                                 Edit Profil
                             </a>

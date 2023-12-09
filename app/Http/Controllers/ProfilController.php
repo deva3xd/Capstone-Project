@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Profil;
+use Image;
 use Illuminate\Http\Request;
 
 class ProfilController extends Controller
@@ -61,14 +62,14 @@ class ProfilController extends Controller
      */
     public function edit(Profil $profil)
     {
-        return view('pelamar.profil.form-pribadi-edit', [
+        return view('pelamar.profil.form-pribadi_edit', [
             'profil' => $profil
         ]);
     }
 
     public function Gantipassword(Profil $profil)
     {
-        return view('pelamar.profil.form-akun-edit', [
+        return view('pelamar.profil.form-akun_edit', [
             'profil' => $profil
         ]);
     }
@@ -110,11 +111,28 @@ class ProfilController extends Controller
         'npwp' => 'nullable|string',
         'gaji_diinginkan' => 'required|string',
         'status_nikah' => 'required|string',
+        'cv' => 'required|mimes:pdf,doc,docx',
+        'lampiran' => 'required|mimes:pdf,doc,docx',
+        // 'foto' => 'required|mimes:png,jpeg,jpg',
         ])->validate();
 
-    //    $cvPath = $request->file('cv');
-    //    $nameCv = 'CV' . date('Ymdhis'). '.' . $request->file('cv')->getClientOriginalExtension();
-    //    $cvPath->move('landing/dokumen/cv', $nameCv);
+        if($request->file('cv')) 
+        {
+            $cv = $request->file('cv');
+            $namaProfil = $validateData['nama'];
+            $cvName = 'CV-' . $namaProfil . '.' .$request->file('cv')->extension();
+            $cvPath = public_path() . '/landing/dokumen/cv';
+            $cv->move($cvPath, $cvName);
+        }
+
+        if($request->file('lampiran')) 
+        {
+            $lampiran = $request->file('lampiran');
+            $namaProfil = $validateData['nama'];
+            $lampiranName = 'Lampiran-' . $namaProfil . '.' .$request->file('lampiran')->extension();
+            $lampiranPath = public_path() . '/landing/dokumen/lampiran';
+            $lampiran->move($lampiranPath, $lampiranName);
+        }
 
         $profil->nama = $validateData['nama'];
         $profil->alamat = $validateData['alamat'];
@@ -131,7 +149,8 @@ class ProfilController extends Controller
         $profil->nik = $validateData['nik'];
         $profil->npwp= $validateData['npwp'];
         $profil->status_nikah = $validateData['status_nikah'];
-        // $profil->cv = $nameCv;
+        $profil->cv = $cvName;
+        $profil->lampiran = $lampiranName;
         $profil->save();
 
         return redirect(route('Profilindex'))->with('success', 'Data Berhasil Di Update');
