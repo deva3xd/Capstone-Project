@@ -15,9 +15,11 @@ class ProfilController extends Controller
      */
     public function index()
     {
+        $images_name = 'Foto-';
         $profils = Profil::all();
         return view('pelamar.profil.form-pribadi', [
-            'profils' => $profils
+            'profils' => $profils,
+            ['images_name' => $images_name],
         ]);
     }
 
@@ -69,8 +71,8 @@ class ProfilController extends Controller
 
     public function Gantipassword(Profil $profil)
     {
-        return view('pelamar.profil.form-akun_edit', [
-            'profil' => $profil
+        return view('pelamar.profil.form-akun-edit', [
+            'profil' => $profil,
         ]);
     }
 
@@ -134,6 +136,36 @@ class ProfilController extends Controller
             $lampiran->move($lampiranPath, $lampiranName);
         }
 
+        $image = $request->file('foto');
+
+        $image_name = time() . '.' . $image->getClientOriginalExtension();
+
+        $destinationPath = public_path('/landing/dokumen/foto');
+
+        // Assuming you have the uploaded image in the $request
+$foto = $request->file('foto');
+
+// Get the original file name without extension
+$namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
+
+// Set the image name with a prefix and the original file extension
+$image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
+
+// Specify the path where you want to save the resized image
+$fotoPath = public_path('/landing/dokumen/foto');
+
+// Create an Intervention Image instance
+$resize_foto = Image::make($foto->getRealPath());
+
+// Resize the image to, for example, 150x150 pixels
+$resize_foto->resize(150, 150, function($constraint) {
+    $constraint->aspectRatio();
+});
+
+// Save the resized image to the specified path
+$resize_foto->save($fotoPath . '/' . $image_name);
+
+
         $profil->nama = $validateData['nama'];
         $profil->alamat = $validateData['alamat'];
         $profil->ttl = $validateData['ttl'];
@@ -151,6 +183,7 @@ class ProfilController extends Controller
         $profil->status_nikah = $validateData['status_nikah'];
         $profil->cv = $cvName;
         $profil->lampiran = $lampiranName;
+        $profil->foto = $image_name;
         $profil->save();
 
         return redirect(route('Profilindex'))->with('success', 'Data Berhasil Di Update');

@@ -71,7 +71,7 @@
                             <div class="form-group m-3">
                               <label for="status_nikah" class="p-1">Status Nikah</label>
                               <select class="form-select @error('status_nikah')is-invalid  @enderror" name="status_nikah" id="status_nikah" aria-label="Default select example">
-                                  <option selected>Pilih</option>
+                                  <option selected>{{ $profil->status_nikah }}</option>
                                   <option value="Belum Menikah">Belum Menikah</option>
                                   <option value="Sudah Menikah">Sudah Menikah</option>
                                   <option value="Duda">Duda</option>
@@ -89,7 +89,7 @@
                             <div class="form-group m-3">
                                 <label for="no_telp" class="p-1">No Telpon</label>
                                 <input name="no_telp" required id="no_telp" type="text"
-                                    value="{{ $profil->no_telpon }}" class="form-control @error('no_telp')is-invalid  @enderror">
+                                    value="{{ $profil->no_telp }}" class="form-control @error('no_telp')is-invalid  @enderror">
                                     @error('no_telp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -213,7 +213,7 @@
                                 @enderror
                             </div>
 
-                            {{-- <div class="form-group m-3">
+                            <div class="form-group m-3">
                                 <label for="foto" class="form-label">Foto</label>
                                 <input name="foto" class="form-control @error('foto')is-invalid  @enderror" type="file" id="foto">
                                 @error('foto')
@@ -221,7 +221,7 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
-                            </div> --}}
+                            </div>
 
                             <button class="btn btn-primary m-3" name="submit" type="submit">Simpan</button>
                         </form>

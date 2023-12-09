@@ -125,6 +125,14 @@
                                 <label class="p-1">Lampiran</label>
                                 <input readonly class="form-control" type="text" value="{{ $profil->lampiran }}">
                             </div>
+                            <!-- Display Original Image -->
+                            <div class="form-floating m-3">
+                                <strong class="p-1">Foto</strong>
+                                <br>
+                                <img src="{{ asset('landing/dokumen/foto/' . $profil->foto) }}"
+                                    class="img-responsive img-thumbnail" alt="Original Image">
+                            </div>
+
                             <a href="{{ route('Profiledit', ['id' => $profil->id]) }}" class="btn btn-warning m-3">
                                 Edit Profil
                             </a>
@@ -134,4 +142,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('addJavascript')
+    <script src="{{ asset('js/sweetalert.min.js') }}">
+@if(session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        @endif
+    </script>
 @endsection
