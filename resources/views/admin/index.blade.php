@@ -6,9 +6,9 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <h1 class="m-0 text-dark">Dashboard</h1>
-                </div>
+                </div> -->
                 <div class="col-sm-6">
                 </div>
             </div>
@@ -24,9 +24,9 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Admin</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">8541</h2>
+                            <h2 class="text-white">16</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-user"></i></span>
                     </div>
                 </div>
             </div>
@@ -35,9 +35,9 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Perusahaan</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">4565</h2>
+                            <h2 class="text-white">112</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-building"></i></span>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Pelamar</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">99</h2>
+                            <h2 class="text-white">2894</h2>
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                     </div>

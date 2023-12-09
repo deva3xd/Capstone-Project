@@ -17,6 +17,21 @@
                     <li><a href="#">Pelamar</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="{{route('daftarLoker')}}">
+                    <i class="icon-notebook"></i><span class="nav-text">Loker</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('daftarWawancara')}}">
+                    <i class="icon-note"></i><span class="nav-text">Wawancara</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="icon-user"></i><span class="nav-text">Profile</span>
+                </a>
+            </li>
         </ul>
     </div>
 @endsection
