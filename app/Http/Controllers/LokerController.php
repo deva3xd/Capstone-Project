@@ -49,10 +49,9 @@ class LokerController extends Controller
         $validateData = validator($request->all(), [
             'id_perusahaan' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
-            'jabatan' => 'required|string|max:255',
+            'posisi' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
             'syarat' => 'required|string|max:255',
-            'tanggung_jawab' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'batas_lamaran' => 'required|date',
             'alamat' => 'required|string',
@@ -103,10 +102,9 @@ class LokerController extends Controller
         $validateData = validator($request->all(), [
             'id_perusahaan' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
-            'jabatan' => 'required|string|max:255',
+            'posisi' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
             'syarat' => 'required|string|max:255',
-            'tanggung_jawab' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'batas_lamaran' => 'required|date',
             'alamat' => 'required|string',
@@ -115,10 +113,9 @@ class LokerController extends Controller
 
         $loker->id_perusahaan = $validateData['id_perusahaan'];
         $loker->kategori = $validateData['kategori'];
-        $loker->jabatan = $validateData['jabatan'];
+        $loker->posisi = $validateData['posisi'];
         $loker->lulusan = $validateData['lulusan'];
         $loker->syarat = $validateData['syarat'];
-        $loker->tanggung_jawab = $validateData['jabatan'];
         $loker->deskripsi = $validateData['deskripsi'];
         $loker->batas_lamaran = $validateData['batas_lamaran'];
         $loker->alamat = $validateData['alamat'];

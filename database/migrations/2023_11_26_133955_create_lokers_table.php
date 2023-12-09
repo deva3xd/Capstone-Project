@@ -17,10 +17,9 @@ class CreateLokersTable extends Migration
             $table->increments('id');
             $table->integer('id_perusahaan');
             $table->string('kategori');
-            $table->string('jabatan');
+            $table->string('posisi');
             $table->string('lulusan');
             $table->string('syarat');
-            $table->string('tanggung_jawab');
             $table->text('deskripsi');
             $table->date('batas_lamaran');
             $table->text('alamat');
