@@ -44,7 +44,7 @@
             <div class="col-lg-4 col-sm-12">
                 <div class="card gradient-4">
                     <div class="card-body">
-                        <h3 class="card-title text-white">Pelamar</h3>
+                        <h3 class="card-title text-white">Member</h3>
                         <div class="d-inline-block">
                             <h2 class="text-white">2894</h2>
                         </div>
