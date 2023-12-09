@@ -80,4 +80,7 @@ Route::post('/register', 'AuthController@register');
 //     })->name('perusahaan');
 // });
 
-
+Route::get('/profileee', function () {
+    $title="tes";
+    return view('perusahaan.profile', ['title' => $title]);
+});

@@ -31,17 +31,15 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama</th>
+                                        <th>Kategori</th>
                                         <th>Jabatan</th>
                                         <th>Lulusan</th>
-                                        <th>Jurusan</th>
-                                        <th>Skill</th>
-                                        <th>Pengalaman Kerja</th>
                                         <th>Syarat</th>
                                         <th>Tanggung Jawab</th>
                                         <th>Deskripsi</th>
                                         <th>Batas Lamaran</th>
                                         <th>Alamat</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -49,17 +47,15 @@
                                     @foreach($lokers as $loker)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $loker->nama }}</td>
+                                        <td>{{ $loker->kategori }}</td>
                                         <td>{{ $loker->jabatan }}</td>
                                         <td>{{ $loker->lulusan }}</td>
-                                        <td>{{ $loker->jurusan }}</td>
-                                        <td>{{ $loker->skill }}</td>
-                                        <td>{{ $loker->pengalaman_kerja }}</td>
                                         <td>{{ $loker->syarat }}</td>
                                         <td>{{ $loker->tanggung_jawab }}</td>
                                         <td>{{ $loker->deskripsi }}</td>
                                         <td>{{ $loker->batas_lamaran }}</td>
                                         <td>{{ $loker->alamat }}</td>
+                                        <td>{{ $loker->status }}</td>
                                         <td class="d-flex">
                                             <a href="{{route('editLoker', ['id' => $loker->id])}}" class="btn btn-warning btn-sm" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deleteLoker', ['id' => $loker->id])}}" class="btn btn-danger btn-sm" role="button">Hapus</a>

@@ -13,7 +13,8 @@ class DashboardController extends Controller
         $loker = Loker::count();
         $wawancara = Wawancara::count();
         $pelamar = Profil::count();
+        $actives = Loker::where('status', 'LIKE', 'aktif')->get();
         $title = 'Dashboard';
-        return view('perusahaan.index', ['loker' => $loker, 'wawancara' => $wawancara, 'pelamar' => $pelamar, 'title' => $title]);
+        return view('perusahaan.index', ['loker' => $loker, 'wawancara' => $wawancara, 'pelamar' => $pelamar, 'title' => $title, 'actives' => $actives]);
     }
 }
