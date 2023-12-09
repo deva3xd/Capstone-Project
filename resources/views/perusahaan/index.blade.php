@@ -26,7 +26,7 @@
                         <div class="d-inline-block">
                             <h2 class="text-white">{{ $loker }}</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-user"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-laptop"></i></span>
                     </div>
                 </div>
             </div>

@@ -38,13 +38,10 @@ Route::get('/pelamar/cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboard');
+Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
 
 // admin
-Route::get('/admin', function() {
-    $title = 'admin';
-    return view('admin.index', ['title' => $title]);
-});
+Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
 
 // loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');

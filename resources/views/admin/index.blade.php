@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Admin</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">16</h2>
+                            <h2 class="text-white">{{$admin}}</h2>
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-user"></i></span>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Perusahaan</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">112</h2>
+                            <h2 class="text-white">{{$perusahaan}}</h2>
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-building"></i></span>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Member</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">2894</h2>
+                            <h2 class="text-white">{{$member}}</h2>
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                     </div>
@@ -58,7 +58,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header pb-0" style="padding-top: 1.88rem;">
-                        <h3>Total</h3>
+                        <h3>Loker Aktif</h3>
                     </div>
                     <div class="card-body pt-0">
                         <div class="table-responsive">
@@ -66,36 +66,24 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>Jabatan</th>
-                                        <th>Lulusan</th>
+                                        <th>Id Perusahaan</th>
+                                        <th>Kategori</th>
+                                        <th>Posisi</th>
+                                        <th>Deskripsi</th>
+                                        <th>Batas Lamaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>aksjkas</td>
-                                        <td>jasjaos ajsaljdo</td>
-                                        <td>S1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>aksjkas</td>
-                                        <td>jasjaos ajsaljdo</td>
-                                        <td>S1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>aksjkas</td>
-                                        <td>jasjaos ajsaljdo</td>
-                                        <td>S1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>aksjkas</td>
-                                        <td>jasjaos ajsaljdo</td>
-                                        <td>S1</td>
-                                    </tr>
+                                    @foreach ($actives as $active)
+                                        <tr>
+                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $active->id_perusahaan }}</td>
+                                            <td>{{ $active->kategori }}</td>
+                                            <td>{{ $active->posisi }}</td>
+                                            <td>{{ $active->lulusan }}</td>
+                                            <td>{{ $active->batas_lamaran }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
