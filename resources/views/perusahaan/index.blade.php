@@ -66,7 +66,7 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama</th>
+                                        <th>Kategori</th>
                                         <th>Jabatan</th>
                                         <th>Lulusan</th>
                                         <th>Syarat</th>
@@ -80,7 +80,7 @@
                                     @foreach ($actives as $active)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $active->nama }}</td>
+                                            <td>{{ $active->kategori }}</td>
                                             <td>{{ $active->jabatan }}</td>
                                             <td>{{ $active->lulusan }}</td>
                                             <td>{{ $active->syarat }}</td>
