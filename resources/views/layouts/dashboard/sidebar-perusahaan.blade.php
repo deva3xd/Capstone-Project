@@ -3,7 +3,7 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label">Dashboard Perusahaan</li>
             <li>
-                <a href="{{route('dashboard')}}">
+                <a href="{{route('dashboardPerusahaan')}}">
                     <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
                 </a>
             </li>
@@ -22,6 +22,7 @@
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>
+            
         </ul>
     </div>
 @endsection

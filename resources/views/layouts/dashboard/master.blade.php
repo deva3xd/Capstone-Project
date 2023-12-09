@@ -74,7 +74,7 @@
     <!-- Footer start -->
     <div class="footer">
         <div class="copyright">
-            <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018
+            <p>Copyright © Designed & Developed by Group 5 Capstone Project MSIB Gamelab.id Batch 5 2023
             </p>
         </div>
         </div>

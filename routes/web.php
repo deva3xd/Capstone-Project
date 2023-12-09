@@ -14,15 +14,15 @@
 // Landing Page //
 Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
-Route::get('/Cariperusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
+Route::get('/perusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
 
 
 // User Pelamar //
 Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
-Route::get('/pelamar/Caripekerjaan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
-Route::get('/pelamar/Cariperusahaan1', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
-Route::get('/pelamar/Cariperusahaan1/Detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
-Route::get('/pelamar/Caripekerjaan/Detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
+Route::get('/pelamar/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
+Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
+Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
+Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
 Route::get('/pelamar/profil', 'ProfilController@index')->name('Profilindex');
 Route::get('/pelamar/{profil}/akun', 'ProfilController@Gantipassword')->name('Passwordedit');
 Route::post('/pelamar/{profil}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
@@ -31,20 +31,17 @@ Route::post('/pelamar/{profil}/profil/update', 'ProfilController@update')->name(
 Route::get('/pelamar/Cariperusahaan', function () {
     return view('pelamar.cari_perusahaan');
 });
-Route::get('/pelamar/Carilowongan/detail', function () {
+Route::get('/pelamar/carilowongan/detail', function () {
     return view('pelamar.detail_perkerjaan');
 });
-Route::get('/pelamar/Cariperusahaan/detail', function () {
+Route::get('/pelamar/cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboard');
+Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
 
 // admin
-Route::get('/admin', function() {
-    $title = 'admin';
-    return view('admin.index', ['title' => $title]);
-});
+Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
 
 // loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');

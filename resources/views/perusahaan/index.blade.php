@@ -26,7 +26,7 @@
                         <div class="d-inline-block">
                             <h2 class="text-white">{{ $loker }}</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-laptop"></i></span>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <div class="d-inline-block">
                             <h2 class="text-white">{{ $wawancara }}</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-home"></i></span>
                     </div>
                 </div>
             </div>
@@ -66,11 +66,10 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>Jabatan</th>
+                                        <th>Kategori</th>
+                                        <th>Posisi</th>
                                         <th>Lulusan</th>
                                         <th>Syarat</th>
-                                        <th>Tanggung Jawab</th>
                                         <th>Deskripsi</th>
                                         <th>Batas Lamaran</th>
                                         <th>Alamat</th>
@@ -80,11 +79,10 @@
                                     @foreach ($actives as $active)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $active->nama }}</td>
-                                            <td>{{ $active->jabatan }}</td>
+                                            <td>{{ $active->kategori }}</td>
+                                            <td>{{ $active->posisi }}</td>
                                             <td>{{ $active->lulusan }}</td>
                                             <td>{{ $active->syarat }}</td>
-                                            <td>{{ $active->tanggung_jawab }}</td>
                                             <td>{{ $active->deskripsi }}</td>
                                             <td>{{ $active->batas_lamaran }}</td>
                                             <td>{{ $active->alamat }}</td>

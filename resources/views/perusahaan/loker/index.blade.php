@@ -32,10 +32,9 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Kategori</th>
-                                        <th>Jabatan</th>
+                                        <th>Posisi</th>
                                         <th>Lulusan</th>
                                         <th>Syarat</th>
-                                        <th>Tanggung Jawab</th>
                                         <th>Deskripsi</th>
                                         <th>Batas Lamaran</th>
                                         <th>Alamat</th>
@@ -48,10 +47,9 @@
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $loker->kategori }}</td>
-                                        <td>{{ $loker->jabatan }}</td>
+                                        <td>{{ $loker->posisi }}</td>
                                         <td>{{ $loker->lulusan }}</td>
                                         <td>{{ $loker->syarat }}</td>
-                                        <td>{{ $loker->tanggung_jawab }}</td>
                                         <td>{{ $loker->deskripsi }}</td>
                                         <td>{{ $loker->batas_lamaran }}</td>
                                         <td>{{ $loker->alamat }}</td>

@@ -48,10 +48,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Jabatan</label>
+                                    <label class="col-sm-2 col-form-label">Posisi</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="jabatan" name="jabatan"
-                                            id="jabatan" required="required">
+                                        <input type="text" class="form-control" placeholder="posisi" name="posisi"
+                                            id="posisi" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -66,13 +66,6 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" placeholder="syarat" name="syarat"
                                             id="syarat" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Tanggung Jawab</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="tanggung jawab"
-                                            name="tanggung_jawab" id="tanggung_jawab" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
