@@ -48,10 +48,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Jabatan</label>
+                                    <label class="col-sm-2 col-form-label">Posisi</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="jabatan" name="jabatan"
-                                            id="jabatan" required="required" value="{{ $loker->jabatan }}">
+                                        <input type="text" class="form-control" placeholder="posisi" name="posisi"
+                                            id="posisi" required="required" value="{{ $loker->posisi }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -66,14 +66,6 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" placeholder="syarat" name="syarat"
                                             id="syarat" required="required" value="{{ $loker->syarat }}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Tanggung Jawab</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="tanggung jawab"
-                                            name="tanggung_jawab" id="tanggung_jawab" required="required"
-                                            value="{{ $loker->tanggung_jawab }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">

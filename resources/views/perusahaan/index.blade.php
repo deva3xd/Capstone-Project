@@ -67,10 +67,9 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Kategori</th>
-                                        <th>Jabatan</th>
+                                        <th>Posisi</th>
                                         <th>Lulusan</th>
                                         <th>Syarat</th>
-                                        <th>Tanggung Jawab</th>
                                         <th>Deskripsi</th>
                                         <th>Batas Lamaran</th>
                                         <th>Alamat</th>
@@ -81,10 +80,9 @@
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $active->kategori }}</td>
-                                            <td>{{ $active->jabatan }}</td>
+                                            <td>{{ $active->posisi }}</td>
                                             <td>{{ $active->lulusan }}</td>
                                             <td>{{ $active->syarat }}</td>
-                                            <td>{{ $active->tanggung_jawab }}</td>
                                             <td>{{ $active->deskripsi }}</td>
                                             <td>{{ $active->batas_lamaran }}</td>
                                             <td>{{ $active->alamat }}</td>
