@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <a>
+                <a href="{{route('profileAdmin')}}">
                     <i class="icon-user"></i><span class="nav-text">Profile</span>
                 </a>
             </li>

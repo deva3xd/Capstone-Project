@@ -22,7 +22,7 @@
             <div class="col-12">
                     <div class="card">
                         <div class="card-header text-right pb-0" style="padding-top: 1.88rem;">
-                            <a href="{{route('pdfWawancara')}}" class="btn btn-success" role="button" target="_blank"><i class="fa fa-download"></i></a>
+                            <a href="{{route('pdfWawancara')}}" class="btn btn-success" role="button" target="_blank"><i class="fa fa-download text-white"></i></a>
                             <a href="{{route('createWawancara')}}" class="btn btn-primary" role="button">Tambah Data</a>
                         </div>
                     <div class="card-body pt-0">
@@ -47,8 +47,8 @@
                                         <td>{{ $wawancara->jadwal }}</td>
                                         <td>{{ $wawancara->catatan }}</td>
                                         <td class="d-flex">
-                                            <a href="{{route('editWawancara', ['id' => $wawancara->id])}}" class="btn btn-warning btn-sm" role="button">Edit</a>
-                                            <a onclick="confirmDelete(this)" data-url="{{route('deleteWawancara', ['id' => $wawancara->id])}}" class="btn btn-danger btn-sm" role="button">Hapus</a>
+                                            <a href="{{route('editWawancara', ['id' => $wawancara->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
+                                            <a onclick="confirmDelete(this)" data-url="{{route('deleteWawancara', ['id' => $wawancara->id])}}" class="btn btn-danger btn-sm text-white" role="button border">Hapus</a>
                                         </td>
                                     </tr>
                                     @endforeach

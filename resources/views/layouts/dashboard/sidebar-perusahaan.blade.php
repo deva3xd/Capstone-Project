@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('daftarWawancara')}}">
+                <a href="{{route('profilePerusahaan')}}">
                     <i class="icon-user"></i><span class="nav-text">Profile</span>
                 </a>
             </li>

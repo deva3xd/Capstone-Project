@@ -64,7 +64,7 @@ class ProfilController extends Controller
      */
     public function edit(Profil $profil)
     {
-        return view('pelamar.profil.form-pribadi_edit', [
+        return view('pelamar.profil.form-pribadi-edit', [
             'profil' => $profil
         ]);
     }

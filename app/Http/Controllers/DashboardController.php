@@ -20,6 +20,11 @@ class DashboardController extends Controller
         return view('admin.index', ['admin' => $admin, 'perusahaan' => $perusahaan, 'member' => $member, 'title' => $title, 'actives' => $actives]);
     }
 
+    public function profileAdmin() {
+        $title = 'Profile';
+        return view('admin.profile', ['title' => $title]);
+    }
+
     public function perusahaan() {
         $loker = Loker::count();
         $wawancara = Wawancara::count();
@@ -27,5 +32,10 @@ class DashboardController extends Controller
         $actives = Loker::where('status', 'LIKE', 'aktif')->get();
         $title = 'Dashboard';
         return view('perusahaan.index', ['loker' => $loker, 'wawancara' => $wawancara, 'pelamar' => $pelamar, 'title' => $title, 'actives' => $actives]);
+    }
+
+    public function profilePerusahaan() {
+        $title = 'Profile';
+        return view('perusahaan.profile', ['title' => $title]);
     }
 }

@@ -43,7 +43,11 @@ Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboardPer
 // admin
 Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
 
-// loker
+// perusahaan
+Route::get('/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
+Route::get('/profileee', 'DashboardController@profileAdmin')->name('profileAdmin');
+
+// perusahaan - loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
 Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
 Route::get('/loker/create', 'LokerController@create')->name('createLoker');
@@ -52,7 +56,7 @@ Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
 Route::post('/loker/{loker}/edit', 'LokerController@update')->name('updateLoker');
 Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoker');
 
-//wawancara
+//perusahaan - wawancara
 Route::get('/wawancara', 'WawancaraController@index')->name('daftarWawancara');
 Route::get('/wawancara/pdf', 'WawancaraController@pdf')->name('pdfWawancara');
 Route::get('/wawancara/create', 'WawancaraController@create')->name('createWawancara');
@@ -76,8 +80,3 @@ Route::post('/register', 'AuthController@register');
 //         return view('perusahaan.index');
 //     })->name('perusahaan');
 // });
-
-Route::get('/profileee', function () {
-    $title="tes";
-    return view('perusahaan.profile', ['title' => $title]);
-});
