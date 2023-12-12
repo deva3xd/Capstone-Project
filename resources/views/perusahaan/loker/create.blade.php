@@ -39,7 +39,7 @@
                                             <option value="data scientist">Data Scientist</option>
                                             <option value="game developer">Game Developer</option>
                                             <option value="it support">IT Support</option>
-                                            <option value="mobile app developer">Mobile App Developer</option>
+                                            <option value="mobile developer">Mobile Developer</option>
                                             <option value="security engineer">Security Engineer</option>
                                             <option value="software developer">Software Developer</option>
                                             <option value="ui/ux designer">UI/UX Designer</option>

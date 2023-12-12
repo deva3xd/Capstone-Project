@@ -20,6 +20,8 @@ Route::get('/perusahaan', 'LandingPageController@perusahaan')->name('PerusahaanL
 // User Pelamar //
 Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
 Route::get('/pelamar/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
+Route::post('/pelamar/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
+// Route::get('/pelamar/{lowongan}/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
 Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
 Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
 Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
