@@ -59,7 +59,7 @@
 						<h4 class="text-capitalize mb-4">Jobseeker</h4>
 
 						<ul class="list-unstyled footer-menu lh-35">
-							<li><a href="{{ route('PelamarCaripekerjaan') }}">Lowongan</a></li>
+							<li><a href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
 							<li><a href="{{ route('PelamarCariperusahaan') }}">Perusahaan</a></li>
 						</ul>
 					</div>

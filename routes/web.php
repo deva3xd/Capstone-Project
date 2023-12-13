@@ -17,11 +17,11 @@ Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLanding
 Route::get('/perusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
 
 
-// User Pelamar //
+// pelamar //
 Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
-Route::get('/pelamar/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
-Route::post('/pelamar/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
-// Route::get('/pelamar/{lowongan}/lowongan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
+Route::get('/pelamar/lowongan', 'PelamarController@cariLowongan')->name('pelamarCariLowongan');
+Route::get('/pelamar/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
+
 Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
 Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
 Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
