@@ -31,32 +31,21 @@
                                     <img src="images/blog/3.jpg" alt="" class="img-fluid rounded">
 
                                     <div class="blog-item-content mt-4">
-                                        <h2 class="mt-3 mb-3 text-md">nama perusahaan</h2>
+                                        <h2 class="mt-3 mb-3 text-md text-uppercase" >{{ $loker->kategori }}</h2>
                                         <div class="blog-item-meta mb-5">
                                             <span class="text-muted text-capitalize mr-3"><i
-                                                    class="ti-pencil-alt mr-2"></i>{{$loker->kategori}}</span>
+                                                class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
                                             <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>{{$year. "-" .$month. "-" .$day}}</span>
                                         </div>
-
-                                        <p class="lead mb-4">Non illo quas blanditiis repellendus laboriosam minima animi.
-                                            Consectetur accusantium pariatur repudiandae!</p>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus natus,
-                                            consectetur? Illum libero vel nihil nisi quae, voluptatem, sapiente
-                                            necessitatibus
-                                            distinctio voluptates, iusto qui. Laboriosam autem, nam voluptate in beatae.</p>
-
-                                        <p class="lead mb-4 font-weight-normal text-black">The same is true as we experience
-                                            the
-                                            emotional sensation of stress from our first instances of social rejection
-                                            ridicule.
-                                            We quickly learn to fear and thus automatically.</p>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, rerum beatae
-                                            repellat
-                                            tenetur incidunt quisquam libero dolores laudantium. Nesciunt quis itaque
-                                            quidem,
-                                            voluptatem autem eos animi laborum iusto expedita sapiente.</p>
+                                        <h3>Deskripsi Pekerjaan</h3>
+                                        <p>{{ $loker->deskripsi }}</p><br>
+                                        <h3>Syarat Pendaftaran</h3>
+                                        <li>Minimal Jenjang/Lulusan : {{ $loker->lulusan }}</li>
+                                        <li>{{ $loker->syarat }}</li><br>
+                                        <h3>Posisi</h3>
+                                        <p>{{ $loker->posisi }}</p><br>
+                                        <h3>Alamat Perusahaan</h3>
+                                        <p>{{ $loker->alamat }}</p>
                                     </div>
                             </div>
                         </div>
