@@ -25,9 +25,9 @@
                 <div class="col-lg-8">
                     <div class="row">
                         @foreach ($lokers as $loker)
-                            <div class="col-lg-6 col-md-6 mb-5 border">
-                                <div class="blog-item">
-                                    <div class="blog-thumb">
+                            <div class="col-lg-10 col-md-6 mb-3 mr-2 border ">
+                                <div class="blog-item p-1 mr-1">
+                                    <div class="blog-thumb py-2">
                                         <img src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
                                             class="img-fluid rounded">
                                     </div>
@@ -35,13 +35,14 @@
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>
                                         <div class="blog-item-meta mb-3">
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
-                                                    Perusahaan: </a>adadar</span><br />
+                                                    </a>{{ $loker->kategori }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
-                                                    Posisi:</a>{{ $loker->posisi }}</span><br />
+                                                    </a>{{ $loker->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
-                                                    Alamat:</a>{{ $loker->alamat }}</span><br />
+                                                    </a>{{ $loker->alamat }}</span><br />
                                         </div>
-                                        <a href="{{route('pelamarDetailLowongan', ['id' => $loker->id])}}" class="btn btn-small btn-main">Learn More</a>
+                                        <a href="{{route('pelamarDetailLowongan', ['id' => $loker->id])}}" class="btn btn-small btn-main">Info Detail</a>
+                                        <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                     </div>
                                 </div>
                             </div>
@@ -52,10 +53,7 @@
                 <div class="col-lg-4">
                     <div class="sidebar-widget search  mb-3 ">
                         <h5>Cari Perusahaan</h5>
-                        <form action="#" class="search-form">
-                            <input type="text" class="form-control" placeholder="search">
-                            <i class="ti-search"></i>
-                        </form>
+                        <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="detail-lowongan"></label>
                     </div>
                     <div class="sidebar-widget category mb-3">
                         <h5 class="mb-4">Kategori</h5>

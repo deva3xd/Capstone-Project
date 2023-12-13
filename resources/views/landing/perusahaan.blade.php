@@ -21,7 +21,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-button border rounded"" href="#" id="navbarDropdown"
+                        <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Login
                         </a>
@@ -80,6 +80,7 @@
                                     <p class="mb-1 text-success">Jakarta</p>
 
                                     <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +105,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +131,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +157,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +183,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
