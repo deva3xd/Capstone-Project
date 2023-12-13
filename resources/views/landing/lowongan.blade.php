@@ -19,15 +19,14 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Login
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
                             <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-user m-1"></i>Pelamar</a>
+                            <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
                         </div>
                     </li>
                 </ul>
@@ -42,11 +41,8 @@
                 <div class="col-md-12">
                     <div class="block text-center">
                         <h1 class="text-capitalize mb-5 text-white text-lg">Lowongan</h1>
-
                         <ul class="list-inline breadcumb-nav">
-                            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-                            <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#" class="text-white-50">Lowongan</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-white">Lowongan</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,20 +61,16 @@
                                     <img src="{{ asset('landing/images/blog/blog-1.jpg') }}" alt=""
                                         class="img-fluid rounded">
                                 </div>
-
                                 <div class="blog-item-content">
                                     <h3 class="mt-3 mb-3"><a href="blog-single.html">Desain UI/UX</a></h3>
-
                                     <div class="blog-item-meta mb-3">
                                         <span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>5
                                             Comments</span>
                                         <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> 28th
                                             January</span>
                                     </div>
-
                                     <p class="mb-1 text-success">PT Suka Maju</p>
                                     <p class="mb-4 text-color">Rp 2 juta - Rp 2 juta/bulan</p>
-
                                     <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
                                 </div>
                             </div>

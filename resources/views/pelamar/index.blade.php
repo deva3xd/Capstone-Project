@@ -17,14 +17,12 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('PelamarCaripekerjaan') }}">Lowongan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('PelamarCariperusahaan') }}">Perusahaan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('Profilindex') }}"><i
-                                    class="fas fa-building m-1"></i>Profil</a>
+                            <a class="dropdown-item" href="{{ route('Profilindex') }}"><i class="fas fa-user m-1"></i>Profil</a>
                             <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
                         </div>
                     </li>
@@ -43,7 +41,7 @@
                             IT</span>
                         <h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h2>
                         <p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
-                        <a href="about.html" target="_blank" class="btn btn-main">Learn more<i class="fa fa-angle-right ml-2"></i></a>
+                        <a href="#" class="btn btn-main">cek lowongan<i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -111,8 +109,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="heading text-center">
-                        <h2>Kami menyediakan platform untuk <br> Membantu pelamar <span class="text-color">Dan juga
-                                perusahaan dalam mencari calon karyawan</span> dengan skill terbaiknya</h2>
+                        <h2>Kami menyediakan platform untuk <br> membantu pelamar <span class="text-color">Dan juga
+                                perusahaan dalam mencari calon karyawan</span> dengan skill yang dibutuhkan</h2>
                     </div>
 
                     <div class="row justify-content-center">
@@ -141,7 +139,7 @@
         <div class="container">
             <div class="justify-content-center">
                 <div class="why-content text-center">
-                    <h2 class="mb-4">Mudah cari dan dapat lowongan</h2>
+                    <h2 class="mb-4">Mudah dalam mencari lowongan kerja</h2>
                     <p class="mb-5">Lebih dari 100 perusahaan menanti anda</p>
                 </div>
             </div>
@@ -218,7 +216,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <span class="text-color">Kirim Pesan</span>
                     <h3 class="text-md mb-5">Form Kontak</h3>
 
                     <div class="row">
@@ -235,37 +232,28 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>Saya Ingin Bertanya ...</option>
-                                        <option>Software Design</option>
-                                        <option>Development cycle</option>
-                                        <option>Software Development</option>
-                                        <option>Maintenance</option>
-                                        <option>Process Query</option>
-                                        <option>Cost and Duration</option>
-                                        <option>Modal Delivery</option>
-                                    </select>
+                                    <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..." disabled />
                                 </div>
 
                                 <div class="form-group">
                                     <input name="subject" id="subject" type="text" class="form-control"
-                                        placeholder="Your Subject">
+                                        placeholder="Subject">
                                 </div>
 
                                 <div class="form-group">
                                     <input name="name" id="name" type="text" class="form-control"
-                                        placeholder="Your Name">
+                                        placeholder="Nama">
                                 </div>
 
                                 <div class="form-group">
                                     <input name="email" id="email" type="email" class="form-control"
-                                        placeholder="Email Address">
+                                        placeholder="Alamat Email">
                                 </div>
 
                                 <div class="form-group-2 mb-4">
-                                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Sampaikan Pesanmu"></textarea>
                                 </div>
-                                <button class="btn btn-main" name="submit" type="submit">Send Message</button>
+                                <button class="btn btn-main" name="submit" type="submit">Kirim Pesan</button>
                             </form>
                         </div>
 
@@ -273,28 +261,31 @@
                             <div class="short-info mt-5 mt-lg-0">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <h5>Call Us</h5>
-                                        +88 01672 506 744
+                                        <h5>Nomor</h5>
+                                        +62-812-3456-7890
                                     </li>
                                     <li>
-                                        <h5>Email Us</h5>
-                                        contact@mail.com
+                                        <h5>Email</h5>
+                                        example@gmail.com
                                     </li>
                                     <li>
-                                        <h5>Location Map</h5>
-                                        North Main Street,Brooklyn Australia
+                                        <h5>Lokasi</h5>
+                                        Jalan-jalan, Indonesia
                                     </li>
                                 </ul>
 
                                 <ul class="social-icons list-inline mt-5">
                                     <li class="list-inline-item">
-                                        <a href="http://www.themefisher.com"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="http://www.themefisher.com"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="http://www.themefisher.com"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
                                     </li>
                                 </ul>
                             </div>
