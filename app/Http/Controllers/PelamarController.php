@@ -11,7 +11,7 @@ class PelamarController extends Controller
         return view('pelamar.index');
     }
 
-    public function cariPekerjaan(){
+    public function cariLowongan(){
         $lokers = Loker::all();
         $data_count = Loker::where('kategori', 'data scientist')->get()->count();
         $game_count = Loker::where('kategori', 'game developer')->get()->count();
@@ -38,8 +38,12 @@ class PelamarController extends Controller
         return view('pelamar.cari-perusahaan');
     }
 
-    public function detailPekerjaan(){
-        return view('pelamar.detail-lowongan');
+    public function detailLowongan($id){
+        $loker = Loker::findOrFail($id);
+        $day = $loker->created_at->day;
+        $month = $loker->created_at->month;
+        $year = $loker->created_at->year;
+        return view('pelamar.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year]);
     }
     public function detailPerusahaan(){
         return view('pelamar.detail-perusahaan');

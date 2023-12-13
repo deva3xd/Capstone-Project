@@ -41,7 +41,7 @@
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
                                                     Alamat:</a>{{ $loker->alamat }}</span><br />
                                         </div>
-                                        <a href="#" class="btn btn-small btn-main">Learn More</a>
+                                        <a href="{{route('pelamarDetailLowongan', ['id' => $loker->id])}}" class="btn btn-small btn-main">Learn More</a>
                                     </div>
                                 </div>
                             </div>
