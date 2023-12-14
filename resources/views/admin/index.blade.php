@@ -1,54 +1,54 @@
 @extends('layouts.dashboard.master')
-@extends('layouts.dashboard.sidebar-perusahaan')
+@extends('layouts.dashboard.sidebar-admin')
 
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <h1 class="m-0 text-dark">Dashboard</h1>
-                </div>
+                </div> -->
                 <div class="col-sm-6">
                 </div>
             </div>
         </div>
     </div>
     <!-- /.content-header -->
-
+    
     <!-- Content body start -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
                 <div class="card gradient-2">
                     <div class="card-body">
-                        <h3 class="card-title text-white">Loker</h3>
+                        <h3 class="card-title text-white">Admin</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">{{ $loker }}</h2>
+                            <h2 class="text-white">{{$admin}}</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-laptop"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-user"></i></span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12">
                 <div class="card gradient-3">
                     <div class="card-body">
-                        <h3 class="card-title text-white">Pelamar</h3>
+                        <h3 class="card-title text-white">Perusahaan</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">{{ $pelamar }}</h2>
+                            <h2 class="text-white">{{$perusahaan}}</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-building"></i></span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12">
                 <div class="card gradient-4">
                     <div class="card-body">
-                        <h3 class="card-title text-white">Wawancara</h3>
+                        <h3 class="card-title text-white">Member</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">{{ $wawancara }}</h2>
+                            <h2 class="text-white">{{$member}}</h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-home"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
                     </div>
                 </div>
             </div>
@@ -66,26 +66,22 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
+                                        <th>Id Perusahaan</th>
                                         <th>Kategori</th>
                                         <th>Posisi</th>
                                         <th>Lulusan</th>
-                                        <th>Syarat</th>
-                                        <th>Deskripsi</th>
                                         <th>Batas Lamaran</th>
-                                        <th>Alamat</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($actives as $active)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $active->id_perusahaan }}</td>
                                             <td>{{ $active->kategori }}</td>
                                             <td>{{ $active->posisi }}</td>
                                             <td>{{ $active->lulusan }}</td>
-                                            <td>{{ $active->syarat }}</td>
-                                            <td>{{ $active->deskripsi }}</td>
                                             <td>{{ $active->batas_lamaran }}</td>
-                                            <td>{{ $active->alamat }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

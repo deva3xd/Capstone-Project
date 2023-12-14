@@ -1,9 +1,9 @@
 @section('sidebar-perusahaan')
     <div class="nk-nav-scroll">
         <ul class="metismenu" id="menu">
-            <li class="nav-label">Dashboard</li>
+            <li class="nav-label">Dashboard Perusahaan</li>
             <li>
-                <a href="{{route('dashboard')}}">
+                <a href="{{route('dashboardPerusahaan')}}">
                     <i class="icon-speedometer"></i><span class="nav-text">Dashboard</span>
                 </a>
             </li>
@@ -13,10 +13,16 @@
                 </a>
             </li>
             <li>
+                <a href="{{route('profilePerusahaan')}}">
+                    <i class="icon-user"></i><span class="nav-text">Profile</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{route('daftarWawancara')}}">
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>
+            
         </ul>
     </div>
 @endsection

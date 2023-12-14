@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@extends('layouts.dashboard.sidebar-perusahaan')
+@extends('layouts.dashboard.sidebar-admin')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -28,11 +28,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Id Perusahaan</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="id_perusahaan" id="id_perusahaan" required="required">
-                                            @foreach ($perusahaans as $perusahaan)
-                                                <option value="{{ $perusahaan->id }}">{{ $perusahaan->nama }}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" class="form-control" placeholder="id perusahaan" name="id_perusahaan"
+                                            id="id_perusahaan" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">

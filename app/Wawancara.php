@@ -14,7 +14,11 @@ class Wawancara extends Model
         'updatedcont_at',
     ];
 
-    public function wawancara() {
-        return $this->belongsTo('App\perusahaan', 'id_loker');
+    public function loker() {
+        return $this->belongsTo('App\Loker', 'id_loker');
+    }
+
+    public function pelamar() {
+        return $this->hasOne('App\Pelamar', 'id_pelamar');
     }
 }

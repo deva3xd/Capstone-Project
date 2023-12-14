@@ -1,9 +1,9 @@
-@extends('layouts.landing.landingpage')
+@extends('layouts.landing.master')
 
 @section('content')
     <nav class="navbar navbar-expand-lg py-4 navigation header-padding nav-text-white" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand">
                 <img src="{{ asset('landing/images/logo.png') }}" alt="" width="50px" height="10px" class="img-fluid">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
@@ -21,13 +21,13 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('LowonganLandingPage') }}">Lowongan</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('PerusahaanLandingPage') }}">Perusahaan</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-button border rounded"" href="#" id="navbarDropdown"
+                        <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Login
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-building m-1"></i>Perusahaan</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-user m-1"></i>Pelamar</a>
+                            <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
+                            <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-user m-1"></i>Pelamar</a>
                         </div>
                     </li>
                 </ul>
@@ -80,6 +80,7 @@
                                     <p class="mb-1 text-success">Jakarta</p>
 
                                     <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +105,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +131,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +157,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +183,8 @@
 
                                     <p class="mb-1 text-success">Jakarta</p>
 
-                                    <a href="blog-single.html" class="btn btn-small btn-main ">Learn More</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-main ">Detail</a>
+                                    <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                 </div>
                             </div>
                         </div>

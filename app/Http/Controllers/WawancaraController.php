@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use \App\Wawancara;
+use App\Wawancara;
 use Mpdf\Mpdf;
+use App\Pelamar;
+use App\Loker;
 use Illuminate\Http\Request;
 
 class WawancaraController extends Controller
@@ -34,8 +36,10 @@ class WawancaraController extends Controller
      */
     public function create()
     {
+        $lokers = Loker::all();
+        $pelamars = Pelamar::all();
         $title = 'Tambah Wawancara';
-        return view('perusahaan.wawancara.create', ['title' => $title]);
+        return view('perusahaan.wawancara.create', ['title' => $title, 'lokers' => $lokers, 'pelamars' => $pelamars]);
     }
 
     /**
@@ -48,7 +52,7 @@ class WawancaraController extends Controller
     {
         $validateData = validator($request->all(), [
             'id_loker' => 'required|string|max:11',
-            'id_profil_pelamar' => 'required|string|max:11',
+            'id_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
         ])->validate();
@@ -96,13 +100,13 @@ class WawancaraController extends Controller
     {
         $validateData = validator($request->all(), [
             'id_loker' => 'required|string|max:11',
-            'id_profil_pelamar' => 'required|string|max:11',
+            'id_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
         ])->validate();
 
         $wawancara->id_loker = $validateData['id_loker'];
-        $wawancara->id_profil_pelamar = $validateData['id_profil_pelamar'];
+        $wawancara->id_pelamar = $validateData['id_pelamar'];
         $wawancara->jadwal = $validateData['jadwal'];
         $wawancara->catatan = $validateData['catatan'];
         $wawancara->save();

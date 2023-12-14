@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Profil;
+use Image;
 use Illuminate\Http\Request;
 
 class ProfilController extends Controller
@@ -14,9 +15,11 @@ class ProfilController extends Controller
      */
     public function index()
     {
+        $images_name = 'Foto-';
         $profils = Profil::all();
         return view('pelamar.profil.form-pribadi', [
-            'profils' => $profils
+            'profils' => $profils,
+            ['images_name' => $images_name],
         ]);
     }
 
@@ -69,7 +72,7 @@ class ProfilController extends Controller
     public function Gantipassword(Profil $profil)
     {
         return view('pelamar.profil.form-akun-edit', [
-            'profil' => $profil
+            'profil' => $profil,
         ]);
     }
 
@@ -110,11 +113,58 @@ class ProfilController extends Controller
         'npwp' => 'nullable|string',
         'gaji_diinginkan' => 'required|string',
         'status_nikah' => 'required|string',
+        'cv' => 'required|mimes:pdf,doc,docx',
+        'lampiran' => 'required|mimes:pdf,doc,docx',
+        // 'foto' => 'required|mimes:png,jpeg,jpg',
         ])->validate();
 
-    //    $cvPath = $request->file('cv');
-    //    $nameCv = 'CV' . date('Ymdhis'). '.' . $request->file('cv')->getClientOriginalExtension();
-    //    $cvPath->move('landing/dokumen/cv', $nameCv);
+        if($request->file('cv')) 
+        {
+            $cv = $request->file('cv');
+            $namaProfil = $validateData['nama'];
+            $cvName = 'CV-' . $namaProfil . '.' .$request->file('cv')->extension();
+            $cvPath = public_path() . '/landing/dokumen/cv';
+            $cv->move($cvPath, $cvName);
+        }
+
+        if($request->file('lampiran')) 
+        {
+            $lampiran = $request->file('lampiran');
+            $namaProfil = $validateData['nama'];
+            $lampiranName = 'Lampiran-' . $namaProfil . '.' .$request->file('lampiran')->extension();
+            $lampiranPath = public_path() . '/landing/dokumen/lampiran';
+            $lampiran->move($lampiranPath, $lampiranName);
+        }
+
+        $image = $request->file('foto');
+
+        $image_name = time() . '.' . $image->getClientOriginalExtension();
+
+        $destinationPath = public_path('/landing/dokumen/foto');
+
+        // Assuming you have the uploaded image in the $request
+$foto = $request->file('foto');
+
+// Get the original file name without extension
+$namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
+
+// Set the image name with a prefix and the original file extension
+$image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
+
+// Specify the path where you want to save the resized image
+$fotoPath = public_path('/landing/dokumen/foto');
+
+// Create an Intervention Image instance
+$resize_foto = Image::make($foto->getRealPath());
+
+// Resize the image to, for example, 150x150 pixels
+$resize_foto->resize(150, 150, function($constraint) {
+    $constraint->aspectRatio();
+});
+
+// Save the resized image to the specified path
+$resize_foto->save($fotoPath . '/' . $image_name);
+
 
         $profil->nama = $validateData['nama'];
         $profil->alamat = $validateData['alamat'];
@@ -131,7 +181,9 @@ class ProfilController extends Controller
         $profil->nik = $validateData['nik'];
         $profil->npwp= $validateData['npwp'];
         $profil->status_nikah = $validateData['status_nikah'];
-        // $profil->cv = $nameCv;
+        $profil->cv = $cvName;
+        $profil->lampiran = $lampiranName;
+        $profil->foto = $image_name;
         $profil->save();
 
         return redirect(route('Profilindex'))->with('success', 'Data Berhasil Di Update');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Loker;
+use App\Perusahaan;
 use Mpdf\Mpdf;
 use Illuminate\Http\Request;
 
@@ -34,8 +35,9 @@ class LokerController extends Controller
      */
     public function create()
     {
+        $perusahaans = Perusahaan::all();
         $title = 'Tambah Loker';
-        return view('perusahaan.loker.create', ['title' => $title]);
+        return view('perusahaan.loker.create', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
 
     /**
@@ -48,17 +50,14 @@ class LokerController extends Controller
     {
         $validateData = validator($request->all(), [
             'id_perusahaan' => 'required|string|max:255',
-            'nama' => 'required|string|max:255',
-            'jabatan' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'posisi' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
-            'jurusan' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string',
             'syarat' => 'required|string|max:255',
-            'tanggung_jawab' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'batas_lamaran' => 'required|date',
-            'alamat' => 'required|string'
+            'alamat' => 'required|string',
+            'status' => 'required|string'
         ])->validate();
 
         $loker = new Loker($validateData);
@@ -104,31 +103,25 @@ class LokerController extends Controller
     {
         $validateData = validator($request->all(), [
             'id_perusahaan' => 'required|string|max:255',
-            'nama' => 'required|string|max:255',
-            'jabatan' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'posisi' => 'required|string|max:255',
             'lulusan' => 'required|string|max:255',
-            'jurusan' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string',
             'syarat' => 'required|string|max:255',
-            'tanggung_jawab' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'batas_lamaran' => 'required|date',
-            'alamat' => 'required|string'
+            'alamat' => 'required|string',
+            'status' => 'required|string'
         ])->validate();
 
         $loker->id_perusahaan = $validateData['id_perusahaan'];
-        $loker->nama = $validateData['nama'];
-        $loker->jabatan = $validateData['jabatan'];
+        $loker->kategori = $validateData['kategori'];
+        $loker->posisi = $validateData['posisi'];
         $loker->lulusan = $validateData['lulusan'];
-        $loker->jurusan = $validateData['jurusan'];
-        $loker->skill = $validateData['skill'];
-        $loker->pengalaman_kerja = $validateData['pengalaman_kerja'];
         $loker->syarat = $validateData['syarat'];
-        $loker->tanggung_jawab = $validateData['jabatan'];
         $loker->deskripsi = $validateData['deskripsi'];
         $loker->batas_lamaran = $validateData['batas_lamaran'];
         $loker->alamat = $validateData['alamat'];
+        $loker->status = $validateData['status'];
         $loker->save();
 
         return redirect(route('daftarLoker'));

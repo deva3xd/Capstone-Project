@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@extends('layouts.dashboard.sidebar-perusahaan')
+@extends('layouts.dashboard.sidebar-admin')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -32,9 +32,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Profile Pelamar</label>
+                                    <label class="col-sm-2 col-form-label">ID Pelamar</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="ID Profile Pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_pelamar}}">
+                                        <input type="number" class="form-control" placeholder="ID Pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_profil_pelamar}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">

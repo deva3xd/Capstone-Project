@@ -30,34 +30,28 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
-                <th>Jabatan</th>
+                <th>Kategori</th>
+                <th>Posisi</th>
                 <th>Lulusan</th>
-                <th>Jurusan</th>
-                <th>Skill</th>
-                <th>Pengalaman Kerja</th>
                 <th>Syarat</th>
-                <th>Tanggung Jawab</th>
                 <th>Deskripsi</th>
                 <th>Batas Lamaran</th>
                 <th>Alamat</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             @foreach($lokers as $loker)
             <tr>
                 <td>{{ $loop->index + 1 }}</td>
-                <td>{{ $loker->nama }}</td>
-                <td>{{ $loker->jabatan }}</td>
+                <td>{{ $loker->kategori }}</td>
+                <td>{{ $loker->posisi }}</td>
                 <td>{{ $loker->lulusan }}</td>
-                <td>{{ $loker->jurusan }}</td>
-                <td>{{ $loker->skill }}</td>
-                <td>{{ $loker->pengalaman_kerja }}</td>
                 <td>{{ $loker->syarat }}</td>
-                <td>{{ $loker->tanggung_jawab }}</td>
                 <td>{{ $loker->deskripsi }}</td>
                 <td>{{ $loker->batas_lamaran }}</td>
                 <td>{{ $loker->alamat }}</td>
+                <td>{{ $loker->status }}</td>
             </tr>
             @endforeach
         </tbody>

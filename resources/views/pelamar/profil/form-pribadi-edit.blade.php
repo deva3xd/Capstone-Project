@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="text-center m-2 p-2">FORM PROFIL</h1>
-                        <form action="{{ route('Profilupdate', ['profil' => $profil->id]) }}" method="POST">
+                        <form enctype="multipart/form-data" action="{{ route('Profilupdate', ['profil' => $profil->id]) }}" method="POST">
                             @csrf
                             <div class="form-group m-3">
                                 <label for="nama" class="p-1">Nama</label>
@@ -71,7 +71,7 @@
                             <div class="form-group m-3">
                               <label for="status_nikah" class="p-1">Status Nikah</label>
                               <select class="form-select @error('status_nikah')is-invalid  @enderror" name="status_nikah" id="status_nikah" aria-label="Default select example">
-                                  <option selected>Pilih</option>
+                                  <option selected>{{ $profil->status_nikah }}</option>
                                   <option value="Belum Menikah">Belum Menikah</option>
                                   <option value="Sudah Menikah">Sudah Menikah</option>
                                   <option value="Duda">Duda</option>
@@ -89,7 +89,7 @@
                             <div class="form-group m-3">
                                 <label for="no_telp" class="p-1">No Telpon</label>
                                 <input name="no_telp" required id="no_telp" type="text"
-                                    value="{{ $profil->no_telpon }}" class="form-control @error('no_telp')is-invalid  @enderror">
+                                    value="{{ $profil->no_telp }}" class="form-control @error('no_telp')is-invalid  @enderror">
                                     @error('no_telp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -193,25 +193,36 @@
                                 @enderror
                             </div>
 
-                            {{-- <div class="form-group m-3">
+                            <div class="form-group m-3">
                                 <label for="cv" class="form-label">CV</label>
-                                <input name="cv" class="form-control @error('nik')is-invalid  @enderror" type="file" id="cv">
+                                <input name="cv" class="form-control @error('cv')is-invalid  @enderror" type="file" id="cv">
                                 @error('cv')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
-                            </div> --}}
+                            </div>
 
-                            {{-- <div class="form-group m-3">
-                                <label for="foto" class="form-label p-1">Foto</label>
-                                <input name="foto" class="form-control @error('nik')is-invalid  @enderror" type="file" id="foto">
-                                @error('npwp')
+                            <div class="form-group m-3">
+                                <label for="lampiran" class="form-label">Lampiran</label>
+                                <input name="lampiran" class="form-control @error('lampiran')is-invalid  @enderror" type="file" id="lam">
+                                @error('lampiran')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
-                            </div> --}}
+                            </div>
+
+                            <div class="form-group m-3">
+                                <label for="foto" class="form-label">Foto</label>
+                                <input name="foto" class="form-control @error('foto')is-invalid  @enderror" type="file" id="foto">
+                                @error('foto')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
                             <button class="btn btn-primary m-3" name="submit" type="submit">Simpan</button>
                         </form>
                     </div>
