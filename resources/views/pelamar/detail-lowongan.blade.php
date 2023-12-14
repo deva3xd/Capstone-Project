@@ -9,11 +9,9 @@
                     <div class="block text-center">
                         <h1 class="text-capitalize mb-5 text-lg text-white">Detail Lowongan</h1>
                         <ul class="list-inline breadcumb-nav">
-                            <li class="list-inline-item"><span class="text-white">Home</span></li>
-                            <li class="list-inline-item"><span class="text-white">/</span></li>
                             <li class="list-inline-item"><span class="text-white-50">Lowongan</span></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><span class="text-white-50">Detail</span></li>
+                            <li class="list-inline-item"><span class="text-white">Detail</span></li>
                         </ul>
                     </div>
                 </div>

@@ -15,7 +15,6 @@
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('PelamarCariperusahaan') }}">Perusahaan</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>

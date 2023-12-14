@@ -42,12 +42,29 @@ Route::get('/pelamar/cariperusahaan/detail', function () {
 
 Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
 
-// admin
+// admin - loker
 Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
+Route::get('/profileee', 'DashboardController@profileAdmin')->name('profileAdmin');
+
+Route::get('/loker', 'LokerController@index')->name('daftarLoker');
+Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
+Route::get('/loker/create', 'LokerController@create')->name('createLoker');
+Route::post('/loker/create', 'LokerController@store')->name('storeLoker');
+Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
+Route::post('/loker/{loker}/edit', 'LokerController@update')->name('updateLoker');
+Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoker');
+
+//admin - wawancara
+Route::get('/wawancara', 'WawancaraController@index')->name('daftarWawancara');
+Route::get('/wawancara/pdf', 'WawancaraController@pdf')->name('pdfWawancara');
+Route::get('/wawancara/create', 'WawancaraController@create')->name('createWawancara');
+Route::post('wawancara/create', 'WawancaraController@store')->name('storeWawancara');
+Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
+Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
+Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
 
 // perusahaan
 Route::get('/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
-Route::get('/profileee', 'DashboardController@profileAdmin')->name('profileAdmin');
 
 // perusahaan - loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');

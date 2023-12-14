@@ -18,7 +18,7 @@
                 </ul>
             </li>
             <li>
-                <a href="{{route('daftarLoker')}}">
+                <a href="{{route('daftarLokerAdmin')}}">
                     <i class="icon-notebook"></i><span class="nav-text">Loker</span>
                 </a>
             </li>
@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('daftarWawancara')}}">
+                <a href="{{route('daftarWawancaraAdmin')}}">
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>
