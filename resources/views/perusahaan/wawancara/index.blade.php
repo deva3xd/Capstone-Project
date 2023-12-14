@@ -32,7 +32,7 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>ID Loker</th>
-                                        <th>ID Profile</th>
+                                        <th>ID Pelamar</th>
                                         <th>Jadwal</th>
                                         <th>Catatan</th>
                                         <th>Aksi</th>
@@ -43,7 +43,7 @@
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $wawancara->id_loker }}</td>
-                                        <td>{{ $wawancara->id_profil_pelamar }}</td>
+                                        <td>{{ $wawancara->id_pelamar }}</td>
                                         <td>{{ $wawancara->jadwal }}</td>
                                         <td>{{ $wawancara->catatan }}</td>
                                         <td class="d-flex">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Loker;
+use App\Perusahaan;
 use Mpdf\Mpdf;
 use Illuminate\Http\Request;
 
@@ -34,8 +35,9 @@ class LokerController extends Controller
      */
     public function create()
     {
+        $perusahaans = Perusahaan::all();
         $title = 'Tambah Loker';
-        return view('perusahaan.loker.create', ['title' => $title]);
+        return view('perusahaan.loker.create', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
 
     /**

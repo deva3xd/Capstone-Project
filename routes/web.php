@@ -16,8 +16,13 @@ Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
 Route::get('/perusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
 
+<<<<<<< HEAD
+Route::middleware('pelamar')->group(function () {
+// User Pelamar //
+=======
 
 // pelamar //
+>>>>>>> a8a361ecc3c37c83a2cecc0ddb5faa65a014eb33
 Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
 Route::get('/pelamar/lowongan', 'PelamarController@cariLowongan')->name('pelamarCariLowongan');
 Route::get('/pelamar/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
@@ -40,12 +45,14 @@ Route::get('/pelamar/cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
-
+<<<<<<< HEAD
+// loker
+=======
 // admin - loker
-Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
+Route::get('/a/dashboard', 'DashboardController@admin')->name('dashboardAdmin');
 Route::get('/profileee', 'DashboardController@profileAdmin')->name('profileAdmin');
 
+>>>>>>> a8a361ecc3c37c83a2cecc0ddb5faa65a014eb33
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
 Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
 Route::get('/loker/create', 'LokerController@create')->name('createLoker');
@@ -64,6 +71,7 @@ Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('
 Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
 
 // perusahaan
+Route::get('/p/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
 Route::get('/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
 
 // perusahaan - loker
@@ -84,12 +92,32 @@ Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('edi
 Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
 Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
 
+});
+
+Route::middleware('perusahaan')->group(function () {
+
+Route::get('/a/dashboard', function () {
+    $title = 'dashboard';
+    return view('perusahaan.index', ['title' => $title]);
+})->name('dashboard');
+
+});
+
+
+
 //login regis
 Route::get('/login', 'AuthController@showLoginForm')->name('login');
 Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout')->name('logout');
+
 Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
 Route::post('/register', 'AuthController@register');
 
+<<<<<<< HEAD
+
+
+
+=======
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/pelamar', function () {
 //         return view('landing.master');
@@ -99,3 +127,4 @@ Route::post('/register', 'AuthController@register');
 //         return view('perusahaan.index');
 //     })->name('perusahaan');
 // });
+>>>>>>> a8a361ecc3c37c83a2cecc0ddb5faa65a014eb33

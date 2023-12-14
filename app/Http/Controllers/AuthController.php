@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Validator;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User; 
+
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -16,11 +17,19 @@ class AuthController extends Controller
 
 public function login(Request $request)
 {
-    $credentials = $request->only('email', 'password', 'role');
+    $credentials = $request->only("email", "password");
 
     if (Auth::attempt($credentials)) {
-        $role = Auth::user()->role;
-        return redirect("/{$role}");
+        $role = Auth::user();
+        
+        if($role->role == "pelamar"){
+            return redirect()->intended("/pelamar");
+        }
+    
+        elseif($role->role == "perusahaan"){
+            return redirect()->intended("/perusahaan");
+        }
+    
     }
 
     return back()->withErrors(['email' => 'Invalid credentials']);
@@ -53,12 +62,18 @@ public function register(Request $request)
     $user->save();
 
     // Redirect ke halaman login dengan pesan sukses
-    return redirect('/login')->with('success', 'Account created successfully! Please login.');
+    return redirect(route('login'))->with('success', 'Account created successfully! Please login.');
 }
 
 public function showRegistrationForm()
 {
     return view('auth.register');
 }
+
+public function logout()
+  {
+   Auth::logout();
+   return redirect(route('landing.landingpage'));
+  }
 
 }

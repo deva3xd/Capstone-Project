@@ -50,54 +50,9 @@
                 </div>
 
                 <div class="col-lg-4">
-<<<<<<< HEAD
-                    <!-- Search -->
-
-                    <!-- Search -->
-                    <div class="sidebar-widget category mb-3">
-                        <h5 class="mb-4">Kategori</h5>
-                        @foreach ($lokers as $loker)
-                            <ul class="list-unstyled">
-                                <li class="align-items-center">
-                                    <i hef="/" class="text-dark">Data Scientist</i>
-                                    <span>{{ $data }}</span>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">Game Developer</i>
-                                    <span>{{ $game }}</span>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">It Support</i>
-                                    <span>{{ $it }}</span>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">Mobile Developer</i>
-                                    <span>{{ $mobile }}</span>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">Security Engineer</i>
-                                    <span>{{ $security }}</span>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">Software Developer</i>
-                                    <span>{{ $software }}</span>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">UI/UX Designer</i>
-                                    <span>{{ $uiux }}</span>
-                                </li>
-                                </li>
-                                <li class="align-items-center">
-                                    <i class="text-dark">Web Developer</i>
-                                    <span>{{ $web }}</span>
-                                </li>
-                            </ul>
-                        @endforeach
-=======
                     <div class="sidebar-widget search  mb-3 ">
                         <h5>Cari Perusahaan</h5>
-                        <label>Search:<input type="search" class="form-control form-control-sm" placeholder=""
-                                aria-controls="detail-lowongan"></label>
+                        <label><input type="search" class="form-control form-control-sm" placeholder="nama perusahaan" id="search" name="search" onfocus="this.value=''"></label>
                     </div>
                     <div class="sidebar-widget category mb-3">
                         <h5 class="mb-4">Kategori</h5>
@@ -142,4 +97,15 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('addJavascript')
+<script> //fix ini
+$(document).ready(function() {
+    $('#search').on('keyup', function() {
+        var query = $(this).val();
+        alert(query);
+    }
+}
+</script>
 @endsection

@@ -28,8 +28,11 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Id Perusahaan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="id perusahaan" name="id_perusahaan"
-                                            id="id_perusahaan" required="required">
+                                        <select class="form-control" name="id_perusahaan" id="id_perusahaan" required="required">
+                                            @foreach ($perusahaans as $perusahaan)
+                                                <option value="{{ $perusahaan->id }}">{{ $perusahaan->nama }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">

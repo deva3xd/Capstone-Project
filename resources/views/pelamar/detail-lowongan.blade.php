@@ -9,9 +9,9 @@
                     <div class="block text-center">
                         <h1 class="text-capitalize mb-5 text-lg text-white">Detail Lowongan</h1>
                         <ul class="list-inline breadcumb-nav">
-                            <li class="list-inline-item"><span class="text-white-50">Lowongan</span></li>
+                            <li class="list-inline-item"><span class="text-white">Lowongan</span></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><span class="text-white">Detail</span></li>
+                            <li class="list-inline-item"><span class="text-white-50">Detail</span></li>
                         </ul>
                     </div>
                 </div>
@@ -31,9 +31,9 @@
                                     <div class="blog-item-content mt-4">
                                         <h2 class="mt-3 mb-3 text-md text-uppercase" >{{ $loker->kategori }}</h2>
                                         <div class="blog-item-meta mb-5">
-                                            <span class="text-muted text-capitalize mr-3"><i
-                                                class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
-                                            <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>{{$year. "-" .$month. "-" .$day}}</span>
+                                            <span class="text-muted text-capitalize mr-3"><i class="fa fa-building mr-2"></i>{{ $loker->perusahaan->nama }}</span>
+                                            <span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
+                                            <span class="text-muted text-capitalize mr-3"><i class="ti-time mr-1"></i>{{$year. "-" .$month. "-" .$day}}</span>
                                         </div>
                                         <h3>Deskripsi Pekerjaan</h3>
                                         <p>{{ $loker->deskripsi }}</p><br>

@@ -30,7 +30,7 @@ class PelamarController extends Controller
             'security' => $security_count,
             'software' => $software_count,
             'uiux' => $uiux_count,
-            'web' => $web_count
+            'web' => $web_count,
         ]);
     }
 
@@ -43,7 +43,8 @@ class PelamarController extends Controller
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
-        return view('pelamar.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year]);
+        return view('pelamar.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year
+    ]);
     }
     public function detailPerusahaan(){
         return view('pelamar.detail-perusahaan');

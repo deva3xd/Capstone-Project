@@ -31,7 +31,7 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>ID Loker</th>
-                                        <th>ID Profile</th>
+                                        <th>ID Pelamar</th>
                                         <th>Jadwal</th>
                                         <th>Catatan</th>
                                         <th>Aksi</th>

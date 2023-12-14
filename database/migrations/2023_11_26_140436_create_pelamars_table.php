@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfilPelamarsTable extends Migration
+class CreatePelamarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProfilPelamarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('profil_pelamar', function (Blueprint $table) {
+        Schema::create('pelamar', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->text('alamat');
@@ -46,6 +46,6 @@ class CreateProfilPelamarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profil_pelamars');
+        Schema::dropIfExists('pelamars');
     }
 }
