@@ -15,7 +15,7 @@ class ProfilController extends Controller
     public function index()
     {
         $profils = Profil::all();
-        return view('pelamar.Profil.form_pribadi', [
+        return view('pelamar.profil.form-pribadi', [
             'profils' => $profils
         ]);
     }
@@ -61,14 +61,14 @@ class ProfilController extends Controller
      */
     public function edit(Profil $profil)
     {
-        return view('pelamar.Profil.form_pribadi_edit', [
+        return view('pelamar.profil.form-pribadi-edit', [
             'profil' => $profil
         ]);
     }
 
     public function Gantipassword(Profil $profil)
     {
-        return view('pelamar.Profil.form_akun_edit', [
+        return view('pelamar.profil.form-akun-edit', [
             'profil' => $profil
         ]);
     }

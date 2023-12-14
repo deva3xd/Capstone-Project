@@ -16,7 +16,7 @@ Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
 Route::get('/Cariperusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
 
-
+Route::middleware('pelamar')->group(function () {
 // User Pelamar //
 Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
 Route::get('/pelamar/Caripekerjaan', 'PelamarController@cariPekerjaan')->name('PelamarCaripekerjaan');
@@ -38,11 +38,6 @@ Route::get('/pelamar/Cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/a/dashboard', function () {
-    $title = 'dashboard';
-    return view('perusahaan.index', ['title' => $title]);
-})->name('dashboard');
-
 // loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
 Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
@@ -61,20 +56,27 @@ Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('edi
 Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
 Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
 
+});
+
+Route::middleware('perusahaan')->group(function () {
+
+Route::get('/a/dashboard', function () {
+    $title = 'dashboard';
+    return view('perusahaan.index', ['title' => $title]);
+})->name('dashboard');
+
+});
+
+
+
 //login regis
 Route::get('/login', 'AuthController@showLoginForm')->name('login');
 Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout')->name('logout');
+
 Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
 Route::post('/register', 'AuthController@register');
 
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/pelamar', function () {
-//         return view('landing.master');
-//     })->name('pelamar');
 
-//     Route::get('/perusahaan', function () {
-//         return view('perusahaan.index');
-//     })->name('perusahaan');
-// });
 
 
