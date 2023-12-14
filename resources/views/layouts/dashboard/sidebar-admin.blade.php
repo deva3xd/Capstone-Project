@@ -18,17 +18,17 @@
                 </ul>
             </li>
             <li>
-                <a href="{{route('daftarLokerAdmin')}}">
+                <a href="#">
                     <i class="icon-notebook"></i><span class="nav-text">Loker</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('profileAdmin')}}">
+                <a href="#">
                     <i class="icon-user"></i><span class="nav-text">Profile</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('daftarWawancaraAdmin')}}">
+                <a href="#">
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>

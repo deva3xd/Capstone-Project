@@ -50,9 +50,9 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="sidebar-widget search  mb-3 ">
+                    <div class="sidebar-widget search mb-3 ">
                         <h5>Cari Perusahaan</h5>
-                        <label>Search:<input type="search" class="form-control form-control-sm" placeholder=""
+                        <label><input type="search" class="form-control form-control-sm" placeholder=""
                                 aria-controls="detail-lowongan"></label>
                     </div>
                     <div class="sidebar-widget category mb-3">

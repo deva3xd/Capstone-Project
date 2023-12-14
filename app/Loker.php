@@ -14,7 +14,7 @@ class Loker extends Model
         'updatedcont_at',
     ];
 
-    public function loker() {
-        return $this->belongsTo('App\perusahaan', 'id_perusahaan');
+    public function perusahaan() {
+        return $this->belongsTo('App\Perusahaan', 'id_perusahaan');
     }
 }

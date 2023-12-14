@@ -40,10 +40,8 @@ Route::get('/pelamar/cariperusahaan/detail', function () {
     return view('pelamar.detail_perusahaan');
 });
 
-Route::get('/a/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
-
 // admin - loker
-Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
+Route::get('/a/dashboard', 'DashboardController@admin')->name('dashboardAdmin');
 Route::get('/profileee', 'DashboardController@profileAdmin')->name('profileAdmin');
 
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');
@@ -64,6 +62,7 @@ Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('
 Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
 
 // perusahaan
+Route::get('/p/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
 Route::get('/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
 
 // perusahaan - loker

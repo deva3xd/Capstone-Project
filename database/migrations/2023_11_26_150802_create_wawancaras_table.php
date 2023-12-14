@@ -16,7 +16,7 @@ class CreateWawancarasTable extends Migration
         Schema::create('wawancara', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_loker');
-            $table->integer('id_profil_pelamar');
+            $table->integer('id_pelamar');
             $table->date('jadwal');
             $table->string('catatan');
             $table->timestamps();

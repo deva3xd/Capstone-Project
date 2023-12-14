@@ -32,9 +32,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Profile Pelamar</label>
+                                    <label class="col-sm-2 col-form-label">ID Pelamar</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="ID Profile Pelamar" name="id_profil_pelamar" id="id_profil_pelamar" required="required">
+                                        <input type="number" class="form-control" placeholder="ID Pelamar" name="id_pelamar" id="id_pelamar" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
