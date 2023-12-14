@@ -92,25 +92,18 @@
 	<!-- Footer end -->
 
     <!-- Main jQuery -->
-    <script src="landing/plugins/jquery/jquery.js"></script>
-    <script src="landing/js/contact.js"></script>
+    <script src="{{asset('landing/plugins/jquery/jquery.js')}}"></script>
+    <script src="{{asset('landing/js/contact.js')}}"></script>
     <!-- Bootstrap 4.3.2 -->
-    <script src="landing/plugins/bootstrap/js/popper.js"></script>
-    <script src="landing/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('landing/plugins/bootstrap/js/popper.js')}}"></script>
+    <script src="{{asset('landing/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 	<!--  Magnific Popup-->
-    <script src="landing/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="{{asset('landing/plugins/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
     <!-- Slick Slider -->
-    <script src="landing/plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="landing/plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="landing/plugins/counterup/jquery.counterup.min.js"></script>
-    <script src="landing/plugins/modal-video/modal-video.js"></script>
-    <!-- Google Map -->
-    <script src="landing/plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
-    <script src="landing/js/script.js"></script>
-	<script src="landing/plugins/bootstrap/js/popper.js"></script>
-	<script src="landing/plugins/bootstrap/js/bootstrap.min.js"></script>	
+    <script src="{{asset('landing/plugins/slick-carousel/slick/slick.min.js')}}"></script>
+    <script src="{{asset('landing/js/script.js')}}"></script>
+	@yield('addJavascript')
+
 </body>
 
 </html>
