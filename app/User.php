@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role',
+        'nama', 'email', 'password', 'type',
     ];
 
     /**
@@ -30,11 +30,15 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * Interact with the user's first name.
      *
-     * @var array
+     * @param  string  $value
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected function type() : Attribute
+    {
+        return new Attribute(
+            get: fn ($value) => ["user", "admin", "perusahaan"]
+        )
+    }
 }
