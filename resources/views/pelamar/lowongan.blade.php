@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="sidebar-widget search mb-3 ">
+                    <div class="sidebar-widget search  mb-3 ">
                         <h5>Cari Perusahaan</h5>
                         <label><input type="search" class="form-control form-control-sm" placeholder="nama perusahaan" id="search" name="search" onfocus="this.value=''"></label>
                     </div>
@@ -91,6 +91,7 @@
                                 <span>{{ $web }}</span>
                             </li>
                         </ul>
+>>>>>>> 1ecbd0f6f554571a800fd353b9a0c7f5a7d7cf9d
                     </div>
                 </div>
             </div>
