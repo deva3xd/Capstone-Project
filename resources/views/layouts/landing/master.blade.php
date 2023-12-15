@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 	
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -103,7 +103,6 @@
     <script src="{{asset('landing/plugins/slick-carousel/slick/slick.min.js')}}"></script>
     <script src="{{asset('landing/js/script.js')}}"></script>
 	@yield('addJavascript')
-
 </body>
 
 </html>
