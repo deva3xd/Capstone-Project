@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
-
 use Closure;
 
 class PelamarMiddleware
@@ -16,7 +15,6 @@ class PelamarMiddleware
      */
     public function handle($request, Closure $next)
     {
-        
         if (Auth::check() && Auth::user()->role === 'pelamar') {
             return $next($request);
         }

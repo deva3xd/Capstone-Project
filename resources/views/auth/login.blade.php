@@ -8,7 +8,7 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="index.html"><h4>Login</h4></a>
+                                <h4 class="text-center">Login</h4>
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('postlogin') }}">
                                     @csrf
                                     <div class="form-group">

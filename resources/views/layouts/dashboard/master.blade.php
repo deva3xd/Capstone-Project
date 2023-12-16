@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="header-right d-flex align-items-center">
-                    <button class="btn btn-danger">Log-out</button>
+                <a class="btn btn-danger" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');">Keluar</a>
                 </div>
             </div>
         </div>
