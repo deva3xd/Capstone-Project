@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pelamar;
 
+
 use Illuminate\Http\Request;
 
 class AkunPelamarController extends Controller
@@ -42,25 +43,23 @@ class AkunPelamarController extends Controller
     {
         $validateData = validator($request->all(), [
             'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
+            'alamat' => 'required|string',
             'ttl' => 'required|date',
-            'jk' => 'required|string|max:255',
-            'no_telp' => 'required|numeric',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'pendidikan' => 'required|string|max:255',
-            'nama_institusi' => 'required|string|max:255',
-            'pengalaman_organisasi' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'sertifikasi' => 'required|string|max:255',
-            'gaji_diinginkan' => 'required|integer',
-            'lampiran' => 'required|string|max:255',
-            'cv' => 'required|string|max:255',
-            'foto' => 'required|string|max:255',
-            'npwp' => 'required|numeric',
-            'nik' => 'required|numeric',
-            'status_nikah' => 'required|string'
+            'jk' => 'required|in:Laki-Laki,Perempuan',
+            'no_telp' => 'required|string',
+            'pendidikan' => 'required|string',
+            'nama_institusi' => 'required|string',
+            'pengalaman_organisasi' => 'nullable|string',
+            'pengalaman_kerja' => 'nullable|string',
+            'skill' => 'nullable|string',
+            'sertifikasi' => 'nullable|string',
+            'nik' => 'required|string',
+            'npwp' => 'nullable|string',
+            'gaji_diinginkan' => 'required|string',
+            'status_nikah' => 'required|string',
+            'cv' => 'required|mimes:pdf,doc,docx',
+            'lampiran' => 'required|mimes:pdf,doc,docx',
+            'foto' => 'required|mimes:png,jpeg,jpg'
         ])->validate();
 
         $member = new Pelamar($validateData);
@@ -106,25 +105,23 @@ class AkunPelamarController extends Controller
     {
         $validateData = validator($request->all(), [
             'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
+            'alamat' => 'required|string',
             'ttl' => 'required|date',
-            'jk' => 'required|string|max:255',
-            'no_telp' => 'required|numeric',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'pendidikan' => 'required|string|max:255',
-            'nama_institusi' => 'required|string|max:255',
-            'pengalaman_organisasi' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'sertifikasi' => 'required|string|max:255',
-            'gaji_diinginkan' => 'required|integer',
-            'lampiran' => 'required|string|max:255',
-            'cv' => 'required|string|max:255',
-            'foto' => 'required|string|max:255',
-            'npwp' => 'required|numeric',
-            'nik' => 'required|numeric',
-            'status_nikah' => 'required|string'
+            'jk' => 'required|in:Laki-Laki,Perempuan',
+            'no_telp' => 'required|string',
+            'pendidikan' => 'required|string',
+            'nama_institusi' => 'required|string',
+            'pengalaman_organisasi' => 'nullable|string',
+            'pengalaman_kerja' => 'nullable|string',
+            'skill' => 'nullable|string',
+            'sertifikasi' => 'nullable|string',
+            'nik' => 'required|string',
+            'npwp' => 'nullable|string',
+            'gaji_diinginkan' => 'required|string',
+            'status_nikah' => 'required|string',
+            'cv' => 'required|mimes:pdf,doc,docx',
+            'lampiran' => 'required|mimes:pdf,doc,docx',
+            'foto' => 'required|string|max:255'
         ])->validate();
 
         $member->nama = $validateData['nama'];
@@ -149,7 +146,7 @@ class AkunPelamarController extends Controller
         $member->status_nikah = $validateData['status_nikah'];
         $member->save();
 
-        return redirect(route('akunPelamar'));
+        return redirect(route('akunPelamar'))->with('success', 'Data Berhasil Diupdate');;
     }
 
     /**

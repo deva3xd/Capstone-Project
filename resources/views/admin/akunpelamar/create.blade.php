@@ -148,17 +148,16 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Status Nikah</label>
-                                    <select class="col-sm-10"" name="status_nikah" id="status_nikah" aria-label="Default select example">
-                                        
-                                        <option value="Belum Menikah">Belum Menikah</option>
-                                        <option value="Sudah Menikah">Sudah Menikah</option>
-                                        <option value="Duda">Duda</option>
-                                        <option value="Janda">Janda</option>
-                                    </select>
+                                        <select class="col-sm-10" name="status_nikah" id="status_nikah" aria-label="Default select example">
+                                            <option value="Belum Menikah">Belum Menikah</option>
+                                            <option value="Sudah Menikah">Sudah Menikah</option>
+                                            <option value="Duda">Duda</option>
+                                            <option value="Janda">Janda</option>
+                                        </select>
                                 </div>
                                 
                                 <div class="text-right">
-                                    <a href="#" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
+                                    <a href="{{route('akunPelamar')}}" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>
