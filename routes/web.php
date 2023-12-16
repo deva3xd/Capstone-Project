@@ -61,6 +61,9 @@ Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('edi
 Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
 Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
 
+//admin - kelola akun pelamar
+Route::get('/akunpelamar', 'AkunPelamarController@index')->name('akunPelamar');
+
 // perusahaan
 Route::get('/p/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
 Route::get('/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
