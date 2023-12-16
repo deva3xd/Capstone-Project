@@ -74,12 +74,19 @@ Route::get('/p/dashboard', 'DashboardController@perusahaan')->name('dashboardPer
 Route::get('/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
 
 Route::get('/perusahaan', 'PerusahaanController@index')->name('daftarPerusahaan');
-// Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
 Route::get('/perusahaan/create', 'PerusahaanController@create')->name('createPerusahaan');
 Route::post('/perusahaan/create', 'PerusahaanController@store')->name('storePerusahaan');
 Route::get('/perusahaan/{perusahaan}/edit', 'PerusahaanController@edit')->name('editPerusahaan');
 Route::post('/perusahaan/{perusahaan}/edit', 'PerusahaanController@update')->name('updatePerusahaan');
 Route::get('/perusahaan/{perusahaan}/delete', 'PerusahaanController@destroy')->name('deletePerusahaan');
+
+//Admin
+Route::get('/admin', 'AdminController@index')->name('daftarAdmin');
+Route::get('/admin/create', 'AdminController@create')->name('createAdmin');
+Route::post('/admin/create', 'AdminController@store')->name('storeAdmin');
+Route::get('/admin/{admin}/edit', 'AdminController@edit')->name('editAdmin');
+Route::post('/admin/{admin}/edit', 'AdminController@update')->name('updateAdmin');
+Route::get('/admin/{admin}/delete', 'AdminController@destroy')->name('deleteAdmin');
 
 // perusahaan - loker
 Route::get('/loker', 'LokerController@index')->name('daftarLoker');

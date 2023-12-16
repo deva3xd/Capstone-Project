@@ -12,7 +12,7 @@
                     <i class="icon-pencil"></i><span class="nav-text">Kelola Akun</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="#">Admin</a></li>
+                    <li><a href="{{route('daftarAdmin')}}">Admin</a></li>
                     <li><a href="{{route('daftarPerusahaan')}}">Perusahaan</a></li>
                     <li><a href="{{route('akunPelamar')}}">Member</a></li>
                 </ul>

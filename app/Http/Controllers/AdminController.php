@@ -14,7 +14,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $admins = Admin::all();
+        $title = 'Data Admin';
+        return view('admin.admin.index', ['title' => $title, 'admins' => $admins]);
     }
 
     /**
@@ -24,7 +26,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $admins = Admin::all();
+        $title = 'Tambah Admin';
+        return view('admin.admin.create', ['title' => $title, 'admins' => $admins]);
     }
 
     /**
@@ -35,7 +39,15 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = validator($request->all(), [
+            'username' => 'required|string|max:255',
+            'password' => 'required|string|max:255'
+        ])->validate();
+
+        $admin = new Admin($validateData);
+        $admin->save();
+
+        return redirect(route('daftarAdmin'));
     }
 
     /**
@@ -57,7 +69,11 @@ class AdminController extends Controller
      */
     public function edit(Admin $admin)
     {
-        //
+        $title = 'Edit Admin';
+        return view('admin.admin.edit', [
+            'admin' => $admin,
+            'title' => $title
+        ]);
     }
 
     /**
@@ -67,9 +83,18 @@ class AdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Perusahaan $perusahaan)
     {
-        //
+        $validateData = validator($request->all(), [
+            'username' => 'required|string|max:255',
+            'password' => 'required|string|max:255'
+        ])->validate();
+
+        $admin->username = $validateData['username'];
+        $admin->alamat = $validateData['password'];
+        $perusahaan->save();
+
+        return redirect(route('daftarAdmin'));
     }
 
     /**
@@ -80,6 +105,7 @@ class AdminController extends Controller
      */
     public function destroy(Admin $admin)
     {
-        //
+        $admin->delete();
+        return redirect(route('daftarAdmin'))->with('success', 'Data Berhasil Dihapus');
     }
 }
