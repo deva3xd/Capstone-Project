@@ -125,7 +125,7 @@ class PerusahaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loker $loker)
+    public function destroy(Perusahaan $perusahaan)
     {
         $perusahaan->delete();
         return redirect(route('daftarPerusahaan'))->with('success', 'Data Berhasil Dihapus');
