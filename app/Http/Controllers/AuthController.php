@@ -31,7 +31,6 @@ public function login(Request $request)
         }
     
     }
-
     return back()->withErrors(['email' => 'Invalid credentials']);
 }
 
@@ -43,7 +42,6 @@ public function register(Request $request)
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users',
         'password' => 'required|string|min:8',
-        'role' => 'required|in:pelamar,perusahaan',
     ]);
 
     // Jika validasi gagal, kembali ke halaman registrasi dengan pesan error
@@ -58,7 +56,7 @@ public function register(Request $request)
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = Hash::make($request->password);
-    $user->role = $request->role;
+    $user->role = 'pelamar';
     $user->save();
 
     // Redirect ke halaman login dengan pesan sukses
@@ -73,7 +71,7 @@ public function showRegistrationForm()
 public function logout()
   {
    Auth::logout();
-   return redirect(route('landing.landingpage'));
+   return redirect(route('LandingPage'));
   }
 
 }

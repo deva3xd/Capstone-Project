@@ -29,16 +29,4 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * Interact with the user's first name.
-     *
-     * @param  string  $value
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function type() : Attribute
-    {
-        return new Attribute(
-            get: fn ($value) => ["user", "admin", "perusahaan"]
-        )
-    }
 }
