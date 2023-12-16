@@ -63,6 +63,11 @@ Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name
 
 //admin - kelola akun pelamar
 Route::get('/akunpelamar', 'AkunPelamarController@index')->name('akunPelamar');
+Route::get('/akunpelamar/create', 'AkunPelamarController@create')->name('createAkunpelamar');
+Route::post('/akunpelamar/create', 'AkunPelamarController@store')->name('storeAkunpelamar');
+Route::get('/akunpelamar/{pelamar}/edit', 'AkunPelamarController@edit')->name('editAkunpelamar');
+Route::post('/akunpelamar/{pelamar}/edit', 'AkunPelamarController@update')->name('updateAkunpelamar');
+Route::get('/akunpelamar/{pelamar}/delete', 'AkunPelamarController@destroy')->name('deleteAkunpelamar');
 
 // perusahaan
 Route::get('/p/dashboard', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
