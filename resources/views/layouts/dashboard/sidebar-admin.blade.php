@@ -13,7 +13,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="#">Admin</a></li>
-                    <li><a href="#">Perusahaan</a></li>
+                    <li><a href="{{route('daftarPerusahaan')}}">Perusahaan</a></li>
                     <li><a href="#">Member</a></li>
                 </ul>
             </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Perusahaan;
 
 class PerusahaanController extends Controller
 {
@@ -25,9 +26,9 @@ class PerusahaanController extends Controller
      */
     public function create()
     {
-        $admins = Admin::all();
+        $perusahaans = Perusahaan::all();
         $title = 'Tambah Perusahaan';
-        return view('admin.perusahaan.create', ['title' => $title, 'admins' => $admins]);
+        return view('admin.perusahaan.create', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
 
     /**
