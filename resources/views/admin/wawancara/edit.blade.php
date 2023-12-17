@@ -28,25 +28,25 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">ID Loker</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="ID Loker" name="id_loker" id="id_loker" required="required" value="{{ $wawancara->id_loker}}">
+                                        <input type="number" class="form-control" placeholder="id loker" name="id_loker" id="id_loker" required="required" value="{{ $wawancara->id_loker}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">ID Pelamar</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="ID Pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_profil_pelamar}}">
+                                        <input type="number" class="form-control" placeholder="id pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_profil_pelamar}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jadwal</label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" placeholder="Jadwal" name="jadwal" id="jadwal" required="required" value="{{ $wawancara->id_jadwal}}">
+                                        <input type="date" class="form-control" placeholder="jadwal" name="jadwal" id="jadwal" required="required" value="{{ $wawancara->id_jadwal}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Catatan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="Catatan" name="catatan" id="catatan" required="required" value="{{ $wawancara->id_catatan}}">
+                                        <input type="text" class="form-control" placeholder="catatan" name="catatan" id="catatan" required="required" value="{{ $wawancara->id_catatan}}">
                                     </div>
                                 </div>
                                 <div class="text-right">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Perusahaan;
 
-class PerusahaanController extends Controller
+class AkunPerusahaanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PerusahaanController extends Controller
     {
         $perusahaans = Perusahaan::all();
         $title = 'Data Perusahaan';
-        return view('admin.perusahaan.index', ['title' => $title, 'perusahaans' => $perusahaans]);
+        return view('admin.akun.perusahaan.index', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
 
     /**
@@ -28,7 +28,7 @@ class PerusahaanController extends Controller
     {
         $perusahaans = Perusahaan::all();
         $title = 'Tambah Perusahaan';
-        return view('admin.perusahaan.create', ['title' => $title, 'perusahaans' => $perusahaans]);
+        return view('admin.akun.perusahaan.create', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
 
     /**
@@ -78,7 +78,7 @@ class PerusahaanController extends Controller
     public function edit(Perusahaan $perusahaan)
     {
         $title = 'Edit Perusahaan';
-        return view('admin.perusahaan.edit', [
+        return view('admin.akun.perusahaan.edit', [
             'perusahaan' => $perusahaan,
             'title' => $title
         ]);

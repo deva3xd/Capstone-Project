@@ -33,7 +33,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
     Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
     Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
-    Route::get('/pelamar/profil', 'ProfilController@index')->name('Profilindex');
+    Route::get('/pelamar/profile', 'ProfilController@index')->name('Profilindex');
     Route::get('/pelamar/{profil}/akun', 'ProfilController@Gantipassword')->name('Passwordedit');
     Route::post('/pelamar/{profil}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
     Route::get('/pelamar/{profil}/profil', 'ProfilController@edit')->name('Profiledit');
@@ -52,6 +52,7 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::post('/perusahaan/loker/create', 'LokerController@store')->name('storeLoker');
     Route::get('/perusahaan/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
     Route::post('/perusahaan/loker/{loker}/edit', 'LokerController@update')->name('updateLoker');
+    Route::get('/perusahaan/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoker');
 
     // wawancara
     Route::get('/perusahaan/wawancara', 'WawancaraController@index')->name('daftarWawancara');
@@ -67,4 +68,26 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
 Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
     Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
     Route::get('/admin/profile', 'DashboardController@profileAdmin')->name('profileAdmin'); 
+
+    // kelola akun
+    Route::get('/admin/account/admin', 'AkunAdminController@index')->name('daftarAdmin');
+    Route::get('/admin/account/admin/create', 'AkunAdminController@create')->name('createAdmin');
+    Route::post('/admin/account/admin/create', 'AkunAdminController@store')->name('storeAdmin');
+    Route::get('/admin/account/admin/{admin}/edit', 'AkunAdminController@edit')->name('editAdmin');
+    Route::post('/admin/account/admin/{admin}/edit', 'AkunAdminController@update')->name('updateAdmin');
+    Route::get('/admin/account/admin/{admin}/delete', 'AkunAdminController@destroy')->name('deleteAdmin');
+
+    Route::get('/admin/account/perusahaan', 'AkunPerusahaanController@index')->name('daftarPerusahaan');
+    Route::get('/admin/account/perusahaan/create', 'AkunPerusahaanController@create')->name('createPerusahaan');
+    Route::post('/admin/account/perusahaan/create', 'AkunPerusahaanController@store')->name('storePerusahaan');
+    Route::get('/admin/account/perusahaan/{perusahaan}/edit', 'AkunPerusahaanController@edit')->name('editPerusahaan');
+    Route::post('/admin/account/perusahaan/{perusahaan}/edit', 'AkunPerusahaanController@update')->name('updatePerusahaan');
+    Route::get('/admin/account/perusahaan/{perusahaan}/delete', 'AkunPerusahaanController@destroy')->name('deletePerusahaan');
+        
+    Route::get('/admin/account/pelamar', 'AkunPelamarController@index')->name('daftarPelamar');
+    Route::get('/admin/account/pelamar/create', 'AkunPelamarController@create')->name('createPelamar');
+    Route::post('/admin/account/pelamar/create', 'AkunPelamarController@store')->name('storePelamar');
+    Route::get('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@edit')->name('editPelamar');
+    Route::post('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@update')->name('updatePelamar');
+    Route::get('/admin/account/pelamar/{pelamar}/delete', 'AkunPelamarController@destroy')->name('deletePelamar');
 });

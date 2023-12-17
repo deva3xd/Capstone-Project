@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Kelola Akun Pelamar</h1>
+                    <h1 class="m-0 text-dark">Daftar Akun Member</h1>
                 </div>
                 <div class="col-sm-6">
                 </div>
@@ -22,7 +22,7 @@
             <div class="col-12">
                     <div class="card">
                         <div class="card-header text-right pb-0" style="padding-top: 1.88rem;">
-                            <a href="{{route('createAkunpelamar')}}" class="btn btn-primary" role="button">Tambah Akun</a>
+                            <a href="{{route('createPelamar')}}" class="btn btn-primary" role="button">Tambah Data</a>
                         </div>
                     <div class="card-body pt-0">
                         <div class="table-responsive">
@@ -53,7 +53,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($member as $pelamar)
+                                    @foreach($pelamars as $pelamar)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $pelamar->nama }}</td>
@@ -76,8 +76,8 @@
                                         <td>{{ $pelamar->nik }}</td>
                                         <td>{{ $pelamar->status_nikah }}</td>
                                         <td class="d-flex">
-                                            <a href="{{route('editAkunpelamar', ['nama' => $pelamar->nama])}}" class="btn btn-warning btn-sm" role="button">Edit</a>
-                                            <a onclick="confirmDelete(this)" data-url="{{route('deleteAkunpelamar', ['nama' => $pelamar->nama])}}" class="btn btn-danger btn-sm" role="button">Hapus</a>
+                                            <a href="{{route('editPelamar', ['id' => $pelamar->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
+                                            <a onclick="confirmDelete(this)" data-url="{{route('deletePelamar', ['id' => $pelamar->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Admin;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class AkunAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class AdminController extends Controller
     {
         $admins = Admin::all();
         $title = 'Data Admin';
-        return view('admin.admin.index', ['title' => $title, 'admins' => $admins]);
+        return view('admin.akun.admin.index', ['title' => $title, 'admins' => $admins]);
     }
 
     /**
@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         $admins = Admin::all();
         $title = 'Tambah Admin';
-        return view('admin.admin.create', ['title' => $title, 'admins' => $admins]);
+        return view('admin.akun.admin.create', ['title' => $title, 'admins' => $admins]);
     }
 
     /**
@@ -70,7 +70,7 @@ class AdminController extends Controller
     public function edit(Admin $admin)
     {
         $title = 'Edit Admin';
-        return view('admin.admin.edit', [
+        return view('admin.akun.admin.edit', [
             'admin' => $admin,
             'title' => $title
         ]);
@@ -83,7 +83,7 @@ class AdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perusahaan $perusahaan)
+    public function update(Request $request, Admin $admin)
     {
         $validateData = validator($request->all(), [
             'username' => 'required|string|max:255',
@@ -91,8 +91,8 @@ class AdminController extends Controller
         ])->validate();
 
         $admin->username = $validateData['username'];
-        $admin->alamat = $validateData['password'];
-        $perusahaan->save();
+        $admin->password = $validateData['password'];
+        $admin->save();
 
         return redirect(route('daftarAdmin'));
     }
