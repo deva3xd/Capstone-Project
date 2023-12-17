@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
+
 use Closure;
 
-class PelamarMiddleware
+class UserAccess
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,13 @@ class PelamarMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'pelamar') {
-            return $next($request);
-        }
+        $roles = array_slice(func_get_args(), 2);
 
-        return redirect('/login')->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        foreach ($roles as $role) { 
+            $user = \Auth::user()->role;
+            if( $user == $role){
+                return $next($request);
+        }
     }
+    return redirect('/');
 }
