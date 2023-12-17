@@ -21,7 +21,7 @@
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('Profilindex') }}"><i
                                     class="fas fa-user m-1"></i>Profil</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
                         </div>
                     </li>
                 </ul>
