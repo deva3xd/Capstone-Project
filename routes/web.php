@@ -16,29 +16,6 @@ Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
 Route::get('/perusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
 
-// admin - loker
-// Route::get('/a/dashboard', 'DashboardController@admin')->name('dashboardAdmin');
-// Route::get('/profileee', 'DashboardController@profileAdmin')->name('profileAdmin');
-
-// Route::get('/loker', 'LokerController@index')->name('daftarLoker');
-// Route::get('/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
-// Route::get('/loker/create', 'LokerController@create')->name('createLoker');
-// Route::post('/loker/create', 'LokerController@store')->name('storeLoker');
-// Route::get('/loker/{loker}/edit', 'LokerController@edit')->name('editLoker');
-// Route::post('/loker/{loker}/edit', 'LokerController@update')->name('updateLoker');
-// Route::get('/loker/{loker}/delete', 'LokerController@destroy')->name('deleteLoker');
-
-// admin - wawancara
-// Route::get('/wawancara', 'WawancaraController@index')->name('daftarWawancara');
-// Route::get('/wawancara/pdf', 'WawancaraController@pdf')->name('pdfWawancara');
-// Route::get('/wawancara/create', 'WawancaraController@create')->name('createWawancara');
-// Route::post('wawancara/create', 'WawancaraController@store')->name('storeWawancara');
-// Route::get('/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
-// Route::post('/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
-// Route::get('/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
-
-
-
 //login regis
 Route::get('/login', 'AuthController@showLoginForm')->name('login');
 Route::post('/login', 'AuthController@login')->name('postlogin');
@@ -84,4 +61,10 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::get('/perusahaan/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
     Route::post('/perusahaan/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
     Route::get('/perusahaan/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
+});
+
+// admin
+Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
+    Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
+    Route::get('/admin/profile', 'DashboardController@profileAdmin')->name('profileAdmin'); 
 });

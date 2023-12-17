@@ -26,10 +26,8 @@ public function login(Request $request)
             return redirect()->intended("/pelamar");
         } elseif($role->role == "perusahaan") {
             return redirect()->intended("/perusahaan");
-        } elseif(($role->role == "admin")) {
-            return redirect()->intended("/admin");
         } else {
-            return redirect()->intended("/");
+            return redirect()->intended("/admin");
         }
     }
     return back()->withErrors(['email' => 'Invalid credentials']);
@@ -38,7 +36,6 @@ public function login(Request $request)
 public function register(Request $request)
 {
     // Validasi data pengguna
-    
     $validator = Validator::make($request->all(), [
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users',
@@ -57,7 +54,7 @@ public function register(Request $request)
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = Hash::make($request->password);
-    $user->role = 'perusahaan';
+    $user->role = 'admin';
     $user->save();
 
     // Redirect ke halaman login dengan pesan sukses
