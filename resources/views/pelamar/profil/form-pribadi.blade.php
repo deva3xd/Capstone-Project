@@ -59,7 +59,7 @@
 
                             <div class="form-floating m-3">
                                 <label class="p-1">Alamat</label>
-                                <input readonly class="form-control" type="password" value="{{ $pelamar->alamat }}">
+                                <input readonly class="form-control" type="text" value="{{ $pelamar->alamat }}">
                             </div>
 
                             <div class="form-floating m-3">
@@ -151,15 +151,17 @@
 @endsection
 
 @section('addJavascript')
-    <script src="{{ asset('js/sweetalert.min.js') }}">
 @if(session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: '{{ session('success') }}',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        @endif
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: '{{ session('success') }}',
+            showConfirmButton: false,
+            timer: 1500
+        });
     </script>
+@endif
+
 @endsection

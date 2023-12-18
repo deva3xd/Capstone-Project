@@ -24,10 +24,6 @@ Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
 Route::post('/register', 'AuthController@register');
 
-Route::middleware(['auth', 'NoProfil'])->group(function () {
-    Route::get('/pelamar/profile/buat', 'ProfilController@create')->name('Profilcreate');
-});
-
 // pelamar
 Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');

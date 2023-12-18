@@ -1,5 +1,4 @@
 @extends('layouts.landing.master')
-@extends('layouts.landing.navbar')
 
 @section('content')
 
