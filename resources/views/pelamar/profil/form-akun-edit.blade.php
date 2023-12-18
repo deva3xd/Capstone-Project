@@ -19,11 +19,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="text-center m-2 p-2">FORM AKUN</h1>
-                        <form action="{{ route('Passwordupdate', ['profil' => $profil->id]) }}" method="POST">
+                        <form action="{{ route('Passwordupdate', ['pelamar' => $pelamar->id]) }}" method="POST">
                             @csrf
                             <div class="form-group m-3">
                                 <label for="password" class="p-1">Password</label>
-                                <input name="password" id="password" required type="text" value="{{ $profil->password }}"
+                                <input name="password" id="password" required type="text" value="{{ $pelamar->password }}"
                                     class="form-control password @error('password')is-invalid  @enderror">
                                     @error('password')
                                 <div class="invalid-feedback">

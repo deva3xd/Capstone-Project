@@ -15,6 +15,7 @@ class CreatePelamarsTable extends Migration
     {
         Schema::create('pelamar', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_user');
             $table->string('nama');
             $table->text('alamat');
             $table->date('ttl');

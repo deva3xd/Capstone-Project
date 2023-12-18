@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
         'PelamarMiddleware' => \App\Http\Middleware\PelamarMiddleware::class,
         'PerusahaanMiddleware' => \App\Http\Middleware\PerusahaanMiddleware::class,
         'AdminMiddleware' => \App\Http\Middleware\AdminMiddleware::class,
+        'NoProfil' => \App\Http\Middleware\NoProfil::class,
     ];
 
     /**
