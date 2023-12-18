@@ -17,6 +17,7 @@ class ProfilController extends Controller
      */
     public function index()
     {
+        $title = 'Profile';
         $images_name = 'Foto-';
         $title = 'Profil';
         $users = User::all();
@@ -24,7 +25,8 @@ class ProfilController extends Controller
         return view('pelamar.profil.form-pribadi', [
             'pelamars' => $pelamars,
             ['images_name' => $images_name],
-            'users' => $users
+            'users' => $users,
+            'title' => $title
         ]);
     }
 
@@ -35,8 +37,8 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        $title = 'Buat Profil';
-        return view('pelamar.profil.form-pribadi-create');   
+        $title = 'Buat Profile';
+        return view('pelamar.profil.form-pribadi-create', ['title' => $title]);   
     }
 
     /**
@@ -92,27 +94,27 @@ class ProfilController extends Controller
             $destinationPath = public_path('/landing/dokumen/foto');
     
             // Assuming you have the uploaded image in the $request
-    $foto = $request->file('foto');
-    
-    // Get the original file name without extension
-    $namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
-    
-    // Set the image name with a prefix and the original file extension
-    $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
-    
-    // Specify the path where you want to save the resized image
-    $fotoPath = public_path('/landing/dokumen/foto');
-    
-    // Create an Intervention Image instance
-    $resize_foto = Image::make($foto->getRealPath());
-    
-    // Resize the image to, for example, 150x150 pixels
-    $resize_foto->resize(150, 150, function($constraint) {
-        $constraint->aspectRatio();
-    });
-    
-    // Save the resized image to the specified path
-    $resize_foto->save($fotoPath . '/' . $image_name);
+            $foto = $request->file('foto');
+            
+            // Get the original file name without extension
+            $namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
+            
+            // Set the image name with a prefix and the original file extension
+            $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
+            
+            // Specify the path where you want to save the resized image
+            $fotoPath = public_path('/landing/dokumen/foto');
+            
+            // Create an Intervention Image instance
+            $resize_foto = Image::make($foto->getRealPath());
+            
+            // Resize the image to, for example, 150x150 pixels
+            $resize_foto->resize(150, 150, function($constraint) {
+                $constraint->aspectRatio();
+            });
+            
+            // Save the resized image to the specified path
+            $resize_foto->save($fotoPath . '/' . $image_name);
 
         $userId = auth()->user()->id;
         $email = auth()->user()->email;
@@ -164,8 +166,10 @@ class ProfilController extends Controller
      */
     public function edit(Pelamar $pelamar)
     {
+        $title = 'Edit Profile';
         return view('pelamar.profil.form-pribadi-edit', [
             'pelamar' => $pelamar,
+            'title' => $title
         ]);
     }
 
@@ -242,22 +246,22 @@ class ProfilController extends Controller
         $destinationPath = public_path('/landing/dokumen/foto');
 
         // Assuming you have the uploaded image in the $request
-$foto = $request->file('foto');
+        $foto = $request->file('foto');
 
-// Get the original file name without extension
-$namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
+        // Get the original file name without extension
+        $namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
 
-// Set the image name with a prefix and the original file extension
-$image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
+        // Set the image name with a prefix and the original file extension
+        $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
 
-// Specify the path where you want to save the resized image
-      $fotoPath = public_path('/landing/dokumen/foto');
+        // Specify the path where you want to save the resized image
+        $fotoPath = public_path('/landing/dokumen/foto');
 
-// Create an Intervention Image instance
-       $resize_foto = Image::make($foto->getRealPath());
+        // Create an Intervention Image instance
+        $resize_foto = Image::make($foto->getRealPath());
 
-// Resize the image to, for example, 150x150 pixels
-       $resize_foto->resize(150, 150, function($constraint) {
+        // Resize the image to, for example, 150x150 pixels
+        $resize_foto->resize(150, 150, function($constraint) {
             $constraint->aspectRatio();
         });
 

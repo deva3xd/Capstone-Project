@@ -1,13 +1,12 @@
 @extends('layouts.landing.master')
 
 @section('content')
-
-    <section class="page-title bg-1">
+    <section class="page-title py-5 bg-1">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <h1 class="text-capitalize mb-5 text-white text-lg">Masukkan Profil Anda</h1>
+                        <h1 class="text-capitalize text-white text-lg">Lengkapi Profil Dahulu</h1>
                     </div>
                 </div>
             </div>

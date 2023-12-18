@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>LokerIt.id - Login</title>
+    <title>LokerTI.id - {{ $title }}</title>
     <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />    <!-- Data Table -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/logo.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/favicon.png') }}" />
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{asset('dashboard/css/style.css')}}">
 </head>

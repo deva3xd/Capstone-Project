@@ -8,7 +8,7 @@
     <title>LokerTI.id - {{ $title }}</title>
     <!-- theme meta -->
     <meta name="theme-name" content="quixlab" />    <!-- Data Table -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/logo.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/favicon.png') }}" />
     <link rel="stylesheet" href="{{asset('dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{asset('dashboard/css/style.css')}}">
@@ -66,6 +66,9 @@
         <!-- Content body start -->
         <div class="content-body">
             @yield('content')
+
+            @yield('login')
+            @yield('register')
         </div>
         <!-- Content body end -->
     </div>
