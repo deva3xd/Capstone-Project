@@ -16,9 +16,9 @@ class AkunPelamarController extends Controller
      */
     public function index()
     {
-        $member = Pelamar::all();
+        $pelamars = Pelamar::all();
         $title = 'Akun Pelamar';
-        return view('admin.akunpelamar.index', ['title' => $title, 'member' => $member]);
+        return view('admin.akun.pelamar.index', ['title' => $title, 'pelamars' => $pelamars]);
     }
 
     /**
@@ -28,9 +28,9 @@ class AkunPelamarController extends Controller
      */
     public function create()
     {
-        $member = Pelamar::all();
+        $pelamar = Pelamar::all();
         $title = 'Tambah Pelamar';
-        return view('admin.akunpelamar.create', ['title' => $title, 'member' => $member]);
+        return view('admin.akun.pelamar.create', ['title' => $title, 'pelamar' => $pelamar]);
     }
 
     /**
@@ -62,10 +62,10 @@ class AkunPelamarController extends Controller
             'foto' => 'required|mimes:png,jpeg,jpg'
         ])->validate();
 
-        $member = new Pelamar($validateData);
-        $member->save();
+        $pelamar = new Pelamar($validateData);
+        $pelamar->save();
 
-        return redirect(route('akunPelamar'));
+        return redirect(route('daftarPelamar'));
     }
 
     /**
@@ -85,11 +85,11 @@ class AkunPelamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pelamar $member)
+    public function edit(Pelamar $pelamar)
     {
         $title = 'Edit Data Pelamar';
-        return view('admin.akunpelamar.edit', [
-            'pelamar' => $member,
+        return view('admin.akun.pelamar.edit', [
+            'pelamar' => $pelamar,
             'title' => $title
         ]);
     }
@@ -101,7 +101,7 @@ class AkunPelamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pelamar $member)
+    public function update(Request $request, Pelamar $pelamar)
     {
         $validateData = validator($request->all(), [
             'nama' => 'required|string|max:255',
@@ -124,27 +124,27 @@ class AkunPelamarController extends Controller
             'foto' => 'required|string|max:255'
         ])->validate();
 
-        $member->nama = $validateData['nama'];
-        $member->alamat = $validateData['alamat'];
-        $member->ttl = $validateData['ttl'];
-        $member->jk = $validateData['jk'];
-        $member->no_telp = $validateData['no_telp'];
-        $member->email = $validateData['email'];
-        $member->password = $validateData['password'];
-        $member->pendidikan = $validateData['pendidikan'];
-        $member->nama_institusi = $validateData['nama_institusi'];
-        $member->pengalaman_organisasi = $validateData['pengalaman_organisasi'];
-        $member->pengalaman_kerja = $validateData['pengalaman_kerja'];
-        $member->skill = $validateData['skill'];
-        $member->sertifikasi = $validateData['sertifikasi'];
-        $member->gaji_diinginkan = $validateData['gaji_diinginkan'];
-        $member->lampiran = $validateData['lampiran'];
-        $member->cv = $validateData['cv'];
-        $member->foto = $validateData['foto'];
-        $member->npwp = $validateData['npwp'];
-        $member->nik = $validateData['nik'];
-        $member->status_nikah = $validateData['status_nikah'];
-        $member->save();
+        $pelamar->nama = $validateData['nama'];
+        $pelamar->alamat = $validateData['alamat'];
+        $pelamar->ttl = $validateData['ttl'];
+        $pelamar->jk = $validateData['jk'];
+        $pelamar->no_telp = $validateData['no_telp'];
+        $pelamar->email = $validateData['email'];
+        $pelamar->password = $validateData['password'];
+        $pelamar->pendidikan = $validateData['pendidikan'];
+        $pelamar->nama_institusi = $validateData['nama_institusi'];
+        $pelamar->pengalaman_organisasi = $validateData['pengalaman_organisasi'];
+        $pelamar->pengalaman_kerja = $validateData['pengalaman_kerja'];
+        $pelamar->skill = $validateData['skill'];
+        $pelamar->sertifikasi = $validateData['sertifikasi'];
+        $pelamar->gaji_diinginkan = $validateData['gaji_diinginkan'];
+        $pelamar->lampiran = $validateData['lampiran'];
+        $pelamar->cv = $validateData['cv'];
+        $pelamar->foto = $validateData['foto'];
+        $pelamar->npwp = $validateData['npwp'];
+        $pelamar->nik = $validateData['nik'];
+        $pelamar->status_nikah = $validateData['status_nikah'];
+        $pelamar->save();
 
         return redirect(route('akunPelamar'))->with('success', 'Data Berhasil Diupdate');;
     }
@@ -155,9 +155,9 @@ class AkunPelamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pelamar $member)
+    public function destroy(Pelamar $pelamar)
     {
-        $member->delete();
-        return redirect(route('akunPelamar'))->with('success', 'Data Berhasil Dihapus');
+        $pelamar->delete();
+        return redirect(route('daftarPelamar'))->with('success', 'Data Berhasil Dihapus');
     }
 }

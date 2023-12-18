@@ -22,28 +22,24 @@ public function login(Request $request)
     if (Auth::attempt($credentials)) {
         $role = Auth::user();
         
-        if($role->role == "pelamar"){
+        if($role->role == "pelamar") {
             return redirect()->intended("/pelamar");
-        }
-    
-        elseif($role->role == "perusahaan"){
+        } elseif($role->role == "perusahaan") {
             return redirect()->intended("/perusahaan");
+        } else {
+            return redirect()->intended("/admin");
         }
-    
     }
-
     return back()->withErrors(['email' => 'Invalid credentials']);
 }
 
 public function register(Request $request)
 {
     // Validasi data pengguna
-    
     $validator = Validator::make($request->all(), [
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users',
         'password' => 'required|string|min:8',
-        'role' => 'required|in:pelamar,perusahaan',
     ]);
 
     // Jika validasi gagal, kembali ke halaman registrasi dengan pesan error
@@ -58,7 +54,7 @@ public function register(Request $request)
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = Hash::make($request->password);
-    $user->role = $request->role;
+    $user->role = 'admin';
     $user->save();
 
     // Redirect ke halaman login dengan pesan sukses
@@ -71,9 +67,9 @@ public function showRegistrationForm()
 }
 
 public function logout()
-  {
-   Auth::logout();
-   return redirect(route('landing.landingpage'));
-  }
+{
+    Auth::logout();
+        return redirect(route('LandingPage'));
+    }
 
 }

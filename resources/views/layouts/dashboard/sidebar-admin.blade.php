@@ -14,7 +14,7 @@
                 <ul aria-expanded="false">
                     <li><a href="{{route('daftarAdmin')}}">Admin</a></li>
                     <li><a href="{{route('daftarPerusahaan')}}">Perusahaan</a></li>
-                    <li><a href="{{route('akunPelamar')}}">Member</a></li>
+                    <li><a href="{{route('daftarPelamar')}}">Member</a></li>
                 </ul>
             </li>
             <li>

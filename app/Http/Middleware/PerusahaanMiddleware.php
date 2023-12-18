@@ -15,11 +15,10 @@ class PerusahaanMiddleware
      */
     public function handle($request, Closure $next)
     {
-       
-       if (Auth::check() && Auth::user()->role === 'perusahaan') {
-        return $next($request);
-    }
+        if (Auth::check() && Auth::user()->role === 'perusahaan') {
+            return $next($request);
+        }
 
-    return redirect('/login')->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        return redirect('/login')->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
     }
 }

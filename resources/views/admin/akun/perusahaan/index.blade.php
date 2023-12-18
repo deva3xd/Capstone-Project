@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Data Perusahaan</h1>
+                    <h1 class="m-0 text-dark">Daftar Akun Perusahaan</h1>
                 </div>
                 <div class="col-sm-6">
                 </div>
@@ -56,7 +56,7 @@
                                         <td>{{ $perusahaan->logo }}</td>
                                         <td class="d-flex">
                                             <a href="{{route('editPerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
-                                            <a onclick="confirmDelete(this)" data-url="{{route('deletePerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-danger btn-sm text-white" role="button border">Hapus</a>
+                                            <a onclick="confirmDelete(this)" data-url="{{route('deletePerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>
                                         </td>
                                     </tr>
                                     @endforeach
