@@ -24,20 +24,25 @@ Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
 Route::post('/register', 'AuthController@register');
 
+Route::middleware(['auth', 'NoProfil'])->group(function () {
+    Route::get('/pelamar/profile/buat', 'ProfilController@create')->name('Profilcreate');
+});
+
 // pelamar
 Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
     Route::get('/pelamar/lowongan', 'PelamarController@cariLowongan')->name('pelamarCariLowongan');
     Route::get('/pelamar/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
-
     Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
     Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
     Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
     Route::get('/pelamar/profile', 'ProfilController@index')->name('Profilindex');
-    Route::get('/pelamar/{profil}/akun', 'ProfilController@Gantipassword')->name('Passwordedit');
-    Route::post('/pelamar/{profil}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
-    Route::get('/pelamar/{profil}/profil', 'ProfilController@edit')->name('Profiledit');
-    Route::post('/pelamar/{profil}/profil/update', 'ProfilController@update')->name('Profilupdate');
+    Route::get('/pelamar/profile/buat', 'ProfilController@create')->name('Profilcreate');
+    Route::post('/pelamar/profile/simpan', 'ProfilController@store')->name('Profilstore');
+    Route::get('/pelamar/{pelamar}/akun', 'ProfilController@Gantipassword')->name('Passwordedit');
+    Route::post('/pelamar/{pelamar}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
+    Route::get('/pelamar/{pelamar}/profil', 'ProfilController@edit')->name('Profiledit');
+    Route::post('/pelamar/{pelamar}/profil/update', 'ProfilController@update')->name('Profilupdate');
 });
 
 // perusahaan

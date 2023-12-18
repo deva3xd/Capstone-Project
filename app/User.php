@@ -29,4 +29,18 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function pelamar()
+    {
+        return $this->hasOne(Pelamar::class, 'id_user', 'id');
+    }
+
+    /**
+     * Check if the user has a pelamar profile.
+     *
+     * @return bool
+     */
+    public function hasPelamarProfile()
+    {
+        return $this->pelamar()->exists();
+    }
 }
