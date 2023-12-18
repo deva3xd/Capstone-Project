@@ -72,7 +72,7 @@ class ProfilController extends Controller
                 $cv = $request->file('cv');
                 $namaProfil = $validateData['nama'];
                 $cvName = 'CV-' . $namaProfil . '.' .$request->file('cv')->extension();
-                $cvPath = public_path() . '/landing/dokumen/cv';
+                $cvPath = public_path() . '/dokumen/cv';
                 $cv->move($cvPath, $cvName);
             }
     
@@ -81,7 +81,7 @@ class ProfilController extends Controller
                 $lampiran = $request->file('lampiran');
                 $namaProfil = $validateData['nama'];
                 $lampiranName = 'Lampiran-' . $namaProfil . '.' .$request->file('lampiran')->extension();
-                $lampiranPath = public_path() . '/landing/dokumen/lampiran';
+                $lampiranPath = public_path() . '/dokumen/lampiran';
                 $lampiran->move($lampiranPath, $lampiranName);
             }
     
@@ -89,7 +89,7 @@ class ProfilController extends Controller
     
             $image_name = time() . '.' . $image->getClientOriginalExtension();
     
-            $destinationPath = public_path('/landing/dokumen/foto');
+            $destinationPath = public_path('/dokumen/foto');
     
             // Assuming you have the uploaded image in the $request
     $foto = $request->file('foto');
@@ -101,7 +101,7 @@ class ProfilController extends Controller
     $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
     
     // Specify the path where you want to save the resized image
-    $fotoPath = public_path('/landing/dokumen/foto');
+    $fotoPath = public_path('/dokumen/foto');
     
     // Create an Intervention Image instance
     $resize_foto = Image::make($foto->getRealPath());
@@ -222,7 +222,7 @@ class ProfilController extends Controller
             $cv = $request->file('cv');
             $namaProfil = $validateData['nama'];
             $cvName = 'CV-' . $namaProfil . '.' .$request->file('cv')->extension();
-            $cvPath = public_path() . '/landing/dokumen/cv';
+            $cvPath = public_path() . '/dokumen/cv';
             $cv->move($cvPath, $cvName);
         }
 
@@ -231,7 +231,7 @@ class ProfilController extends Controller
             $lampiran = $request->file('lampiran');
             $namaProfil = $validateData['nama'];
             $lampiranName = 'Lampiran-' . $namaProfil . '.' .$request->file('lampiran')->extension();
-            $lampiranPath = public_path() . '/landing/dokumen/lampiran';
+            $lampiranPath = public_path() . '/dokumen/lampiran';
             $lampiran->move($lampiranPath, $lampiranName);
         }
 
@@ -239,7 +239,7 @@ class ProfilController extends Controller
 
         $image_name = time() . '.' . $image->getClientOriginalExtension();
 
-        $destinationPath = public_path('/landing/dokumen/foto');
+        $destinationPath = public_path('/dokumen/foto');
 
         // Assuming you have the uploaded image in the $request
 $foto = $request->file('foto');
@@ -251,7 +251,7 @@ $namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
 $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
 
 // Specify the path where you want to save the resized image
-      $fotoPath = public_path('/landing/dokumen/foto');
+      $fotoPath = public_path('/dokumen/foto');
 
 // Create an Intervention Image instance
        $resize_foto = Image::make($foto->getRealPath());
