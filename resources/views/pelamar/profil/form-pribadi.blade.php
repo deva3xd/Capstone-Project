@@ -135,7 +135,7 @@
                             <div class="form-floating m-3">
                                 <strong class="p-1">Foto</strong>
                                 <br>
-                                <img src="{{ asset('landing/dokumen/foto/' . $pelamar->foto) }}"
+                                <img src="{{ asset('dokumen/foto/' . $pelamar->foto) }}"
                                     class="img-responsive img-thumbnail" alt="Original Image">
                             </div>
 

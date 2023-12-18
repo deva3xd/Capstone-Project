@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pelamar;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -128,7 +129,7 @@ class AkunPelamarController extends Controller
         $pelamar->foto = $image_name;
         $pelamar->id_user = $validateData['id_user'];
         $pelamar->password = $validateData['password'];
-        $pelamar->password = $
+        $pelamar->email = $validateData['email'];
         $pelamar->save();
 
             return redirect(route('Pelamar'));
@@ -259,9 +260,6 @@ class AkunPelamarController extends Controller
             $pelamar->cv = $cvName;
             $pelamar->lampiran = $lampiranName;
             $pelamar->foto = $image_name;
-            $pelamar->id_user = $userId;
-            $pelamar->email = $email;
-            $pelamar->password = $password;
             $pelamar->save();
         return redirect(route('daftarPelamar'));
     }
