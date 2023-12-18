@@ -91,7 +91,6 @@
                                 <span>{{ $web }}</span>
                             </li>
                         </ul>
->>>>>>> 1ecbd0f6f554571a800fd353b9a0c7f5a7d7cf9d
                     </div>
                 </div>
             </div>

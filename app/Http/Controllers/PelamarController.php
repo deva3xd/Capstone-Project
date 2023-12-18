@@ -8,10 +8,12 @@ use App\Loker;
 class PelamarController extends Controller
 {
     public function index(){
-        return view('pelamar.index');
+        $title = 'Home';
+        return view('pelamar.index', ['title' => $title]);
     }
 
     public function cariLowongan(){
+        $title = 'Lowongan';
         $lokers = Loker::all();
         $data_count = Loker::where('kategori', 'data scientist')->get()->count();
         $game_count = Loker::where('kategori', 'game developer')->get()->count();
@@ -31,6 +33,7 @@ class PelamarController extends Controller
             'software' => $software_count,
             'uiux' => $uiux_count,
             'web' => $web_count,
+            'title' => $title
         ]);
     }
 
@@ -38,14 +41,15 @@ class PelamarController extends Controller
         return view('pelamar.cari-perusahaan');
     }
 
-    public function detailLowongan($id){
+    public function detailLowongan($id) {
+        $title = 'Detail Lowongan';
         $loker = Loker::findOrFail($id);
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
-        return view('pelamar.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year
-    ]);
+        return view('pelamar.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year, 'title' => $title]);
     }
+    
     public function detailPerusahaan(){
         return view('pelamar.detail-perusahaan');
     }

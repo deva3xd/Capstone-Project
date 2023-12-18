@@ -13,22 +13,24 @@
 
 // Landing Page //
 Route::get('/', 'LandingPageController@index')->name('LandingPage');
-Route::get('/lowongan', 'LandingPageController@lowongan')->name('LowonganLandingPage');
-Route::get('/perusahaan', 'LandingPageController@perusahaan')->name('PerusahaanLandingPage');
+Route::get('/lowongan', 'LandingPageController@cariLowongan')->name('Lowongan');
+Route::get('//lowongan/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
 
 //login regis
 Route::get('/login', 'AuthController@showLoginForm')->name('login');
 Route::post('/login', 'AuthController@login')->name('postlogin');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
-Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
-Route::post('/register', 'AuthController@register');
+Route::get('/register/pelamar', 'AuthController@showRegistrationFormPelamar')->name('registerPelamar');
+Route::post('/register/pelamar', 'AuthController@registerPelamar');
+Route::get('/register/perusahaan', 'AuthController@showRegistrationFormPerusahaan')->name('registerPerusahaan');
+Route::post('/register/perusahaan', 'AuthController@registerPerusahaan');
 
 // pelamar
 Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar', 'PelamarController@index')->name('Pelamar');
     Route::get('/pelamar/lowongan', 'PelamarController@cariLowongan')->name('pelamarCariLowongan');
-    Route::get('/pelamar/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
+    Route::get('/pelamar/lowongan/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
     Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
     Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
     Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
@@ -39,6 +41,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::post('/pelamar/{pelamar}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
     Route::get('/pelamar/{pelamar}/profil', 'ProfilController@edit')->name('Profiledit');
     Route::post('/pelamar/{pelamar}/profil/update', 'ProfilController@update')->name('Profilupdate');
+    Route::get('/pelamar/profil', 'RiwayatController@index')->name('Riwayat');
 });
 
 // perusahaan

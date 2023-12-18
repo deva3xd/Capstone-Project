@@ -11,66 +11,104 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function showLoginForm()
-{
-    return view('auth.login');
-}
+    {
+        $title = 'Masuk';
+        return view('auth.login', ['title' => $title]);
+    }
 
-public function login(Request $request)
-{
-    $credentials = $request->only("email", "password");
+    public function login(Request $request)
+    {
+        $credentials = $request->only("email", "password");
 
-    if (Auth::attempt($credentials)) {
-        $role = Auth::user();
-        
-        if($role->role == "pelamar") {
-            return redirect()->intended("/pelamar");
-        } elseif($role->role == "perusahaan") {
-            return redirect()->intended("/perusahaan");
-        } else {
-            return redirect()->intended("/admin");
+        if (Auth::attempt($credentials)) {
+            $role = Auth::user();
+            
+            if($role->role == "pelamar") {
+                return redirect()->intended("/pelamar");
+            } elseif($role->role == "perusahaan") {
+                return redirect()->intended("/perusahaan");
+            } else {
+                return redirect()->intended("/admin");
+            }
         }
-    }
-    return back()->withErrors(['email' => 'Invalid credentials']);
-}
-
-public function register(Request $request)
-{
-    // Validasi data pengguna
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|unique:users',
-        'password' => 'required|string|min:8',
-    ]);
-
-    // Jika validasi gagal, kembali ke halaman registrasi dengan pesan error
-    if ($validator->fails()) {
-        return redirect('/register')
-                    ->withErrors($validator)
-                    ->withInput();
+        return back()->withErrors(['email' => 'Invalid credentials']);
     }
 
-    // Simpan data pengguna ke dalam database
-    $user = new User;
-    $user->name = $request->name;
-    $user->email = $request->email;
-    $user->password = Hash::make($request->password);
-    $user->role = 'pelamar';
-    $user->save();
+    public function registerPelamar(Request $request)
+    {
+        // Validasi data pengguna
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
 
-    Auth::login($user);
+        // Jika validasi gagal, kembali ke halaman login dengan pesan error
+        if ($validator->fails()) {
+            return redirect('/login')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
 
-    // Redirect ke halaman login dengan pesan sukses
-    return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please login.');;
-}
+        // Simpan data pengguna ke dalam database
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = 'pelamar';
+        $user->save();
 
-public function showRegistrationForm()
-{
-    return view('auth.register');
-}
+        Auth::login($user);
 
-public function logout()
-{
-    Auth::logout();
+        // Redirect ke halaman login dengan pesan sukses
+        return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please login.');;
+    }
+
+    public function registerPerusahaan(Request $request)
+    {
+        // Validasi data pengguna
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
+
+        // Jika validasi gagal, kembali ke halaman registrasi dengan pesan error
+        if ($validator->fails()) {
+            return redirect('/register')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // Simpan data pengguna ke dalam database
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = 'perusahaan';
+        $user->save();
+
+        Auth::login($user);
+
+        // Redirect ke halaman login dengan pesan sukses
+        return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please input data.');;
+    }
+
+    public function showRegistrationFormPelamar()
+    {
+        $title = 'Daftar';
+        return view('auth.register-pelamar', ['title' => $title]);
+    }
+
+    public function showRegistrationFormPerusahaan()
+    {
+        $title = 'Daftar';
+        return view('auth.register-perusahaan', ['title' => $title]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
         return redirect(route('LandingPage'));
     }
 

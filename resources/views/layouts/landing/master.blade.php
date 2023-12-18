@@ -2,14 +2,14 @@
 <html lang="en">
 	
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
-	<meta name="author" content="themefisher.com">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 	<!-- theme meta -->
 	<meta name="theme-name" content="orbitor" />
-	<title>Home</title>
+	<title>LokerTI.id - {{ $title }}</title>
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('landing/images/logo.png') }}" />
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('landing/images/favicon.png') }}" />
 	<!-- bootstrap.min css -->
 	<link rel="stylesheet" href="{{ asset('landing/plugins/bootstrap/css/bootstrap.min.css') }}">
 	<!-- Icon Font Css -->

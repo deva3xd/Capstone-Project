@@ -116,7 +116,7 @@ class AkunPerusahaanController extends Controller
         $perusahaan->logo = $validateData['logo'];
         $perusahaan->save();
 
-        return redirect(route('daftarPerusahaan'));
+        return redirect(route('daftarPerusahaan'))->with('success', 'Data Berhasil Diupdate');;
     }
 
     /**

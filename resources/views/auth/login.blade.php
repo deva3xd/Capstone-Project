@@ -17,9 +17,10 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" name="password" placeholder="Password">
                                     </div>
-                                    <button class="btn login-form__btn submit w-100">Sign In</button>
+                                    <button class="btn login-form__btn submit w-100">Masuk</button>
                                 </form>
-                                <p class="mt-5 login-form__footer">Belum punya akun? <a href="{{ route('register') }}" class="text-primary">Daftar</a> sekarang</p>
+                                <p class="mt-5 login-form__footer">Belum punya akun? Daftar sebagai <a href="{{route('registerPelamar')}}" class="text-primary">Pelamar</a> atau <a href="{{route('registerPerusahaan')}}" class="text-primary">Perusahaan</a> sekarang</p>
+                                <a href="{{route('LandingPage')}}" class="btn btn-sm btn-danger text-white">kembali</a>
                             </div>
                         </div>
                     </div>
