@@ -18,10 +18,9 @@ class ProfilController extends Controller
     public function index()
     {
         $images_name = 'Foto-';
-        $users = User::all();
         $title = 'Profil';
-        $user = User::all();
-        $pelamars = Pelamar::all();
+        $users = User::all();
+        $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
         return view('pelamar.profil.form-pribadi', [
             'pelamars' => $pelamars,
             ['images_name' => $images_name],
@@ -143,7 +142,7 @@ class ProfilController extends Controller
         $pelamar->password = $password;
         $pelamar->save();
 
-            return redirect(route('Pelamar'));
+        return redirect(route('Pelamar'))->with('success', 'Data Berhasil Di Update');
     }
 
     /**
@@ -185,8 +184,7 @@ class ProfilController extends Controller
 
         $pelamar->password = Hash::make($request->password);;
         $pelamar->save();
-
-        return redirect(route('Profilindex'))->with('success', 'Data Berhasil Di Update');
+        return redirect()->route('Profilindex')->with('success', 'Pesan keberhasilan Anda di sini.');
     }
 
     /**
