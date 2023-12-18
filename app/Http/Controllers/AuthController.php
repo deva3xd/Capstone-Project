@@ -60,7 +60,7 @@ public function register(Request $request)
     Auth::login($user);
 
     // Redirect ke halaman login dengan pesan sukses
-    return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please login.');
+    return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please login.');;
 }
 
 public function showRegistrationForm()

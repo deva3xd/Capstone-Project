@@ -42,31 +42,96 @@ class AkunPelamarController extends Controller
     {
         $validateData = validator($request->all(), [
             'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
+            'alamat' => 'required|string',
             'ttl' => 'required|date',
-            'jk' => 'required|string|max:255',
-            'no_telp' => 'required|numeric',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'pendidikan' => 'required|string|max:255',
-            'nama_institusi' => 'required|string|max:255',
-            'pengalaman_organisasi' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'sertifikasi' => 'required|string|max:255',
-            'gaji_diinginkan' => 'required|integer',
-            'lampiran' => 'required|string|max:255',
-            'cv' => 'required|string|max:255',
-            'foto' => 'required|string|max:255',
-            'npwp' => 'required|numeric',
-            'nik' => 'required|numeric',
-            'status_nikah' => 'required|string'
-        ])->validate();
+            'jk' => 'required|in:Laki-Laki,Perempuan',
+            'no_telp' => 'required|string',
+            'pendidikan' => 'required|string',
+            'nama_institusi' => 'required|string',
+            'pengalaman_organisasi' => 'nullable|string',
+            'pengalaman_kerja' => 'nullable|string',
+            'skill' => 'nullable|string',
+            'sertifikasi' => 'nullable|string',
+            'nik' => 'required|string',
+            'npwp' => 'nullable|string',
+            'gaji_diinginkan' => 'required|string',
+            'status_nikah' => 'required|string',
+            'cv' => 'required|mimes:pdf,doc,docx',
+            'lampiran' => 'required|mimes:pdf,doc,docx',
+            // 'foto' => 'required|mimes:png,jpeg,jpg',
+            ])->validate();
+            if($request->file('cv')) 
+            {
+                $cv = $request->file('cv');
+                $namaProfil = $validateData['nama'];
+                $cvName = 'CV-' . $namaProfil . '.' .$request->file('cv')->extension();
+                $cvPath = public_path() . '/landing/dokumen/cv';
+                $cv->move($cvPath, $cvName);
+            }
+    
+            if($request->file('lampiran')) 
+            {
+                $lampiran = $request->file('lampiran');
+                $namaProfil = $validateData['nama'];
+                $lampiranName = 'Lampiran-' . $namaProfil . '.' .$request->file('lampiran')->extension();
+                $lampiranPath = public_path() . '/landing/dokumen/lampiran';
+                $lampiran->move($lampiranPath, $lampiranName);
+            }
+    
+            $image = $request->file('foto');
+    
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+    
+            $destinationPath = public_path('/landing/dokumen/foto');
+    
+            // Assuming you have the uploaded image in the $request
+    $foto = $request->file('foto');
+    
+    // Get the original file name without extension
+    $namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
+    
+    // Set the image name with a prefix and the original file extension
+    $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
+    
+    // Specify the path where you want to save the resized image
+    $fotoPath = public_path('/landing/dokumen/foto');
+    
+    // Create an Intervention Image instance
+    $resize_foto = Image::make($foto->getRealPath());
+    
+    // Resize the image to, for example, 150x150 pixels
+    $resize_foto->resize(150, 150, function($constraint) {
+        $constraint->aspectRatio();
+    });
+    
+    // Save the resized image to the specified path
+    $resize_foto->save($fotoPath . '/' . $image_name);
 
-        $pelamar = new Pelamar($validateData);
+        $pelamar = new Pelamar(); 
+        $pelamar->nama = $validateData['nama'];
+        $pelamar->alamat = $validateData['alamat'];
+        $pelamar->ttl = $validateData['ttl'];
+        $pelamar->jk = $validateData['jk'];
+        $pelamar->no_telp = $validateData['no_telp'];
+        $pelamar->pendidikan = $validateData['pendidikan'];
+        $pelamar->nama_institusi = $validateData['nama_institusi'];
+        $pelamar->pengalaman_organisasi = $validateData['pengalaman_organisasi'];
+        $pelamar->pengalaman_kerja = $validateData['pengalaman_kerja'];
+        $pelamar->skill = $validateData['skill'];
+        $pelamar->sertifikasi = $validateData['sertifikasi'];
+        $pelamar->gaji_diinginkan = $validateData['gaji_diinginkan'];
+        $pelamar->nik = $validateData['nik'];
+        $pelamar->npwp= $validateData['npwp'];
+        $pelamar->status_nikah = $validateData['status_nikah'];
+        $pelamar->cv = $cvName;
+        $pelamar->lampiran = $lampiranName;
+        $pelamar->foto = $image_name;
+        $pelamar->id_user = $validateData['id_user'];
+        $pelamar->password = $validateData['password'];
+        $pelamar->password = $
         $pelamar->save();
 
-        return redirect(route('daftarPelamar'));
+            return redirect(route('Pelamar'));
     }
 
     /**
@@ -106,49 +171,98 @@ class AkunPelamarController extends Controller
     {
         $validateData = validator($request->all(), [
             'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
+            'alamat' => 'required|string',
             'ttl' => 'required|date',
-            'jk' => 'required|string|max:255',
-            'no_telp' => 'required|numeric',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'pendidikan' => 'required|string|max:255',
-            'nama_institusi' => 'required|string|max:255',
-            'pengalaman_organisasi' => 'required|string|max:255',
-            'pengalaman_kerja' => 'required|string|max:255',
-            'skill' => 'required|string|max:255',
-            'sertifikasi' => 'required|string|max:255',
-            'gaji_diinginkan' => 'required|integer',
-            'lampiran' => 'required|string|max:255',
-            'cv' => 'required|string|max:255',
-            'foto' => 'required|string|max:255',
-            'npwp' => 'required|numeric',
-            'nik' => 'required|numeric',
-            'status_nikah' => 'required|string'
-        ])->validate();
-
-        $pelamar->nama = $validateData['nama'];
-        $pelamar->alamat = $validateData['alamat'];
-        $pelamar->ttl = $validateData['ttl'];
-        $pelamar->jk = $validateData['jk'];
-        $pelamar->no_telp = $validateData['no_telp'];
-        $pelamar->email = $validateData['email'];
-        $pelamar->password = $validateData['password'];
-        $pelamar->pendidikan = $validateData['pendidikan'];
-        $pelamar->nama_institusi = $validateData['nama_institusi'];
-        $pelamar->pengalaman_organisasi = $validateData['pengalaman_organisasi'];
-        $pelamar->pengalaman_kerja = $validateData['pengalaman_kerja'];
-        $pelamar->skill = $validateData['skill'];
-        $pelamar->sertifikasi = $validateData['sertifikasi'];
-        $pelamar->gaji_diinginkan = $validateData['gaji_diinginkan'];
-        $pelamar->lampiran = $validateData['lampiran'];
-        $pelamar->cv = $validateData['cv'];
-        $pelamar->foto = $validateData['foto'];
-        $pelamar->npwp = $validateData['npwp'];
-        $pelamar->nik = $validateData['nik'];
-        $pelamar->status_nikah = $validateData['status_nikah'];
-        $pelamar->save();
-
+            'jk' => 'required|in:Laki-Laki,Perempuan',
+            'no_telp' => 'required|string',
+            'pendidikan' => 'required|string',
+            'nama_institusi' => 'required|string',
+            'pengalaman_organisasi' => 'nullable|string',
+            'pengalaman_kerja' => 'nullable|string',
+            'skill' => 'nullable|string',
+            'sertifikasi' => 'nullable|string',
+            'nik' => 'required|string',
+            'npwp' => 'nullable|string',
+            'gaji_diinginkan' => 'required|string',
+            'status_nikah' => 'required|string',
+            'cv' => 'required|mimes:pdf,doc,docx',
+            'lampiran' => 'required|mimes:pdf,doc,docx',
+            // 'foto' => 'required|mimes:png,jpeg,jpg',
+            ])->validate();
+    
+            if($request->file('cv')) 
+            {
+                $cv = $request->file('cv');
+                $namaProfil = $validateData['nama'];
+                $cvName = 'CV-' . $namaProfil . '.' .$request->file('cv')->extension();
+                $cvPath = public_path() . '/landing/dokumen/cv';
+                $cv->move($cvPath, $cvName);
+            }
+    
+            if($request->file('lampiran')) 
+            {
+                $lampiran = $request->file('lampiran');
+                $namaProfil = $validateData['nama'];
+                $lampiranName = 'Lampiran-' . $namaProfil . '.' .$request->file('lampiran')->extension();
+                $lampiranPath = public_path() . '/landing/dokumen/lampiran';
+                $lampiran->move($lampiranPath, $lampiranName);
+            }
+    
+            $image = $request->file('foto');
+    
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+    
+            $destinationPath = public_path('/landing/dokumen/foto');
+    
+            // Assuming you have the uploaded image in the $request
+    $foto = $request->file('foto');
+    
+    // Get the original file name without extension
+    $namaProfil = pathinfo($foto->getClientOriginalName(), PATHINFO_FILENAME);
+    
+    // Set the image name with a prefix and the original file extension
+    $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
+    
+    // Specify the path where you want to save the resized image
+          $fotoPath = public_path('/landing/dokumen/foto');
+    
+    // Create an Intervention Image instance
+           $resize_foto = Image::make($foto->getRealPath());
+    
+    // Resize the image to, for example, 150x150 pixels
+           $resize_foto->resize(150, 150, function($constraint) {
+                $constraint->aspectRatio();
+            });
+    
+            // Save the resized image to the specified path
+            $resize_foto->save($fotoPath . '/' . $image_name);
+    
+            $userId = auth()->user()->id;
+            $email = auth()->user()->email;
+            $password = auth()->user()->password;
+    
+            $pelamar->nama = $validateData['nama'];
+            $pelamar->alamat = $validateData['alamat'];
+            $pelamar->ttl = $validateData['ttl'];
+            $pelamar->jk = $validateData['jk'];
+            $pelamar->no_telp = $validateData['no_telp'];
+            $pelamar->pendidikan = $validateData['pendidikan'];
+            $pelamar->nama_institusi = $validateData['nama_institusi'];
+            $pelamar->pengalaman_organisasi = $validateData['pengalaman_organisasi'];
+            $pelamar->pengalaman_kerja = $validateData['pengalaman_kerja'];
+            $pelamar->skill = $validateData['skill'];
+            $pelamar->sertifikasi = $validateData['sertifikasi'];
+            $pelamar->gaji_diinginkan = $validateData['gaji_diinginkan'];
+            $pelamar->nik = $validateData['nik'];
+            $pelamar->npwp= $validateData['npwp'];
+            $pelamar->status_nikah = $validateData['status_nikah'];
+            $pelamar->cv = $cvName;
+            $pelamar->lampiran = $lampiranName;
+            $pelamar->foto = $image_name;
+            $pelamar->id_user = $userId;
+            $pelamar->email = $email;
+            $pelamar->password = $password;
+            $pelamar->save();
         return redirect(route('daftarPelamar'));
     }
 
