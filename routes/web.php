@@ -41,6 +41,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::post('/pelamar/{pelamar}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
     Route::get('/pelamar/{pelamar}/profil', 'ProfilController@edit')->name('Profiledit');
     Route::post('/pelamar/{pelamar}/profil/update', 'ProfilController@update')->name('Profilupdate');
+    Route::get('/pelamar/profil', 'RiwayatController@index')->name('Riwayat');
 });
 
 // perusahaan
