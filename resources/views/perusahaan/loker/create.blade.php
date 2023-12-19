@@ -26,7 +26,7 @@
                             <form action="{{ route('storeLoker') }}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Id Perusahaan</label>
+                                    <label class="col-sm-2 col-form-label">Nama Perusahaan</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="id_perusahaan" id="id_perusahaan" required="required">
                                             @foreach ($perusahaans as $perusahaan)

@@ -25,10 +25,16 @@
                         <div class="basic-form">
                             <form action="{{route('updateAdmin', ['id' => $admin->id])}}" method="POST">
                             @csrf
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Nama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" placeholder="nama" name="name" id="name" required="required" value="{{ $admin->name }}">
+                                </div>
+                            </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="username" name="username" id="username" required="required" value="{{ $admin->username }}">
+                                        <input type="text" class="form-control" placeholder="username" name="email" id="email" required="required" value="{{ $admin->email }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">

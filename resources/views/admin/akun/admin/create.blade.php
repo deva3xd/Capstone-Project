@@ -26,9 +26,15 @@
                             <form action="{{route('storeAdmin')}}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Username</label>
+                                    <label class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="username" name="username" id="username" required="required">
+                                        <input type="text" class="form-control" placeholder="nama" name="name" id="name" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="email" name="email" id="email" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -38,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <a href="#" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
+                                    <a href="{{route('daftarAdmin')}}" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>

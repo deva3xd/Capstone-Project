@@ -31,24 +31,8 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Alamat</th>
-                                        <th>TTL</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>No Telp</th>
                                         <th>Email</th>
                                         <th>Password</th>
-                                        <th>Pendidikan</th>
-                                        <th>Nama Institusi</th>
-                                        <th>Pengalaman Organisasi</th>
-                                        <th>Pengalaman Kerja</th>
-                                        <th>Skill</th>
-                                        <th>Sertifikasi</th>
-                                        <th>Gaji diinginkan</th>
-                                        <th>Lampiran</th>
-                                        <th>CV</th>
-                                        <th>NPWP</th>
-                                        <th>NIK</th>
-                                        <th>Status Nikah</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -56,25 +40,9 @@
                                     @foreach($pelamars as $pelamar)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $pelamar->nama }}</td>
-                                        <td>{{ $pelamar->alamat }}</td>
-                                        <td>{{ $pelamar->ttl }}</td>
-                                        <td>{{ $pelamar->jk }}</td>
-                                        <td>{{ $pelamar->no_telp }}</td>
+                                        <td>{{ $pelamar->name }}</td>
                                         <td>{{ $pelamar->email }}</td>
                                         <td>{{ $pelamar->password }}</td>
-                                        <td>{{ $pelamar->pendidikan }}</td>
-                                        <td>{{ $pelamar->nama_institusi }}</td>
-                                        <td>{{ $pelamar->pengalaman_organisasi }}</td>
-                                        <td>{{ $pelamar->pengalaman_kerja }}</td>
-                                        <td>{{ $pelamar->skill }}</td>
-                                        <td>{{ $pelamar->sertifikasi }}</td>
-                                        <td>{{ $pelamar->gaji_diinginkan }}</td>
-                                        <td>{{ $pelamar->lampiran }}</td>
-                                        <td>{{ $pelamar->cv }}</td>
-                                        <td>{{ $pelamar->npwp }}</td>
-                                        <td>{{ $pelamar->nik }}</td>
-                                        <td>{{ $pelamar->status_nikah }}</td>
                                         <td class="d-flex">
                                             <a href="{{route('editPelamar', ['id' => $pelamar->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deletePelamar', ['id' => $pelamar->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>

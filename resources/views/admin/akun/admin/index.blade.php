@@ -29,7 +29,8 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>ID.</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
                                         <th>Username</th>
                                         <th>Password</th>
                                         <th>Aksi</th>
@@ -39,7 +40,8 @@
                                     @foreach($admins as $admin)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $admin->username }}</td>
+                                        <td>{{ $admin->name }}</td>
+                                        <td>{{ $admin->email }}</td>
                                         <td>{{ $admin->password }}</td>
                                         <td class="d-flex">
                                             <a href="{{route('editAdmin', ['id' => $admin->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>

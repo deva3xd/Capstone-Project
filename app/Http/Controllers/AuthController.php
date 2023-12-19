@@ -27,7 +27,7 @@ class AuthController extends Controller
                 return redirect()->intended("/pelamar");
             } elseif($role->role == "perusahaan") {
                 return redirect()->intended("/perusahaan");
-            } else {
+            } elseif($role->role == "admin") {
                 return redirect()->intended("/admin");
             }
         }
@@ -88,10 +88,8 @@ class AuthController extends Controller
         $user->role = 'perusahaan';
         $user->save();
 
-        Auth::login($user);
-
         // Redirect ke halaman login dengan pesan sukses
-        return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please input data.');;
+        return redirect(route('login'))->with('success', 'Account created successfully! Please input data.');;
     }
 
     public function showRegistrationFormPelamar()

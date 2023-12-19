@@ -26,10 +26,13 @@
                             <form action="{{ route('updateLoker', ['id' => $loker->id]) }}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Id Perusahaan</label>
+                                    <label class="col-sm-2 col-form-label">Nama Perusahaan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="id" name="id_perusahaan"
-                                            id="id_perusahaan" required="required" value="{{ $loker->id_perusahaan }}">
+                                        <select class="form-control" name="id_perusahaan" id="id_perusahaan" required="required">
+                                            @foreach ($perusahaans as $perusahaan)
+                                                <option value="{{ $perusahaan->id }}" selected>{{ $perusahaan->nama }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">

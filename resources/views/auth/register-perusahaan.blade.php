@@ -12,7 +12,7 @@
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('registerPerusahaan') }}">
                                 @csrf
                                     <div class="form-group">
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama" required />
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama Perusahaan" required />
                                     </div>
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
