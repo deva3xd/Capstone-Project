@@ -18,15 +18,26 @@
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('Lowongan') }}">Lowongan</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="mx-0 nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Daftar</a>
-                        <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('registerPelamar')}}"><i class="fas fa-user m-1"></i>Pelamar</a>
-                            <a class="dropdown-item" href="{{route('registerPerusahaan')}}"><i class="fas fa-building m-1"></i>Perusahaan</a>
-                        </div>
-                    </li>
+                    @if(auth()->user()->role=="pelamar")
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+                            <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('Profilindex') }}"><i class="fas fa-user m-1"></i>Profil</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
+                            </div>
+                        </li>
+                    @else
+                        <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="mx-0 nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Daftar</a>
+                            <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('registerPelamar')}}"><i class="fas fa-user m-1"></i>Pelamar</a>
+                                <a class="dropdown-item" href="{{route('registerPerusahaan')}}"><i class="fas fa-building m-1"></i>Perusahaan</a>
+                            </div>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
