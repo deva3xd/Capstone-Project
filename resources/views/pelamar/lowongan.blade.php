@@ -52,7 +52,7 @@
                 <div class="col-lg-4">
                     <div class="sidebar-widget search  mb-3 ">
                         <h5>Cari Perusahaan</h5>
-                        <label><input type="search" class="form-control form-control-sm" placeholder="nama perusahaan" id="search" name="search" onfocus="this.value=''"></label>
+                        <label><input type="search" class="form-control form-control-sm" placeholder="Cari Nama Perusahaan" id="search" name="search" onfocus="this.value=''"></label>
                     </div>
                     <div class="sidebar-widget category mb-3">
                         <h5 class="mb-4">Kategori</h5>

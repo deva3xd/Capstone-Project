@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<!-- theme meta -->
 	<meta name="theme-name" content="orbitor" />
-	<title>LokerTI.id - {{ $title }}</title>
+	<title>LokerTI.id</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('landing/images/favicon.png') }}" />
 	<!-- bootstrap.min css -->

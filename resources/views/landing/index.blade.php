@@ -53,7 +53,7 @@
                             IT</span>
                         <h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h2>
                         <p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
-                        <a href="#" class="btn btn-main">cek lowongan<i class="fa fa-angle-right ml-2"></i></a>
+                        <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-main">cek lowongan<i class="fa fa-angle-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
