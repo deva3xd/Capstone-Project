@@ -14,7 +14,7 @@
 // Landing Page //
 Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@cariLowongan')->name('Lowongan');
-Route::get('//lowongan/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
+Route::get('/lowongan/{lowongan}/detail-lowongan', 'LandingPageController@detailLowongan')->name('DetailLowongan');
 
 //login regis
 Route::get('/login', 'AuthController@showLoginForm')->name('login');

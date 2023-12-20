@@ -9,7 +9,7 @@ class PelamarController extends Controller
 {
     public function index(){
         $title = 'Home';
-        return view('landing.index', ['title' => $title]);
+        return view('pelamar.index', ['title' => $title]);
     }
 
     public function cariLowongan(){

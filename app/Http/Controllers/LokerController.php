@@ -35,9 +35,8 @@ class LokerController extends Controller
      */
     public function create()
     {
-        $perusahaans = Perusahaan::all();
         $title = 'Tambah Loker';
-        return view('perusahaan.loker.create', ['title' => $title, 'perusahaans' => $perusahaans]);
+        return view('perusahaan.loker.create', ['title' => $title]);
     }
 
     /**

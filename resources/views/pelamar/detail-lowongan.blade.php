@@ -26,28 +26,32 @@
                     <div class="row">
                         <div class="col-lg-12 mb-5">
                             <div class="single-blog-item">
-                                    <img src="images/blog/3.jpg" alt="" class="img-fluid rounded">
-
-                                    <div class="blog-item-content mt-4">
-                                        <h2 class="mt-3 mb-3 text-md text-uppercase" >{{ $loker->kategori }}</h2>
-                                        <div class="blog-item-meta mb-5">
-                                            <span class="text-muted text-capitalize mr-3"><i class="fa fa-building mr-2"></i>{{ $loker->perusahaan->nama }}</span>
-                                            <span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
-                                            <span class="text-muted text-capitalize mr-3"><i class="ti-time mr-1"></i>{{$year. "-" .$month. "-" .$day}}</span>
-                                        </div>
-                                        <h3>Deskripsi Pekerjaan</h3>
-                                        <p>{{ $loker->deskripsi }}</p><br>
-                                        <h3>Syarat Pendaftaran</h3>
-                                        <li>Minimal Jenjang/Lulusan : {{ $loker->lulusan }}</li>
-                                        <li>{{ $loker->syarat }}</li><br>
-                                        <h3>Posisi</h3>
-                                        <p>{{ $loker->posisi }}</p><br>
-                                        <h3>Alamat Perusahaan</h3>
-                                        <p>{{ $loker->alamat }}</p>
+                                <img src="images/blog/3.jpg" alt="" class="img-fluid rounded">
+                                <div class="blog-item-content mt-4">
+                                    <h2 class="mt-3 mb-3 text-md text-uppercase">{{ $loker->kategori }}</h2>
+                                    <div class="blog-item-meta mb-5">
+                                        <span class="text-muted text-capitalize mr-3"><i class="fa fa-building mr-2"></i>fix
+                                            this</span>
+                                        <span class="text-muted text-capitalize mr-3"><i
+                                                class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
+                                        <span class="text-muted text-capitalize mr-3"><i
+                                                class="ti-time mr-1"></i>{{ $year . '-' . $month . '-' . $day }}</span>
                                     </div>
+                                    <h3>Deskripsi Pekerjaan</h3>
+                                    <p>{{ $loker->deskripsi }}</p><br>
+                                    <h3>Syarat Pendaftaran</h3>
+                                    <li>Minimal Jenjang/Lulusan : {{ $loker->lulusan }}</li>
+                                    <li>{{ $loker->syarat }}</li><br>
+                                    <h3>Posisi</h3>
+                                    <p>{{ $loker->posisi }}</p><br>
+                                    <h3>Alamat Perusahaan</h3>
+                                    <p>{{ $loker->alamat }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{route('pelamarCariLowongan')}}" class="btn btn-small btn-danger">Kembali</a>
+                    <a href="blog-single.html" class="btn btn-small btn-success">Daftar</a>
                 </div>
             </div>
         </div>

@@ -41,7 +41,6 @@
                                         </div>
                                         <a href="{{ route('pelamarDetailLowongan', ['id' => $loker->id]) }}"
                                             class="btn btn-small btn-main">Info Detail</a>
-                                        <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                     </div>
                                 </div>
                             </div>

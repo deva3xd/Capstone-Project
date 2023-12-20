@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>LokerTI.id - {{ $title }}</title>
     <!-- theme meta -->
-    <meta name="theme-name" content="quixlab" />    <!-- Data Table -->
+    <meta name="theme-name" content="quixlab" /> <!-- Data Table -->
     <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/favicon.png') }}" />
-    <link rel="stylesheet" href="{{asset('dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css') }}">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="{{asset('dashboard/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
 </head>
 
 <body>
@@ -50,7 +50,26 @@
                     </div>
                 </div>
                 <div class="header-right d-flex align-items-center">
-                <a class="btn btn-danger" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');">Keluar</a>
+                    <span class="text-uppercase mr-1">
+                        {{ Auth::user()->name }}
+                    </span>
+                    <li class="icons dropdown">
+                        <div class="user-img c-pointer position-relative" data-toggle="dropdown">
+                            <span class="activity active"></span>
+                            <img src="images/user/1.png" height="40" width="40" alt="">
+                        </div>
+                        <div class="drop-down dropdown-profile dropdown-menu">
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('profilePerusahaan')}}"><i class="icon-user"></i> <span>Profile</span></a>
+                                    </li>
+                                    <hr class="my-2">
+                                    <li><a href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="icon-logout"></i> <span>Keluar</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                 </div>
             </div>
         </div>
@@ -80,7 +99,7 @@
             <p>Copyright © Designed & Developed by Group 5 Capstone Project MSIB Gamelab.id Batch 5 2023
             </p>
         </div>
-        </div>
+    </div>
     <!-- Footer end -->
     </div>
     <!-- Main wrapper end -->
@@ -88,20 +107,20 @@
     @include('sweetalert::alert')
 
     <!-- Scripts -->
-    <script src="{{asset('dashboard/plugins/common/common.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/custom.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/settings.js')}}"></script>
-    <script src="{{asset('dashboard/js/styleSwitcher.js')}}"></script>
-    <script src="{{asset('dashboard/plugins/highlightjs/highlight.pack.min.js')}}"></script>
+    <script src="{{ asset('dashboard/plugins/common/common.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/custom.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/settings.js') }}"></script>
+    <script src="{{ asset('dashboard/js/styleSwitcher.js') }}"></script>
+    <script src="{{ asset('dashboard/plugins/highlightjs/highlight.pack.min.js') }}"></script>
     <script>
         hljs.initHighlightingOnLoad();
     </script>
 
     <!-- Data Table -->
-    <script src="{{asset('dashboard/js/dashboard/dashboard-1.js')}}"></script>
-    <script src="{{asset('dashboard/plugins/tables/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('dashboard/plugins/tables/js/datatable/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('dashboard/plugins/tables/js/datatable-init/datatable-basic.min.js')}}"></script>
+    <script src="{{ asset('dashboard/js/dashboard/dashboard-1.js') }}"></script>
+    <script src="{{ asset('dashboard/plugins/tables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('dashboard/plugins/tables/js/datatable/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('dashboard/plugins/tables/js/datatable-init/datatable-basic.min.js') }}"></script>
     <script>
         (function($) {
             "use strict"

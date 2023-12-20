@@ -18,7 +18,7 @@
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('Profilindex') }}"><i
                                     class="fas fa-user m-1"></i>Profil</a>

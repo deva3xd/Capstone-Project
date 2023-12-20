@@ -16,36 +16,29 @@
                         <a class="nav-link" href="{{ route('LandingPage') }}">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#tentang_kami">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#tentang_kami">Tentang Kami</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('Lowongan') }}">Lowongan</a></li>
-                    @if(auth()->user()->role=="pelamar")
-                        <li class="nav-item dropdown">
-                            <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
-                            <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('Profilindex') }}"><i class="fas fa-user m-1"></i>Profil</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
-                            </div>
-                        </li>
-                    @else
-                    <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="mx-0 nav-link nav-link-button border rounded" href="#" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Daftar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('registerPelamar') }}"><i class="fas fa-user m-1"></i>Pelamar</a>
-                            <a class="dropdown-item" href="{{ route('registerPerusahaan') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
+                            <a class="dropdown-item" href="{{ route('registerPelamar') }}"><i
+                                    class="fas fa-user m-1"></i>Pelamar</a>
+                            <a class="dropdown-item" href="{{ route('registerPerusahaan') }}"><i
+                                    class="fas fa-building m-1"></i>Perusahaan</a>
                         </div>
                     </li>
-                    @endif
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <section class="page-title bg-1">
         <div class="container">
             <div class="row">
@@ -83,9 +76,8 @@
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
                                                 </a>{{ $loker->alamat }}</span><br />
                                         </div>
-                                        <a href="{{ route('pelamarDetailLowongan', ['id' => $loker->id]) }}"
+                                        <a href="{{ route('DetailLowongan', ['id' => $loker->id]) }}"
                                             class="btn btn-small btn-main">Info Detail</a>
-                                        <a href="blog-single.html" class="btn btn-small btn-success ">Daftar</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +88,8 @@
                 <div class="col-lg-4">
                     <div class="sidebar-widget search  mb-3 ">
                         <h5>Cari Perusahaan</h5>
-                        <label><input type="search" class="form-control form-control-sm" placeholder="nama perusahaan" id="search" name="search" onfocus="this.value=''"></label>
+                        <label><input type="search" class="form-control form-control-sm" placeholder="nama perusahaan"
+                                id="search" name="search" onfocus="this.value=''"></label>
                     </div>
                     <div class="sidebar-widget category mb-3">
                         <h5 class="mb-4">Kategori</h5>
@@ -143,12 +136,13 @@
 @endsection
 
 @section('addJavascript')
-<script> //fix ini
-$(document).ready(function() {
-    $('#search').on('keyup', function() {
-        var query = $(this).val();
-        alert(query);
-    }
-}
-</script>
+    <script>
+        //fix ini
+        $(document).ready(function() {
+                    $('#search').on('keyup', function() {
+                            var query = $(this).val();
+                            alert(query);
+                        }
+                    }
+    </script>
 @endsection

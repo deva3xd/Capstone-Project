@@ -20,13 +20,15 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('Profilindex') }}"><i class="fas fa-user m-1"></i>Profil</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
+                            <a class="dropdown-item" href="{{ route('Profilindex') }}"><i
+                                    class="fas fa-user m-1"></i>Profil</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i
+                                    class="fas fa-sign-out-alt m-1"></i>Keluar</a>
                         </div>
-                        </li>
-                    @else
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,7 +44,8 @@
                             IT</span>
                         <h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h2>
                         <p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
-                        <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-main">cek lowongan<i class="fa fa-angle-right ml-2"></i></a>
+                        <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-main">cek lowongan<i
+                                class="fa fa-angle-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -233,7 +236,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..." disabled />
+                                    <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..."
+                                        disabled />
                                 </div>
 
                                 <div class="form-group">
