@@ -9,13 +9,10 @@ class Pelamar extends Model
     protected $table = 'pelamar';
 
     protected $fillable = [
-        'nama',
         'alamat',
         'ttl',
         'jk',
         'no_telp',
-        'email',
-        'password',
         'pendidikan',
         'nama_institusi',
         'pengalaman_organisasi',
@@ -32,6 +29,6 @@ class Pelamar extends Model
     ];
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_user', 'id');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }

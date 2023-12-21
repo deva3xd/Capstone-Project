@@ -24,8 +24,7 @@ class ProfilController extends Controller
         return view('pelamar.profil.form-pribadi', [
             'pelamars' => $pelamars,
             ['images_name' => $images_name],
-            'users' => $users,
-            'title' => $title
+            'users' => $users
         ]);
     }
 
@@ -37,7 +36,7 @@ class ProfilController extends Controller
     public function create()
     {
         $title = 'Buat Profil';
-        return view('pelamar.profil.form-pribadi-create');   
+        return view('pelamar.profil.form-pribadi-create', ['title' => $title]);   
     }
 
     /**
