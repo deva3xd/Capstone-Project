@@ -37,27 +37,31 @@
                                             <div class="card-body">
                                                 <div class="media align-items-center mb-4">
                                                     <img class="mr-3"
-                                                        src="{{ url('dokumen/logo/' . $perusahaan[2]->logo) }}" width="150"
+                                                        src="{{ url('dokumen/logo/' . $perusahaan[0]->logo) }}" width="150"
                                                         alt="">
                                                     <div class="media-body">
                                                         <h3 class="mb-0 text-uppercase">{{ Auth::user()->name }}</h3>
-                                                        @if ($perusahaan[2]->id_users == Auth::user()->id)
-                                                            <p class="text-muted mb-0">{{ $perusahaan[2]->alamat }}</p>
+                                                        @if ($perusahaan[0]->id_users == Auth::user()->id)
+                                                            <p class="text-muted mb-0">{{ $perusahaan[0]->alamat }}</p>
                                                         @else
                                                             <p class="text-muted mb-0">Lengkapi profil terlebih dahulu</p>
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <h4>Deskripsi</h4>
-                                                <p class="text-muted">{{ $perusahaan[2]->deskripsi }}</p>
-                                                <ul class="card-profile__info">
-                                                    <li class="mb-1"><strong class="text-dark mr-4">No Telepon</strong>
-                                                        <span>{{ $perusahaan[2]->no_telp }}</span>
-                                                    </li>
-                                                    <li><strong class="text-dark mr-4">Email</strong>
-                                                        <span>{{ $perusahaan[2]->email }}</span>
-                                                    </li>
-                                                </ul>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                    <h5>Deskripsi</h5>
+                                                    <p class="text-muted" align="justify">{{ $perusahaan[0]->deskripsi }}</p>
+                                                    <h5>No Telepon</h5>
+                                                    <p class="text-muted">{{ $perusahaan[0]->no_telp }}</p>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <h5>NPWP</h5>
+                                                        <p class="text-muted">{{ $perusahaan[0]->npwp }}</p></p>
+                                                        <h5>Email</h5>
+                                                        <p class="text-muted">{{ $perusahaan[0]->email }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +108,14 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Deskripsi</label>
                                                     <div class="col-sm-10">
-                                                        <textarea class="form-control" h-150px" rows="6" name="deskripsi" id="deskripsi" placeholder="deskripsi"></textarea>
+                                                        <textarea class="form-control h-150px" rows="6" name="deskripsi" id="deskripsi" placeholder="deskripsi"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Jumlah Pegawai</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="number" class="form-control" placeholder="jumlah pegawai"
+                                                            name="jumlah_pegawai" id="jumlah_pegawai" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
