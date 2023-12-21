@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        @foreach ($lokers as $loker)
+                        @foreach ($lokers as $loker) 
                             <div class="col-lg-12 col-md-6 mb-3 border ">
                                 <div class="blog-item p-1 mr-1">
                                     <div class="blog-thumb py-2">
