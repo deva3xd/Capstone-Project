@@ -66,7 +66,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="widget widget-contact mb-5 mb-lg-0">
 						<h4 class="text-capitalize mb-4">Kontak Kami</h4>
-						<h6><i class="ti-headphone-alt mr-3"></i><span class="text-white-50">example@gmail.com</span></h6>
+						<h6><i class="ti-headphone-alt mr-3"></i><span class="text-white-50">loker_it@gmail.com</span></h6>
 						<h6><i class="ti-mobile mr-3"></i><span class="text-white-50">+62-812-3456-7890</span></h6>
 						<ul class="list-inline footer-socials mt-5">
 							<li class="list-inline-item"><a href="#"><i class="ti-facebook mr-2"></i></a></li>

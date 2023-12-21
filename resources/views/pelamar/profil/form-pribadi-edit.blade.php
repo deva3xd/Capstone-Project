@@ -23,7 +23,7 @@
                             @csrf
                             <div class="form-group m-3">
                                 <label for="nama" class="p-1">Nama</label>
-                                <input name="nama" id="nama" required type="text" value="{{ $pelamar->nama }}"
+                                <input name="nama" id="nama" required type="text" value="{{ $pelamar->users->nama }}"
                                     class="form-control @error('nama')is-invalid  @enderror">
                                     @error('nama')
                                 <div class="invalid-feedback">
