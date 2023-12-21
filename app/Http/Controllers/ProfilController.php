@@ -165,6 +165,7 @@ class ProfilController extends Controller
      */
     public function edit(Pelamar $pelamar)
     {
+        $title = 'Edit Profil';
         return view('pelamar.profil.form-pribadi-edit', [
             'pelamar' => $pelamar,
         ]);
@@ -172,8 +173,10 @@ class ProfilController extends Controller
 
     public function Gantipassword(Pelamar $pelamar)
     {
+        $title = 'Ganti Password';
         return view('pelamar.profil.form-akun-edit', [
             'pelamar' => $pelamar,
+            'title' => $title
         ]);
     }
 

@@ -95,4 +95,11 @@ Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
     Route::get('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@edit')->name('editPelamar');
     Route::post('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@update')->name('updatePelamar');
     Route::get('/admin/account/pelamar/{pelamar}/delete', 'AkunPelamarController@destroy')->name('deletePelamar');
+
+    Route::get('/admin/dataperusahaan', 'DataPerusahaanController@index')->name('daftarDataPerusahaan');
+    Route::get('/admin/dataperusahaan/create', 'DataPerusahaanController@create')->name('createDataPerusahaan');
+    Route::post('/admin/dataperusahaan/store', 'DataPerusahaanController@store')->name('storeDataPerusahaan');
+    Route::get('/admin/dataperusahaan{perusahaan}/edit', 'DataPerusahaanController@edit')->name('editDataPerusahaan');
+    Route::post('/admin/dataperusahaan/{perusahaan}/update', 'DataPerusahaanController@update')->name('updateDataPerusahaan');
+    Route::get('/admin/dataperusahaan/{perusahaan}/delete', 'DataPerusahaanController@destroy')->name('deleteDataPerusahaan');
 });

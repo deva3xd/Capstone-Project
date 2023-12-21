@@ -29,7 +29,7 @@
                                         <img  src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
                                             class="img-fluid rounded" width="180">
                                     </div>
-                                    <div class="blog-item-content pb-2">
+                                    <div class="blog-item-content pb-1" >
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>
                                         <div class="blog-item-meta mb-3">
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
