@@ -32,11 +32,11 @@
                                     <div class="blog-item-content pb-1" >
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>
                                         <div class="blog-item-meta mb-3">
-                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
-                                                </a>{{ $loker->kategori }}</span><br />
-                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Posisi:</b>
                                                 </a>{{ $loker->posisi }}</span><br />
-                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Batas Lamaran:</b>
+                                                </a>{{ $loker->batas_lamaran }}</span><br />
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Deskripsi:</b>
                                                 </a>{{ $loker->alamat }}</span><br />
                                         </div>
                                         <a href="{{ route('pelamarDetailLowongan', ['id' => $loker->id]) }}"

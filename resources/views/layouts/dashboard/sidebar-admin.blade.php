@@ -24,11 +24,6 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="icon-user"></i><span class="nav-text">Profile</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>

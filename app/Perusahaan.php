@@ -14,7 +14,7 @@ class Perusahaan extends Model
         'updatedcont_at',
     ];
 
-    public function users() {
-        return $this->hasOne('App\Users', 'id');
+    public function Loker() {
+        return $this->hasOne(Loker::class, 'id');
     }
 }
