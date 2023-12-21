@@ -114,14 +114,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Jumlah Pegawai</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="number" class="form-control"
-                                                            placeholder="jumlah pegawai" name="jumlah_pegawai"
-                                                            id="jumlah_pegawai" required />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">NPWP</label>
                                                     <div class="col-sm-10">
                                                         <input type="number" class="form-control" placeholder="npwp"

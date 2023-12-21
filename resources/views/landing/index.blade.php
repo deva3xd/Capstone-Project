@@ -237,7 +237,7 @@
 
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..."
-                                        disabled />
+                                        readonly />
                                 </div>
 
                                 <div class="form-group">

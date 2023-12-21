@@ -58,10 +58,9 @@ class ProfilController extends Controller
             'nama_institusi' => 'required|string',
             'pengalaman_organisasi' => 'nullable|string',
             'pengalaman_kerja' => 'nullable|string',
-            'skill' => 'nullable|string',
+            'skill' => 'required|string',
             'sertifikasi' => 'nullable|string',
             'nik' => 'required|string',
-            'npwp' => 'nullable|string',
             'gaji_diinginkan' => 'required|string',
             'status_nikah' => 'required|string',
             'cv' => 'required|mimes:pdf,doc,docx',
@@ -133,7 +132,6 @@ class ProfilController extends Controller
         $pelamar->sertifikasi = $validateData['sertifikasi'];
         $pelamar->gaji_diinginkan = $validateData['gaji_diinginkan'];
         $pelamar->nik = $validateData['nik'];
-        $pelamar->npwp= $validateData['npwp'];
         $pelamar->status_nikah = $validateData['status_nikah'];
         $pelamar->cv = $cvName;
         $pelamar->lampiran = $lampiranName;
@@ -213,7 +211,6 @@ class ProfilController extends Controller
         'skill' => 'nullable|string',
         'sertifikasi' => 'nullable|string',
         'nik' => 'required|string',
-        'npwp' => 'nullable|string',
         'gaji_diinginkan' => 'required|string',
         'status_nikah' => 'required|string',
         'cv' => 'required|mimes:pdf,doc,docx',
@@ -285,7 +282,6 @@ $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
         $pelamar->sertifikasi = $validateData['sertifikasi'];
         $pelamar->gaji_diinginkan = $validateData['gaji_diinginkan'];
         $pelamar->nik = $validateData['nik'];
-        $pelamar->npwp= $validateData['npwp'];
         $pelamar->status_nikah = $validateData['status_nikah'];
         $pelamar->cv = $cvName;
         $pelamar->lampiran = $lampiranName;

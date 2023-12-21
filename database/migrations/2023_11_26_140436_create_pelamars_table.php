@@ -17,7 +17,7 @@ class CreatePelamarsTable extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->string('nama');
-            $table->text('alamat')->unique();
+            $table->text('alamat');
             $table->date('ttl');
             $table->string('jk');
             $table->bigInteger('no_telp');
@@ -25,15 +25,14 @@ class CreatePelamarsTable extends Migration
             $table->string('password');
             $table->string('pendidikan');
             $table->string('nama_institusi');
-            $table->text('pengalaman_organisasi');
-            $table->text('pengalaman_kerja');
+            $table->text('pengalaman_organisasi')->nullable();
+            $table->text('pengalaman_kerja')->nullable();
             $table->text('skill');
-            $table->string('sertifikasi');
+            $table->string('sertifikasi')->nullable();
             $table->integer('gaji_diinginkan');
             $table->string('lampiran');
             $table->string('cv');
             $table->string('foto');
-            $table->bigInteger('npwp');
             $table->bigInteger('nik');
             $table->string('status_nikah');
             $table->timestamps();
