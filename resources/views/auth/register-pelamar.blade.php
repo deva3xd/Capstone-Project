@@ -7,7 +7,7 @@
                 <div class="col-xl-6">
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
-                            <div class="card-body pt-5" style="border: 1px solid #7571f9; border-radius: 15px">
+                            <div class="card-body pt-5" style="border: 1px solid #7571f9; border-radius: 10px">
                                 <h4 class="text-center">Daftar Pelamar</h4>
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('registerPelamar') }}">
                                 @csrf

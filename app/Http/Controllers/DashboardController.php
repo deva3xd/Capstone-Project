@@ -8,6 +8,7 @@ use App\Wawancara;
 use App\Pelamar;
 use App\Admin;
 use App\Perusahaan;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -35,7 +36,36 @@ class DashboardController extends Controller
     }
 
     public function profilePerusahaan() {
+        $perusahaan = Perusahaan::all();
         $title = 'Profile';
-        return view('perusahaan.profile', ['title' => $title]);
+        return view('perusahaan.profile', ['title' => $title, 'perusahaan' => $perusahaan]);
+    }
+
+    public function storeProfilePerusahaan(Request $request) {
+        $validateData = validator($request->all(), [
+            'id_users' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'no_telp' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'npwp' => 'required|string|max:255',
+            'logo' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+        ])->validate();
+
+       	// menyimpan data file yang diupload ke variabel $file
+		$file = $request->file('logo');
+
+		$nama_file = $file->getClientOriginalName();
+
+      	// isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'dokumen/logo';
+		$file->move($tujuan_upload, $nama_file);
+
+        $perusahaan = new Perusahaan($validateData);
+        $perusahaan->logo = $nama_file;
+        $perusahaan->save();
+
+        return redirect(route('profilePerusahaan'));
     }
 }

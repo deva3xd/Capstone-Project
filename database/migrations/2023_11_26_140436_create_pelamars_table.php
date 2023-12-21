@@ -17,7 +17,7 @@ class CreatePelamarsTable extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->string('nama');
-            $table->text('alamat');
+            $table->text('alamat')->unique();
             $table->date('ttl');
             $table->string('jk');
             $table->bigInteger('no_telp');
