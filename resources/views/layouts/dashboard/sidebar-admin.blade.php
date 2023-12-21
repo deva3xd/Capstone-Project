@@ -18,6 +18,14 @@
                 </ul>
             </li>
             <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon-pencil"></i><span class="nav-text">Kelola Data</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{route('daftarDataPerusahaan')}}">Perusahaan</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#">
                     <i class="icon-notebook"></i><span class="nav-text">Loker</span>
                 </a>

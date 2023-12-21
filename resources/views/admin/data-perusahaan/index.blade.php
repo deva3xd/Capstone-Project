@@ -15,15 +15,15 @@
         </div>
     </div>
     <!-- /.content-header -->
-    
+
     <!-- Content body start -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                    <div class="card">
-                        <div class="card-header text-right pb-0" style="padding-top: 1.88rem;">
-                            <a href="{{route('createPelamar')}}" class="btn btn-primary" role="button">Tambah Data</a>
-                        </div>
+                <div class="card">
+                    <div class="card-header text-right pb-0" style="padding-top: 1.88rem;">
+                        <a href="{{ route('createDataPerusahaan') }}" class="btn btn-primary" role="button">Tambah Data</a>
+                    </div>
                     <div class="card-body pt-0">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
@@ -31,23 +31,45 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama</th>
+                                        <th>Alamat</th>
+                                        <th>No Telpon</th>
                                         <th>Email</th>
                                         <th>Password</th>
+                                        <th>Deskripsi</th>
+                                        <th>Jumlah Pegawai</th>
+                                        <th>NPWP</th>
+                                        <th>Logo</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($pelamars as $pelamar)
-                                    <tr>
-                                        <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $pelamar->name }}</td>
-                                        <td>{{ $pelamar->email }}</td>
-                                        <td>{{ $pelamar->password }}</td>
-                                        <td class="d-flex">
-                                            <a href="{{route('editPelamar', ['id' => $pelamar->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
-                                            <a onclick="confirmDelete(this)" data-url="{{route('deletePelamar', ['id' => $pelamar->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($perusahaans as $perusahaan)
+                                        <tr>
+                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $perusahaan->nama }}</td>
+                                            <td>{{ $perusahaan->alamat }}</td>
+                                            <td>{{ $perusahaan->no_telp }}</td>
+                                            <td>{{ $perusahaan->email }}</td>
+                                            <td>{{ $perusahaan->password }}</td>
+                                            <td>{{ $perusahaan->deskripsi }}</td>
+                                            <td>{{ $perusahaan->jumlah_pegawai }}</td>
+                                            <td>{{ $perusahaan->npwp }}</td>
+                                            <td>
+                                                @if ($perusahaan->logo)
+                                                    <img src="{{ asset('dokumen/logo/' . $perusahaan->logo) }}" alt="Logo Perusahaan">
+                                                @else
+                                                    Tidak ada logo
+                                                @endif
+                                            </td>
+                                            <td class="d-flex">
+                                                <a href="{{ route('editDataPerusahaan', ['id' => $perusahaan->id]) }}"
+                                                    class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
+                                                <a onclick="confirmDelete(this)"
+                                                    data-url="{{ route('deletePelamar', ['id' => $perusahaan->id]) }}"
+                                                    class="btn btn-danger btn-sm text-white border"
+                                                    role="button border">Hapus</a>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -60,20 +82,20 @@
     <!-- Content body end -->
 @endsection
 @section('addJavascript')
-<script src="{{ asset('js/sweetalert.min.js') }}"></script>
-<script>
-    confirmDelete = function(button) {
-        var url = $(button).data('url');
-        swal({
-            'title' : 'Konfirmasi Hapus',
-            'text' : 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
-            'dangermode' : true,
-            'buttons' : true
-        }).then(function(value) {
-            if(value) {
-                window.location = url;
-            }
-        })
-    }
-</script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script>
+        confirmDelete = function(button) {
+            var url = $(button).data('url');
+            swal({
+                'title': 'Konfirmasi Hapus',
+                'text': 'Apakah Kamu Yakin Ingin Menghapus Data Ini?',
+                'dangermode': true,
+                'buttons': true
+            }).then(function(value) {
+                if (value) {
+                    window.location = url;
+                }
+            })
+        }
+    </script>
 @endsection
