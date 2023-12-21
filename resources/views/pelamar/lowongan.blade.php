@@ -22,12 +22,12 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        @foreach ($lokers as $loker) 
-                            <div class="col-lg-12 col-md-6 mb-3 border ">
+                        @foreach ($lokers as $loker)
+                            <div class="col-lg-12 col-md-6 mb-3 px-0 border">
                                 <div class="blog-item p-1 mr-1">
-                                    <div class="blog-thumb py-2">
-                                        <img src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
-                                            class="img-fluid rounded">
+                                    <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
+                                        <img  src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
+                                            class="img-fluid rounded" width="180">
                                     </div>
                                     <div class="blog-item-content pb-2">
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>

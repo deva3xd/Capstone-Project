@@ -24,7 +24,8 @@ class ProfilController extends Controller
         return view('pelamar.profil.form-pribadi', [
             'pelamars' => $pelamars,
             ['images_name' => $images_name],
-            'users' => $users
+            'users' => $users,
+            'title' => $title
         ]);
     }
 

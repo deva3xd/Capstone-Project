@@ -37,25 +37,25 @@
                                             <div class="card-body">
                                                 <div class="media align-items-center mb-4">
                                                     <img class="mr-3"
-                                                        src="{{ url('dokumen/logo/' . $perusahaan[2]->logo) }}" width="150"
+                                                        src="{{ url('dokumen/logo/' . $perusahaan[0]->logo) }}" width="150"
                                                         alt="">
                                                     <div class="media-body">
                                                         <h3 class="mb-0 text-uppercase">{{ Auth::user()->name }}</h3>
-                                                        @if ($perusahaan[2]->id_users == Auth::user()->id)
-                                                            <p class="text-muted mb-0">{{ $perusahaan[2]->alamat }}</p>
+                                                        @if ($perusahaan[0]->id_users == Auth::user()->id)
+                                                            <p class="text-muted mb-0">{{ $perusahaan[0]->alamat }}</p>
                                                         @else
                                                             <p class="text-muted mb-0">Lengkapi profil terlebih dahulu</p>
                                                         @endif
                                                     </div>
                                                 </div>
                                                 <h4>Deskripsi</h4>
-                                                <p class="text-muted">{{ $perusahaan[2]->deskripsi }}</p>
+                                                <p class="text-muted">{{ $perusahaan[0]->deskripsi }}</p>
                                                 <ul class="card-profile__info">
                                                     <li class="mb-1"><strong class="text-dark mr-4">No Telepon</strong>
-                                                        <span>{{ $perusahaan[2]->no_telp }}</span>
+                                                        <span>{{ $perusahaan[0]->no_telp }}</span>
                                                     </li>
                                                     <li><strong class="text-dark mr-4">Email</strong>
-                                                        <span>{{ $perusahaan[2]->email }}</span>
+                                                        <span>{{ $perusahaan[0]->email }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
