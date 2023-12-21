@@ -21,7 +21,7 @@
                         <form enctype="multipart/form-data" action="{{ route('Profilstore') }}" method="POST">
                             @csrf
                             <div class="form-group m-3">
-                                <label for="nama" class="p-1">Nama</label>
+                                <label for="nama" class="p-1">Nama lengkap</label>
                                 <input name="nama" id="nama" required type="text"
                                     class="form-control @error('nama')is-invalid  @enderror">
                                     @error('nama')
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="form-group m-3">
-                                <label for="jk" class="p-1">Jenis Kelamin</label>
+                                <label for="jk" class="p-1">Jenis Kelamin :</label>
                                 <div class="form-check form-check-inline m-3">
                                     <input class="form-check-input" required type="radio" name="jk" id="jk_laki"
                                         value="Laki-Laki">
@@ -69,7 +69,7 @@
 
                             <div class="form-group m-3">
                               <label for="status_nikah" class="p-1">Status Nikah</label>
-                              <select class="form-select @error('status_nikah')is-invalid  @enderror" name="status_nikah" id="status_nikah" aria-label="Default select example">
+                              <select class="form-control form-select @error('status_nikah')is-invalid  @enderror" name="status_nikah" id="status_nikah" aria-label="Default select example">
                                   <option selected>Pilih</option>
                                   <option value="Belum Menikah">Belum Menikah</option>
                                   <option value="Sudah Menikah">Sudah Menikah</option>
@@ -86,7 +86,7 @@
                           
 
                             <div class="form-group m-3">
-                                <label for="no_telp" class="p-1">No Telpon</label>
+                                <label for="no_telp" class="p-1">No Telepon</label>
                                 <input name="no_telp" required id="no_telp" type="text"
                                     class="form-control @error('no_telp')is-invalid  @enderror">
                                     @error('no_telp')
@@ -98,9 +98,15 @@
 
                             <div class="form-group m-3">
                                 <label for="pendidikan" class="p-1">Pendidikan Akhir</label>
-                                <input name="pendidikan" required id="pendidikan" type="text"
-                                    class="form-control @error('pendidikan')is-invalid  @enderror">
-                                    @error('pendidikan')
+                                	<select class="form-control form-select @error('pendidikan')is-invalid  @enderror" name="pendidikan" id="pendidikan" aria-label="Default select example">
+                                  <option selected>Pilih</option>
+                                  <option value="SMA/SMK/Sederajat">SMA/SMK/Sederajat</option>
+                                  <option value="D3">D3</option>
+                                  <option value="D4">D4</option>
+                                  <option value="S1">S1</option>
+                                  <option value="S2">S2</option>
+                              </select>
+			                @error('pendidikan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -108,7 +114,7 @@
                             </div>
 
                             <div class="form-group m-3">
-                                <label for="nama_institusi" class="p-1">Nama Institusi</label>
+                                <label for="nama_institusi" class="p-1">Nama Instansi Terakhir</label>
                                 <input name="nama_institusi" required id="nama_institusi" type="text"
                                     class="form-control @error('nama_institusi')is-invalid  @enderror"">
                                     @error('nama_institusi')
@@ -120,12 +126,7 @@
 
                             <div class="form-floating m-3">
                                 <label for="pengalaman_organisasi" class="p-1">Pengalaman Organisasi</label>
-                                <textarea name="pengalaman_organisasi" required class="form-control @error('pengalaman_organisasi')is-invalid  @enderror" id="pengalaman_organisasi" style="width"></textarea>
-                                @error('pengalaman_organisasi')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
+                                <textarea name="pengalaman_organisasi" class="form-control" id="pengalaman_organisasi" style="width"></textarea>                        
                             </div>
 
                             <div class="form-floating m-3">
@@ -139,7 +140,7 @@
                               </div>
 
                             <div class="form-floating m-3">
-                                <label for="skill" class="p-1">Skill</label>
+                                <label for="skill" class="p-1">Skill yang dimiliki</label>
                                 <textarea name="skill" class="form-control @error('skill')is-invalid  @enderror" id="skill" style="width" required></textarea>
                                 @error('skill')
                                 <div class="invalid-feedback">
@@ -149,7 +150,7 @@
                             </div>
 
                             <div class="form-group m-3">
-                                <label for="sertifikasi" class="p-1">Sertifikasi</label>
+                                <label for="sertifikasi" class="p-1">Sertifikasi Keahlian</label>
                                 <input name="sertifikasi" id="sertifikasi"
                                     type="text" class="form-control @error('sertifikasi')is-invalid  @enderror" required>
                                     @error('sertifikasi')
@@ -161,7 +162,7 @@
 
                             <div class="form-group m-3">
                                 <label for="gaji_diinginkan" class="p-1">Gaji yang diinginkan</label>
-                                <input name="gaji_diinginkan" id="gaji_diinginkan" type="text"
+                                <input name="gaji_diinginkan" id="gaji_diinginkan" type="number"
                                     class="form-control @error('gaji_diinginkan')is-invalid  @enderror" required>
                                     @error('gaji_diinginkan')
                                 <div class="invalid-feedback">

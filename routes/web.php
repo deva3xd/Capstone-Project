@@ -48,6 +48,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
 Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::get('/perusahaan', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
     Route::get('/perusahaan/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
+    Route::post('/perusahaan/profile', 'DashboardController@storeProfilePerusahaan')->name('storeProfilePerusahaan');
 
     // loker
     Route::get('/perusahaan/loker', 'LokerController@index')->name('daftarLoker');
