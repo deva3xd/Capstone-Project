@@ -7,12 +7,12 @@
                 <div class="col-xl-6">
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
-                            <div class="card-body pt-5" style="border: 1px solid #7571f9; border-radius: 15px">
+                            <div class="card-body pt-5" style="border: 1px solid #7571f9; border-radius: 10px">
                                 <h4 class="text-center">Daftar Perusahaan</h4>
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('registerPerusahaan') }}">
                                 @csrf
                                     <div class="form-group">
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama Perusahaan" required />
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama" required />
                                     </div>
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">

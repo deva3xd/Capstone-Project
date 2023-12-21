@@ -104,9 +104,10 @@ class AuthController extends Controller
         return view('auth.register-perusahaan', ['title' => $title]);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
+        $request->session()->flush();
         return redirect(route('LandingPage'));
     }
 
