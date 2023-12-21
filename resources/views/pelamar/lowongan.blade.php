@@ -23,13 +23,13 @@
                 <div class="col-lg-8">
                     <div class="row">
                         @foreach ($lokers as $loker) 
-                            <div class="col-lg-12 col-md-6 mb-3 border ">
+                            <div class="col-lg-10 col-md-6 mb-3 border ">
                                 <div class="blog-item p-1 mr-1">
                                     <div class="blog-thumb py-2">
                                         <img src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
-                                            class="img-fluid rounded">
+                                            class="img-fluid rounded" width="180">
                                     </div>
-                                    <div class="blog-item-content pb-2">
+                                    <div class="blog-item-content pb-1" >
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>
                                         <div class="blog-item-meta mb-3">
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1">
