@@ -72,7 +72,6 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
 // admin
 Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
     Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
-    Route::get('/admin/profile', 'DashboardController@profileAdmin')->name('profileAdmin'); 
 
     // kelola akun
     Route::get('/admin/account/admin', 'AkunAdminController@index')->name('daftarAdmin');

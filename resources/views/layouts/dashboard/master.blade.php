@@ -61,10 +61,12 @@
                         <div class="drop-down dropdown-profile dropdown-menu">
                             <div class="dropdown-content-body">
                                 <ul>
+                                    @if (Auth::user()->role == 'perusahaan')
                                     <li>
                                         <a href="{{route('profilePerusahaan')}}"><i class="icon-user"></i> <span>Profile</span></a>
+                                        <hr class="my-2">
                                     </li>
-                                    <hr class="my-2">
+                                    @endif
                                     <li><a href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="icon-logout"></i> <span>Keluar</span></a></li>
                                 </ul>
                             </div>

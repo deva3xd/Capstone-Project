@@ -26,15 +26,15 @@
                             <form action="{{route('updateWawancara', ['id' => $wawancara->id])}}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Loker</label>
+                                    <label class="col-sm-2 col-form-label">Kategori Loker</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="ID Loker" name="id_loker" id="id_loker" required="required" value="{{ $wawancara->id_loker}}">
+                                        <input type="number" class="form-control" placeholder="Kategori Loker" name="id_loker" id="id_loker" required="required" value="{{ $wawancara->id_loker}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Profile Pelamar</label>
+                                    <label class="col-sm-2 col-form-label">Nama Pelamar</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="ID Profile Pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_pelamar}}">
+                                        <input type="number" class="form-control" placeholder="Nama Pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_pelamar}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">

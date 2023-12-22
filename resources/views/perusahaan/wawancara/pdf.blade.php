@@ -30,8 +30,8 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>ID Loker</th>
-                <th>ID Pelamar</th>
+                <th>Kategori Loker</th>
+                <th>Nama Pelamar</th>
                 <th>Jadwal</th>
                 <th>Catatan</th>
             </tr>

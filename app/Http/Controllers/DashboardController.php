@@ -12,6 +12,7 @@ use App\User;
 
 class DashboardController extends Controller
 {
+    // admin
     public function admin() {
         $admin = Admin::count();
         $perusahaan = Perusahaan::count();
@@ -26,6 +27,8 @@ class DashboardController extends Controller
         return view('admin.profile', ['title' => $title]);
     }
 
+
+    // perusahaan
     public function perusahaan() {
         $loker = Loker::count();
         $wawancara = Wawancara::count();

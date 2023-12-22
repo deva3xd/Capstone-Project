@@ -26,7 +26,7 @@
                             <form action="{{ route('storeWawancara') }}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Loker</label>
+                                    <label class="col-sm-2 col-form-label">Kategori Loker</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="id_loker" id="id_loker" required="required">
                                             @foreach ($lokers as $loker)
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Pelamar</label>
+                                    <label class="col-sm-2 col-form-label">Nama Pelamar</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="id_pelamar" id="id_pelamar" required="required">
                                             @foreach ($pelamars as $pelamar)
