@@ -141,7 +141,7 @@ class ProfilController extends Controller
         $pelamar->password = $password;
         $pelamar->save();
 
-        return redirect(route('Pelamar'))->with('success', 'Data Berhasil Di Update');
+        return redirect(route('Pelamar'))->with('success', 'Profil Anda Telah Tersimpan');
     }
 
     /**
@@ -166,6 +166,7 @@ class ProfilController extends Controller
         $title = 'Edit Profil';
         return view('pelamar.profil.form-pribadi-edit', [
             'pelamar' => $pelamar,
+            'title' => $title
         ]);
     }
 
@@ -186,7 +187,7 @@ class ProfilController extends Controller
 
         $pelamar->password = Hash::make($request->password);;
         $pelamar->save();
-        return redirect()->route('Profilindex')->with('success', 'Pesan keberhasilan Anda di sini.');
+        return redirect()->route('Profilindex')->with('success', 'Password Anda Berhasil Di Ganti.');
     }
 
     /**
@@ -291,7 +292,7 @@ $image_name = 'Foto-' . $namaProfil . '.' . $foto->getClientOriginalExtension();
         $pelamar->password = $password;
         $pelamar->save();
 
-        return redirect(route('Profilindex'))->with('success', 'Data Berhasil Di Update');
+        return redirect(route('Profilindex'))->with('success', 'Profil Anda Telah Terupdate');
     }
 
     /**

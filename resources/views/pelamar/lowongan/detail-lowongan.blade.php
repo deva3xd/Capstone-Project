@@ -31,7 +31,7 @@
                                     <h2 class="mt-3 mb-3 text-md text-uppercase">{{ $loker->kategori }}</h2>
                                     <div class="blog-item-meta mb-5">
                                         <span class="text-muted text-capitalize mr-3"><i class="fa fa-building mr-2"></i>
-                                            {{$loker->perusahaan->nama}}</span>
+                                            </span>
                                         <span class="text-muted text-capitalize mr-3"><i
                                                 class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
                                         <span class="text-muted text-capitalize mr-3"><i
@@ -51,9 +51,27 @@
                         </div>
                     </div>
                     <a href="{{route('pelamarCariLowongan')}}" class="btn btn-small btn-danger">Kembali</a>
-                    <a href="blog-single.html" class="btn btn-small btn-success">Daftar</a>
+                    <a onclick="confirmDelete(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}" class="text-white btn btn-small btn-success">Daftar</a>
                 </div>
             </div>
         </div>
     </section>
+@endsection
+@section('addJavascript')
+<script src="{{ asset('js/sweetalert.min.js') }}"></script>
+<script>
+    confirmDelete = function(button) {
+        var url = $(button).data('url');
+        swal({
+            'title' : 'Konfirmasi Melamar Lowongan',
+            'text' : 'Apakah Kamu Yakin Ingin Mendaftar Lamaran Pekerjaan Ini?',
+            'dangermode' : true,
+            'buttons' : true
+        }).then(function(value) {
+            if(value) {
+                window.location = url;
+            }
+        })
+    }
+</script>
 @endsection
