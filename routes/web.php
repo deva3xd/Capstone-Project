@@ -32,6 +32,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar/lowongan', 'PelamarController@cariLowongan')->name('pelamarCariLowongan');
     Route::get('/pelamar/lowongan/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
     Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
+    Route::get('/pelamar/perusahaan/detailpekerjaan/daftar/{id}', 'PelamarController@applyPelamar')->name('PelamarDaftarLoker');
     Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
     Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
     Route::get('/pelamar/profile', 'ProfilController@index')->name('Profilindex');
@@ -41,7 +42,8 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::post('/pelamar/{pelamar}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
     Route::get('/pelamar/{pelamar}/profil', 'ProfilController@edit')->name('Profiledit');
     Route::post('/pelamar/{pelamar}/profil/update', 'ProfilController@update')->name('Profilupdate');
-    Route::get('/pelamar/profil', 'RiwayatController@index')->name('Riwayat');
+    Route::get('/pelamar/profil', 'RiwayatController@riwayatPelamar')->name('Riwayat');
+    
 });
 
 // perusahaan

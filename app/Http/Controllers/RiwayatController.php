@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class RiwayatController extends Controller
 {
-    // $wawancaras = Wawancara::all();
-    return view('pelamar.profil.riwayat');
+    public function riwayatPelamar(){
+        $title = "Riwayat Pelamar";
+        return view('pelamar.profil.riwayat', [
+            'title' => $title
+        ]);
+    }
 }

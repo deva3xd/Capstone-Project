@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Loker;
+use App\DataPelamar;
+use App\Pelamar;
 
 class PelamarController extends Controller
 {
@@ -23,7 +25,7 @@ class PelamarController extends Controller
         $software_count = Loker::where('kategori', 'software developer')->get()->count();
         $uiux_count = Loker::where('kategori', 'ui/ux designer')->get()->count();
         $web_count = Loker::where('kategori', 'web developer')->get()->count();
-        return view('pelamar.lowongan', [
+        return view('pelamar.lowongan.lowongan', [
             'lokers' => $lokers, 
             'data' => $data_count, 
             'game' => $game_count, 
@@ -47,10 +49,26 @@ class PelamarController extends Controller
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
-        return view('pelamar.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year, 'title' => $title]);
+        return view('pelamar.lowongan.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year, 'title' => $title]);
     }
     
     public function detailPerusahaan(){
-        return view('pelamar.detail-perusahaan');
+        return view('pelamar.lowongan.detail-perusahaan');
+    }
+
+    public function applyPelamar($id, Request $request){
+    
+
+        $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
+        $loker = Loker::findOrFail($id);
+        $status = 'Pending';  // Anda mungkin ingin menggunakan enum atau constant untuk nilai ini
+        
+        $dataPelamar = new DataPelamar();
+        $dataPelamar->id_loker = $loker->id;  // Gunakan ID sebagai nilai
+        $dataPelamar->id_profil_pelamar = $pelamar->id;  // Gunakan ID sebagai nilai
+        $dataPelamar->status = $status;
+        $dataPelamar->save();
+
+        return redirect(route('Pelamar'))->with('success', 'Lamaran Anda Sudah Dikirim');
     }
 }

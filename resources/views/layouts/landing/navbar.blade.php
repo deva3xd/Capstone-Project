@@ -22,6 +22,12 @@
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('Profilindex') }}"><i
                                     class="fas fa-user m-1"></i>Profil</a>
+                                    <a class="dropdown-item" href="{{ route('Riwayat') }}">
+                                        <i class="fas fa-history m-1"></i>Riwayat Lamaran
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-calendar m-1"></i>Jadwal Lamaran
+                                    </a>                                    
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="fas fa-sign-out-alt m-1"></i>Keluar</a>
                         </div>
                     </li>

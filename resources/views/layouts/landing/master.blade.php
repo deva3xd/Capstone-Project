@@ -90,7 +90,7 @@
 		</div>
 	</footer>
 	<!-- Footer end -->
-
+	@include('sweetalert::alert')
     <!-- Main jQuery -->
     <script src="{{asset('landing/plugins/jquery/jquery.js')}}"></script>
     <script src="{{asset('landing/js/contact.js')}}"></script>
