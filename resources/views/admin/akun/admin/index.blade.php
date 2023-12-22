@@ -42,7 +42,7 @@
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $admin->name }}</td>
                                         <td>{{ $admin->email }}</td>
-                                        <td>{{ $admin->password }}</td>
+                                        <td>********</td>
                                         <td class="d-flex">
                                             <a href="{{route('editAdmin', ['id' => $admin->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deleteAdmin', ['id' => $admin->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>

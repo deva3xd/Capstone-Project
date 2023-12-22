@@ -18,13 +18,8 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('adminDaftarLoker')}}">
                     <i class="icon-notebook"></i><span class="nav-text">Loker</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>
             <li>

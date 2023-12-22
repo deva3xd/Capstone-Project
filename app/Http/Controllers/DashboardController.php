@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Loker;
 use App\Wawancara;
 use App\Pelamar;
-use App\Admin;
 use App\Perusahaan;
 use App\User;
 
@@ -14,19 +13,37 @@ class DashboardController extends Controller
 {
     // admin
     public function admin() {
-        $admin = Admin::count();
-        $perusahaan = Perusahaan::count();
-        $member = Pelamar::count();
+        $admin = User::where('role', 'LIKE', 'admin')->count();
+        $perusahaan = User::where('role', 'LIKE', 'perusahaan')->count();
+        $member = User::where('role', 'LIKE', 'pelamar')->count();
         $actives = Loker::where('status', 'LIKE', 'aktif')->get();
         $title = 'Dashboard';
         return view('admin.index', ['admin' => $admin, 'perusahaan' => $perusahaan, 'member' => $member, 'title' => $title, 'actives' => $actives]);
     }
 
-    public function profileAdmin() {
-        $title = 'Profile';
-        return view('admin.profile', ['title' => $title]);
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Loker  $loker
+     * @return \Illuminate\Http\Response
+     */
+    public function hapusLoker(Loker $loker)
+    {
+        $loker->delete();
+        return redirect(route('adminDaftarLoker'))->with('success', 'Data Berhasil Dihapus');
     }
 
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function loker()
+    {
+        $lokers = Loker::all();
+        $title = 'Data Loker';
+        return view('admin.loker', ['title' => $title, 'lokers' => $lokers]);
+    }
 
     // perusahaan
     public function perusahaan() {

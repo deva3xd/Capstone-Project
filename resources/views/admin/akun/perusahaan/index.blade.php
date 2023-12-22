@@ -41,7 +41,7 @@
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $perusahaan->name }}</td>
                                         <td>{{ $perusahaan->email }}</td>
-                                        <td>{{ $perusahaan->password }}</td>
+                                        <td>********</td>
                                         <td class="d-flex">
                                             <a href="{{route('editPerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deletePerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>

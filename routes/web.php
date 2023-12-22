@@ -96,4 +96,8 @@ Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
     Route::get('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@edit')->name('editPelamar');
     Route::post('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@update')->name('updatePelamar');
     Route::get('/admin/account/pelamar/{pelamar}/delete', 'AkunPelamarController@destroy')->name('deletePelamar');
+
+    // loker
+    Route::get('/admin/loker', 'DashboardController@loker')->name('adminDaftarLoker');
+    Route::get('/admin/loker/{loker}/delete', 'DashboardController@hapusLoker')->name('adminDeleteLoker');
 });

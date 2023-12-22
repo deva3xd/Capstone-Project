@@ -77,7 +77,7 @@
                                     @foreach ($actives as $active)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $active->id_perusahaan }}</td>
+                                            <td>{{ $active->perusahaan->nama }}</td>
                                             <td>{{ $active->kategori }}</td>
                                             <td>{{ $active->posisi }}</td>
                                             <td>{{ $active->lulusan }}</td>

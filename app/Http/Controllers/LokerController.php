@@ -61,7 +61,6 @@ class LokerController extends Controller
 
         $loker = new Loker($validateData);
         $loker->save();
-
         return redirect(route('daftarLoker'));
     }
 
