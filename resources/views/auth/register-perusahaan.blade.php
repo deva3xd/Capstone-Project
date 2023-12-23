@@ -8,15 +8,12 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-4" style="border: 1px solid #7571f9; border-radius: 10px">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-md-9">
-                                        <h3 class="mb-0"><u>Daftar Perusahaan</u></h3>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="{{ asset('/landing/images/logo-flat.png') }}" width="100px"
-                                            alt="logo" />
-                                    </div>
+                                 <div class="text-center mb-4">
+                                        <img src="{{ asset('/landing/images/logo-flat.png') }}" width="100px" alt="Logo">
                                 </div>
+                                <div class="text-center mb-4">
+                                        <h5>Daftar Akun Perusahaan</h5>
+                                </div
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('registerPerusahaan') }}">
                                 @csrf
                                     <div class="form-group">
