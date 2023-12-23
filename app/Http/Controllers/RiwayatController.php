@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Wawancara;
 use Illuminate\Http\Request;
 use App\Pelamar;
 use App\DataPelamar;
