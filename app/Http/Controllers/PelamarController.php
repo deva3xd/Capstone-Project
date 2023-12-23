@@ -46,11 +46,15 @@ class PelamarController extends Controller
     public function detailLowongan($id) {
         $title = 'Detail Lowongan';
         $loker = Loker::findOrFail($id);
-        $dataPelamars = DataPelamar::where('status', 'pending', auth()->user()->id)->first();
+        $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
+        $dataPelamars = DataPelamar::where('status', 'pending')
+            ->where('id_profil_pelamar', $pelamar->id)
+            ->get();
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
         return view('pelamar.lowongan.detail-lowongan', [
+        'pelamar' => $pelamar,
         'dataPelamars' => $dataPelamars ,
         'loker' => $loker, 
         'day' => $day, 

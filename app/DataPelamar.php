@@ -27,6 +27,6 @@ class DataPelamar extends Model
 
     public function pelamar()
     {
-        return $this->belongsTo('App\Pelamar', 'id_pelamar');
+        return $this->belongsTo('App\Pelamar', 'id_profil_pelamar');
     }
 }

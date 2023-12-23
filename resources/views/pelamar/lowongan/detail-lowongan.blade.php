@@ -50,15 +50,16 @@
                             </div>
                         </div>
                     </div>
-                    @if ($dataPelamars)
-                    <p>Lamaran Anda Sudah Di Kirim<span style="color: green;">&#10004;</span></p>
+                    @if ($dataPelamars->isEmpty())
+                    @else
+                    <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Sedang Diproses</p>
                     @endif
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
-                    @if ($dataPelamars)
-                        <a class="text-white btn btn-small btn-warning disabled">Proses</a>
+                    @if ($dataPelamars->isEmpty())
+                    <a onclick="confirmDelete(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                        class="text-white btn btn-small btn-success">Daftar</a>
                     @else
-                        <a onclick="confirmDelete(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                            class="text-white btn btn-small btn-success">Daftar</a>
+                        <a class="text-white btn btn-small btn-warning disabled">Proses</a>
                     @endif
                 </div>
             </div>
