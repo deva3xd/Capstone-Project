@@ -14,8 +14,7 @@ class Perusahaan extends Model
         'updatedcont_at',
     ];
 
-    public function perusahaan() {
-        return $this->belongsTo('Admin\Perusahaan', 'id');
+    public function Loker() {
+        return $this->hasOne(Loker::class, 'id');
     }
-
 }

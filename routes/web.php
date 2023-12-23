@@ -14,7 +14,7 @@
 // Landing Page //
 Route::get('/', 'LandingPageController@index')->name('LandingPage');
 Route::get('/lowongan', 'LandingPageController@cariLowongan')->name('Lowongan');
-Route::get('//lowongan/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
+Route::get('/lowongan/{lowongan}/detail-lowongan', 'LandingPageController@detailLowongan')->name('DetailLowongan');
 
 //login regis
 Route::get('/login', 'AuthController@showLoginForm')->name('login');
@@ -32,6 +32,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar/lowongan', 'PelamarController@cariLowongan')->name('pelamarCariLowongan');
     Route::get('/pelamar/lowongan/{lowongan}/detail-lowongan', 'PelamarController@detailLowongan')->name('pelamarDetailLowongan');
     Route::get('/pelamar/perusahaan', 'PelamarController@cariPerusahaan')->name('PelamarCariperusahaan');
+    Route::get('/pelamar/perusahaan/detailpekerjaan/daftar/{id}', 'PelamarController@applyPelamar')->name('PelamarDaftarLoker');
     Route::get('/pelamar/perusahaan/detailperusahaan', 'PelamarController@detailPerusahaan')->name('PelamarDetailperusahaan');
     Route::get('/pelamar/pekerjaan/detailpekerjaan', 'PelamarController@detailPekerjaan')->name('PelamarDetailpekerjaan');
     Route::get('/pelamar/profile', 'ProfilController@index')->name('Profilindex');
@@ -41,13 +42,15 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::post('/pelamar/{pelamar}/akun/update', 'ProfilController@updatepassword')->name('Passwordupdate');
     Route::get('/pelamar/{pelamar}/profil', 'ProfilController@edit')->name('Profiledit');
     Route::post('/pelamar/{pelamar}/profil/update', 'ProfilController@update')->name('Profilupdate');
-    Route::get('/pelamar/profil', 'RiwayatController@index')->name('Riwayat');
+    Route::get('/pelamar/profil', 'RiwayatController@riwayatPelamar')->name('Riwayat');
+    
 });
 
 // perusahaan
 Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::get('/perusahaan', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
     Route::get('/perusahaan/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
+    Route::post('/perusahaan/profile', 'DashboardController@storeProfilePerusahaan')->name('storeProfilePerusahaan');
 
     // loker
     Route::get('/perusahaan/loker', 'LokerController@index')->name('daftarLoker');
@@ -71,7 +74,6 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
 // admin
 Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
     Route::get('/admin', 'DashboardController@admin')->name('dashboardAdmin');
-    Route::get('/admin/profile', 'DashboardController@profileAdmin')->name('profileAdmin'); 
 
     // kelola akun
     Route::get('/admin/account/admin', 'AkunAdminController@index')->name('daftarAdmin');
@@ -94,4 +96,8 @@ Route::middleware(['auth', 'AdminMiddleware'])->group(function() {
     Route::get('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@edit')->name('editPelamar');
     Route::post('/admin/account/pelamar/{pelamar}/edit', 'AkunPelamarController@update')->name('updatePelamar');
     Route::get('/admin/account/pelamar/{pelamar}/delete', 'AkunPelamarController@destroy')->name('deletePelamar');
+
+    // loker
+    Route::get('/admin/loker', 'DashboardController@loker')->name('adminDaftarLoker');
+    Route::get('/admin/loker/{loker}/delete', 'DashboardController@hapusLoker')->name('adminDeleteLoker');
 });

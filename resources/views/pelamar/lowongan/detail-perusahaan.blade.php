@@ -50,8 +50,8 @@
 
         <div class="media py-3">
             <a href="#"><img class="mr-4" src="{{ asset('landing/images/blog/bt-2.jpg') }}" alt=""></a>
-           <div class="media-body">
-                   <span class="text-sm text-muted">03 Desember 2023</span>
+            <div class="media-body">
+                  <span class="text-sm text-muted">03 Desember 2023</span>
                 <h6 class="my-2"><a href="#">Cyber Security Analyst</a></h6>
             </div>
         </div>

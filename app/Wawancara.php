@@ -19,6 +19,6 @@ class Wawancara extends Model
     }
 
     public function pelamar() {
-        return $this->hasOne('App\Pelamar', 'id_pelamar');
+        return $this->belongsTo('App\Pelamar', 'id_pelamar');
     }
 }

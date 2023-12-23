@@ -35,9 +35,8 @@ class LokerController extends Controller
      */
     public function create()
     {
-        $perusahaans = Perusahaan::all();
         $title = 'Tambah Loker';
-        return view('perusahaan.loker.create', ['title' => $title, 'perusahaans' => $perusahaans]);
+        return view('perusahaan.loker.create', ['title' => $title]);
     }
 
     /**
@@ -62,7 +61,6 @@ class LokerController extends Controller
 
         $loker = new Loker($validateData);
         $loker->save();
-
         return redirect(route('daftarLoker'));
     }
 
@@ -85,10 +83,12 @@ class LokerController extends Controller
      */
     public function edit(Loker $loker)
     {
+        $perusahaans = Perusahaan::all();
         $title = 'Edit Loker';
         return view('perusahaan.loker.edit', [
             'loker' => $loker,
-            'title' => $title
+            'title' => $title,
+            'perusahaans'=> $perusahaans
         ]);
     }
 

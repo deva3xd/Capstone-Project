@@ -29,8 +29,9 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>ID.</th>
-                                        <th>Username</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
                                         <th>Password</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -39,8 +40,9 @@
                                     @foreach($admins as $admin)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $admin->username }}</td>
-                                        <td>{{ $admin->password }}</td>
+                                        <td>{{ $admin->name }}</td>
+                                        <td>{{ $admin->email }}</td>
+                                        <td>********</td>
                                         <td class="d-flex">
                                             <a href="{{route('editAdmin', ['id' => $admin->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deleteAdmin', ['id' => $admin->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>

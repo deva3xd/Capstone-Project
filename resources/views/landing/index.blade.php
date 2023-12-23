@@ -18,13 +18,14 @@
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('Lowongan') }}">Lowongan</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="mx-0 nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Daftar</a>
+                        <a class="mx-0 nav-link nav-link-button border rounded" href="#" id="navbarDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Daftar</a>
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('registerPelamar')}}"><i class="fas fa-user m-1"></i>Pelamar</a>
-                            <a class="dropdown-item" href="{{route('registerPerusahaan')}}"><i class="fas fa-building m-1"></i>Perusahaan</a>
+                            <a class="dropdown-item" href="{{ route('registerPelamar') }}"><i class="fas fa-user m-1"></i>Pelamar</a>
+                            <a class="dropdown-item" href="{{ route('registerPerusahaan') }}"><i class="fas fa-building m-1"></i>Perusahaan</a>
                         </div>
                     </li>
                 </ul>
@@ -42,7 +43,8 @@
                             IT</span>
                         <h2 class="mb-3 mt-3">Temukan Pekerjaan IT Impianmu Di LokerTI.id</h2>
                         <p class="mb-5">Dapatkan pekerjaan IT yang sesuai dengan skill mu</p>
-                        <a href="#" class="btn btn-main">cek lowongan<i class="fa fa-angle-right ml-2"></i></a>
+                        <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-main">cek lowongan<i
+                                class="fa fa-angle-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -172,7 +174,8 @@
                 <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="award-img-block mb-4 mb-lg-0">
                         <div class="award-img">
-                            <img src="{{ asset('landing/images/about/alfamart.png') }}" alt="" class="img-fluid">
+                            <img src="{{ asset('landing/images/about/alfamart.png') }}" alt=""
+                                class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -233,7 +236,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..." disabled />
+                                    <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..."
+                                        readonly />
                                 </div>
 
                                 <div class="form-group">

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AkunAdminController extends Controller
 {
@@ -14,8 +15,8 @@ class AkunAdminController extends Controller
      */
     public function index()
     {
-        $admins = Admin::all();
-        $title = 'Data Admin';
+        $admins = User::where('role', 'admin')->get();
+        $title = 'Akun Admin';
         return view('admin.akun.admin.index', ['title' => $title, 'admins' => $admins]);
     }
 
@@ -26,9 +27,9 @@ class AkunAdminController extends Controller
      */
     public function create()
     {
-        $admins = Admin::all();
+        $admin = User::where('role', 'admin')->get();
         $title = 'Tambah Admin';
-        return view('admin.akun.admin.create', ['title' => $title, 'admins' => $admins]);
+        return view('admin.akun.admin.create', ['title' => $title, 'admin' => $admin]);
     }
 
     /**
@@ -40,14 +41,20 @@ class AkunAdminController extends Controller
     public function store(Request $request)
     {
         $validateData = validator($request->all(), [
-            'username' => 'required|string|max:255',
-            'password' => 'required|string|max:255'
-        ])->validate();
+            'name' => 'required|string|max:255',
+            'email' => 'required|string',
+            'password' => 'required|string|min:8',
+            ])->validate();
+            
 
-        $admin = new Admin($validateData);
-        $admin->save();
+            $admin = new User;
+            $admin->name = $request->name;
+            $admin->email = $request->email;
+            $admin->password = Hash::make($request->password);
+            $admin->role = 'admin';
+            $admin->save();
 
-        return redirect(route('daftarAdmin'));
+            return redirect(route('daftarAdmin'));
     }
 
     /**
@@ -56,7 +63,7 @@ class AkunAdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show(User $admin)
     {
         //
     }
@@ -67,7 +74,7 @@ class AkunAdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit(User $admin)
     {
         $title = 'Edit Admin';
         return view('admin.akun.admin.edit', [
@@ -83,17 +90,19 @@ class AkunAdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, User $admin)
     {
         $validateData = validator($request->all(), [
-            'username' => 'required|string|max:255',
-            'password' => 'required|string|max:255'
-        ])->validate();
+            'name' => 'required|string|max:255',
+            'email' => 'required|string',
+            'password' => 'required|string|min:8',
+            ])->validate();
 
-        $admin->username = $validateData['username'];
-        $admin->password = $validateData['password'];
-        $admin->save();
-
+            $admin->name = $request->name;
+            $admin->email = $request->email;
+            $admin->password = Hash::make($request->password);
+            $admin->role = 'admin';
+            $admin->save();
         return redirect(route('daftarAdmin'));
     }
 
@@ -103,7 +112,7 @@ class AkunAdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(User $admin)
     {
         $admin->delete();
         return redirect(route('daftarAdmin'))->with('success', 'Data Berhasil Dihapus');

@@ -22,7 +22,10 @@
                     <i class="icon-note"></i><span class="nav-text">Wawancara</span>
                 </a>
             </li>
-            
+            <li>
+                <a href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="icon-logout"></i><span class="nav-text">Keluar</span>
+                </a>
+            </li>
         </ul>
     </div>
 @endsection

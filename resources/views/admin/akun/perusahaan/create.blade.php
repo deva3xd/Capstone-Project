@@ -28,19 +28,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="nama" name="nama" id="nama" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Alamat</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="alamat" name="alamat" id="alamat" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">No Telepon</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="no telpon" name="no_telp" id="no_telp" required="required">
+                                        <input type="text" class="form-control" placeholder="nama" name="name" id="name" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -55,33 +43,8 @@
                                         <input type="text" class="form-control" placeholder="password" name="password" id="password" required="required">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Deskripsi</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="deskripsi" name="deskripsi" id="deskripsi" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Jumlah Pegawai</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="jumlah pegawai" name="jumlah_pegawai" id="jumlah_pegawai" required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">NPWP</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="npwp" name="npwp" id="npwp" required="npwp">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Logo</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="logo" name="logo" id="logo" required="required">
-                                    </div>
-                                </div>
-                                
                                 <div class="text-right">
-                                    <a href="#" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
+                                    <a href="{{route('daftarPerusahaan')}}" class="btn btn-outline-secondary mr-2" role="button">Batal</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>

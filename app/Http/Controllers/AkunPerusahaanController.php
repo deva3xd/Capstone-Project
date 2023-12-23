@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
-use App\Perusahaan;
+use Illuminate\Support\Facades\Hash;
 
 class AkunPerusahaanController extends Controller
 {
@@ -14,7 +15,7 @@ class AkunPerusahaanController extends Controller
      */
     public function index()
     {
-        $perusahaans = Perusahaan::all();
+        $perusahaans = User::where('role', 'perusahaan')->get();
         $title = 'Data Perusahaan';
         return view('admin.akun.perusahaan.index', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
@@ -26,7 +27,7 @@ class AkunPerusahaanController extends Controller
      */
     public function create()
     {
-        $perusahaans = Perusahaan::all();
+        $perusahaans = User::where('role', 'perusahaan')->get();
         $title = 'Tambah Perusahaan';
         return view('admin.akun.perusahaan.create', ['title' => $title, 'perusahaans' => $perusahaans]);
     }
@@ -40,19 +41,17 @@ class AkunPerusahaanController extends Controller
     public function store(Request $request)
     {
         $validateData = validator($request->all(), [
-            'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
-            'no_telp' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'jumlah_pegawai' => 'required|string',
-            'npwp' => 'required|string',
-            'logo' => 'required|string'
+            'name' => 'required|string|max:255',
+            'email' => 'required|string',
+            'password' => 'required|string|min:8',
         ])->validate();
 
-        $perusahaan = new Perusahaan($validateData);
-        $perusahaan->save();
+            $perusahaan = new User;
+            $perusahaan->name = $request->name;
+            $perusahaan->email = $request->email;
+            $perusahaan->password = Hash::make($request->password);
+            $perusahaan->role = 'perusahaan';
+            $perusahaan->save();
 
         return redirect(route('daftarPerusahaan'));
     }
@@ -75,7 +74,7 @@ class AkunPerusahaanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit(Perusahaan $perusahaan)
+    public function edit(User $perusahaan)
     {
         $title = 'Edit Perusahaan';
         return view('admin.akun.perusahaan.edit', [
@@ -91,30 +90,20 @@ class AkunPerusahaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perusahaan $perusahaan)
+    public function update(Request $request, User $perusahaan)
     {
         $validateData = validator($request->all(), [
-            'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
-            'no_telp' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'jumlah_pegawai' => 'required|string',
-            'npwp' => 'required|string',
-            'logo' => 'required|string'
+            'name' => 'required|string|max:255',
+            'email' => 'required|string',
+            'password' => 'required|string|min:8',
         ])->validate();
 
-        $perusahaan->nama = $validateData['nama'];
-        $perusahaan->alamat = $validateData['alamat'];
-        $perusahaan->no_telp = $validateData['no_telp'];
-        $perusahaan->email = $validateData['email'];
-        $perusahaan->password = $validateData['password'];
-        $perusahaan->deskripsi = $validateData['deskripsi'];
-        $perusahaan->jumlah_pegawai = $validateData['jumlah_pegawai'];
-        $perusahaan->npwp = $validateData['npwp'];
-        $perusahaan->logo = $validateData['logo'];
-        $perusahaan->save();
+            $perusahaan = new User;
+            $perusahaan->name = $request->name;
+            $perusahaan->email = $request->email;
+            $perusahaan->password = Hash::make($request->password);
+            $perusahaan->role = 'perusahaan';
+            $perusahaan->save();
 
         return redirect(route('daftarPerusahaan'))->with('success', 'Data Berhasil Diupdate');;
     }

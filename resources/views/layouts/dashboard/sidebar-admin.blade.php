@@ -18,18 +18,12 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('adminDaftarLoker')}}">
                     <i class="icon-notebook"></i><span class="nav-text">Loker</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="icon-user"></i><span class="nav-text">Profile</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="icon-note"></i><span class="nav-text">Wawancara</span>
+                <a href="{{ route('logout') }}" onclick="return confirm('Apakah Anda Yakin Ingin Keluar?');"><i class="icon-logout"></i><span class="nav-text">Keluar</span>
                 </a>
             </li>
         </ul>

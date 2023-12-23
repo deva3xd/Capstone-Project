@@ -17,9 +17,10 @@ class WawancaraController extends Controller
      */
     public function index()
     {
+        $pelamar = Pelamar::all();
         $wawancaras = Wawancara::all();
         $title = 'Data Wawancara';
-        return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras]);
+        return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras, 'pelamar' => $pelamar]);
     }
 
     public function pdf() {

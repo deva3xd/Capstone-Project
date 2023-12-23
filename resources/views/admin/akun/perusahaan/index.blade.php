@@ -31,29 +31,17 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Alamat</th>
-                                        <th>No Telepon</th>
                                         <th>Email</th>
                                         <th>Password</th>
-                                        <th>Deskripsi</th>
-                                        <th>Jumlah Pegawai</th>
-                                        <th>NPWP</th>
-                                        <th>Logo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($perusahaans as $perusahaan)
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $perusahaan->nama }}</td>
-                                        <td>{{ $perusahaan->alamat }}</td>
-                                        <td>{{ $perusahaan->no_telp }}</td>
+                                        <td>{{ $perusahaan->name }}</td>
                                         <td>{{ $perusahaan->email }}</td>
-                                        <td>{{ $perusahaan->password }}</td>
-                                        <td>{{ $perusahaan->deskripsi }}</td>
-                                        <td>{{ $perusahaan->jumlah_pegawai }}</td>
-                                        <td>{{ $perusahaan->npwp }}</td>
-                                        <td>{{ $perusahaan->logo }}</td>
+                                        <td>********</td>
                                         <td class="d-flex">
                                             <a href="{{route('editPerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                             <a onclick="confirmDelete(this)" data-url="{{route('deletePerusahaan', ['id' => $perusahaan->id])}}" class="btn btn-danger btn-sm text-white border" role="button border">Hapus</a>
