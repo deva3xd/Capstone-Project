@@ -15,6 +15,6 @@ class Loker extends Model
     ];
 
     public function perusahaan() {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan');
+        return $this->belongsTo('App\Perusahaan', 'id_perusahaan');
     }
 }
