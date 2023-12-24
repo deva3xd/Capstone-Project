@@ -2,10 +2,17 @@
 @extends('layouts.landing.navbar')
 
 @section('content')
-    <!-- Content body start -->
-    <section class="page-title bg-1">
-        <!-- ... kode lainnya ... -->
-    </section>
+<section class="page-title bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block text-center">
+                    <h1 class="text-capitalize mb-5 text-white text-lg">Riwayat Lamaran</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="section blog-wrap">
         <div class="container">

@@ -128,12 +128,18 @@ class WawancaraController extends Controller
     }
 
     public function Jadwalwawancara(){
+        $title = 'Jadwal Wawancara';
         $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
         $wawancaras = Wawancara::join('pelamar', 'wawancara.id_pelamar', '=', 'pelamar.id')
         ->join('loker', 'wawancara.id_loker', '=', 'loker.id') 
         ->where('pelamar.id_user', auth()->user()->id)
         ->select('wawancara.*', 'loker.*', 'wawancara.created_at as wawancara_created_at')
         ->get();
-        dd($wawancaras);
+        // dd($wawancaras);
+        
+        return view('pelamar.profil.jadwal-wawancara', [
+            'title' => $title,
+            'wawancaras' => $wawancaras
+        ]);
     }
 }
