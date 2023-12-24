@@ -16,7 +16,6 @@
                         <a class="nav-link" href="{{ route('Pelamar') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
@@ -102,9 +101,9 @@
                     <div class="block text-center">
                         <h1 class="text-capitalize mb-5 text-lg text-white">Tentang Kami</h1>
                         <ul class="list-inline breadcumb-nav">
-                            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-white">Home</a></li>
                             <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#" class="text-white-50">About Us</a></li>
+                            <li class="list-inline-item"><span class="text-white-50">Tentang Kami</span></li>
                         </ul>
                     </div>
                 </div>
@@ -120,7 +119,6 @@
                         <h2>Kami menyediakan platform untuk <br> membantu pelamar <span class="text-color">Dan juga
                                 perusahaan dalam mencari calon karyawan</span> dengan skill yang dibutuhkan</h2>
                     </div>
-
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="counter-item counter--style text-center mb-5 mb-lg-0">
@@ -200,107 +198,5 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="page-title bg-1" id="kontak">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block text-center">
-                        <h1 class="text-capitalize mb-5 text-lg text-white">Hubungi Kami</h1>
-
-                        <ul class="list-inline breadcumb-nav">
-                            <li class="list-inline-item"><a href="#" class="text-white">Home</a></li>
-                            <li class="list-inline-item"><span class="text-white">/</span></li>
-                            <li class="list-inline-item"><a href="#kontak" class="text-white-50">Kontak</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-form-wrap section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h3 class="text-md mb-5">Form Kontak</h3>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <form id="contact-form" class="contact__form " method="post" action="mail.php">
-                                <!-- form message -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="alert alert-success contact__msg" style="display: none"
-                                            role="alert">
-                                            Your message was sent successfully.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Saya Ingin Bertanya ..."
-                                        readonly />
-                                </div>
-
-                                <div class="form-group">
-                                    <input name="subject" id="subject" type="text" class="form-control"
-                                        placeholder="Subject">
-                                </div>
-
-                                <div class="form-group">
-                                    <input name="name" id="name" type="text" class="form-control"
-                                        placeholder="Nama">
-                                </div>
-
-                                <div class="form-group">
-                                    <input name="email" id="email" type="email" class="form-control"
-                                        placeholder="Alamat Email">
-                                </div>
-
-                                <div class="form-group-2 mb-4">
-                                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Sampaikan Pesanmu"></textarea>
-                                </div>
-                                <button class="btn btn-main" name="submit" type="submit">Kirim Pesan</button>
-                            </form>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="short-info mt-5 mt-lg-0">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <h5>Nomor</h5>
-                                        +62-812-3456-7890
-                                    </li>
-                                    <li>
-                                        <h5>Email</h5>
-                                        example@gmail.com
-                                    </li>
-                                    <li>
-                                        <h5>Lokasi</h5>
-                                        Jalan-jalan, Indonesia
-                                    </li>
-                                </ul>
-
-                                <ul class="social-icons list-inline mt-5">
-                                    <li class="list-inline-item">
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </section>
 @endsection

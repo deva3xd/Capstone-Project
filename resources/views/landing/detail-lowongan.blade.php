@@ -12,11 +12,10 @@
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('Pelamar') }}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('LandingPage') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#tentang_kami">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('Lowongan') }}">Lowongan</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a>
                     </li>
                     <li class="nav-item dropdown">

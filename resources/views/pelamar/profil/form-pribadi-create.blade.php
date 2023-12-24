@@ -7,6 +7,11 @@
                 <div class="col-md-12">
                     <div class="block text-center">
                         <h1 class="text-capitalize text-white text-lg">Lengkapi Profil Dahulu</h1>
+                        <ul class="list-inline breadcumb-nav">
+                            <li class="list-inline-item"><a href="#" class="text-white">Profil</a></li>
+                            <li class="list-inline-item"><span class="text-white">/</span></li>
+                            <li class="list-inline-item"><span class="text-white-50">Buat</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>

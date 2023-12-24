@@ -16,9 +16,7 @@
                         <a class="nav-link" href="{{ route('LandingPage') }}">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#tentang_kami">Tentang Kami</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#kontak">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('LandingPage') }}#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('Lowongan') }}">Lowongan</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a>
                     </li>
