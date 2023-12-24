@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('daftarWawancara')}}">
+                <a href="{{route('daftarPelamarPerusahaan')}}">
                     <i class="icon-globe-alt"></i><span class="nav-text">Pelamar</span>
                 </a>
             </li>

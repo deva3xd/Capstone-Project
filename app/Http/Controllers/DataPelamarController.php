@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\DataPelamar;
 use App\Pelamar;
+use App\Loker;
 use Illuminate\Http\Request;
 
 class DataPelamarController extends Controller
@@ -14,72 +16,45 @@ class DataPelamarController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Pelamar  $pelamar
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Pelamar $pelamar)
-    {
-        //
+        $title = 'Data Pelamar';
+        $datas = DataPelamar::all();
+        $pelamar = Pelamar::all();
+        $loker = Loker::all();
+        return view('perusahaan.pelamar.index', ['title' => $title, 'datas' => $datas, 'pelamar' => $pelamar, 'loker' => $loker]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pelamar  $pelamar
+     * @param  \App\DataPelamar  $pelamar
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pelamar $pelamar)
+    public function edit(DataPelamar $data)
     {
-        //
+        $title = 'Edit Pelamar';
+        return view('perusahaan.pelamar.edit', ['title' => $title, 'data' => $data]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pelamar  $pelamar
+     * @param  \App\DataPelamar  $datapelamar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pelamar $pelamar)
+    public function update(Request $request, DataPelamar $data)
     {
-        //
-    }
+        $validateData = validator($request->all(), [
+            'id_loker' => 'required|string|max:255',
+            'id_profil_pelamar' => 'required|string|max:255',
+            'status' => 'required|string|max:255'
+        ])->validate();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Pelamar  $pelamar
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Pelamar $pelamar)
-    {
-        //
+        $data->id_loker = $validateData['id_loker'];
+        $data->id_profil_pelamar = $validateData['id_profil_pelamar'];
+        $data->status = $validateData['status'];
+        $data->save();
+
+        return redirect(route('daftarPelamarPerusahaan'));
     }
 }

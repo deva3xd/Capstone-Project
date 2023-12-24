@@ -26,27 +26,44 @@
                             <form action="{{route('updateWawancara', ['id' => $wawancara->id])}}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Kategori Loker</label>
+                                    <label class="col-sm-2 col-form-label">Id Data Pelamar</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="Kategori Loker" name="id_loker" id="id_loker" required="required" value="{{ $wawancara->id_loker}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Nama Pelamar</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control" placeholder="Nama Pelamar" name="id_pelamar" id="id_pelamar" required="required" value="{{ $wawancara->id_pelamar}}">
+                                        <input type="number" class="form-control" placeholder="Kategori Loker" name="id_data_pelamar" id="id_data_pelamar" value="{{ $wawancara->id_data_pelamar}}" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jadwal</label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" placeholder="Jadwal" name="jadwal" id="jadwal" required="required" value="{{ $wawancara->id_jadwal}}">
+                                        <input type="date" class="form-control" placeholder="Jadwal" name="jadwal" id="jadwal"  value="{{ $wawancara->jadwal}}" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Catatan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="Catatan" name="catatan" id="catatan" required="required" value="{{ $wawancara->id_catatan}}">
+                                        <textarea h-150px" rows="6" class="form-control" placeholder="Catatan" name="catatan"
+                                            id="catatan" required="required">{{ $wawancara->catatan}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label pt-0">Status</label>
+                                    <div class="col-sm-10">
+                                        <div class="radio mb-3">
+                                            <label>
+                                                <input type="radio" name="status" id="status" value="diproses"
+                                                    checked> Diproses
+                                            </label>
+                                        </div>
+                                        <div class="radio mb-3">
+                                            <label>
+                                                <input type="radio" name="status" id="status" value="diterima"> Diterima
+                                            </label>
+                                        </div>
+                                        <div class="radio mb-3">
+                                            <label>
+                                                <input type="radio" name="status" id="status"
+                                                    value="ditolak"> Ditolak
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="text-right">

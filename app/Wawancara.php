@@ -14,11 +14,7 @@ class Wawancara extends Model
         'updatedcont_at',
     ];
 
-    public function loker() {
-        return $this->belongsTo('App\Loker', 'id_loker');
-    }
-
-    public function pelamar() {
-        return $this->belongsTo('App\Pelamar', 'id_pelamar');
+    public function datapelamar() {
+        return $this->belongsTo(DataPelamar::class, 'id_data_pelamar');
     }
 }

@@ -15,18 +15,18 @@ class DataPelamar extends Model
         'status' 
     ];
 
-    public function lowongan()
+    public function loker()
     {
-        return $this->belongsTo('App\Loker', 'id_loker');
+        return $this->belongsTo(Loker::class, 'id_loker');
     }
 
     public function wawancara()
     {
-        return $this->belongsTo('App\Wawancara', 'id_wawancara');
+        return $this->belongsTo(Wawancara::class, 'id_wawancara');
     }
 
     public function pelamar()
     {
-        return $this->belongsTo('App\Pelamar', 'id_profil_pelamar');
+        return $this->belongsTo(Pelamar::class, 'id_profil_pelamar');
     }
 }

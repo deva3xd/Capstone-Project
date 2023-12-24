@@ -16,7 +16,7 @@ class CreateDataPelamarsTable extends Migration
         Schema::create('data_pelamar', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_loker');
-            $table->integer('id_wawancara');
+            $table->integer('id_wawancara')->nullable();
             $table->integer('id_profil_pelamar');
             $table->string('status');
             $table->timestamps();
