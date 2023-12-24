@@ -17,19 +17,19 @@
                                             alt="logo" />
                                     </div>
                                 </div>
-                                <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('postlogin') }}">
+                                <form class="mt-3 login-input" method="POST" action="{{ route('postlogin') }}">
                                     @csrf
-                                    <div class="form-group">
+                                    <div class="form-group border-bottom">
                                         <input type="email" class="form-control" name="email" placeholder="Email"
                                             required />
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group border-bottom">
                                         <input type="password" class="form-control" name="password" placeholder="Password"
                                             required />
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Masuk</button>
                                 </form>
-                                <p class="mt-5 login-form__footer">Belum punya akun? Daftar sebagai <a
+                                <p class="mt-1 login-form__footer">Belum punya akun? Daftar sebagai <a
                                         href="{{ route('registerPelamar') }}" class="text-primary">Pelamar</a> atau <a
                                         href="{{ route('registerPerusahaan') }}" class="text-primary">Perusahaan</a>
                                     sekarang</p>
