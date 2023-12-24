@@ -13,6 +13,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{route('daftarPelamarPerusahaan')}}">
+                    <i class="icon-globe-alt"></i><span class="nav-text">Pelamar</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{route('profilePerusahaan')}}">
                     <i class="icon-user"></i><span class="nav-text">Profile</span>
                 </a>

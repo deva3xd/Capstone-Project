@@ -25,20 +25,12 @@
                         <div class="basic-form">
                             <form action="{{ route('updateLoker', ['id' => $loker->id]) }}" method="POST">
                                 @csrf
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Nama Perusahaan</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-control" name="id_perusahaan" id="id_perusahaan" required="required">
-                                            @foreach ($perusahaans as $perusahaan)
-                                                <option value="{{ $perusahaan->id }}" selected>{{ $perusahaan->nama }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                <input type="hidden" name="id_perusahaan" name="id_perusahaan" value="{{ Auth::user()->id }}"/>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Kategori</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="kategori" name="kategori">
+                                            <option value="">Pilih</option>
                                             <option value="data scientist" {{ $loker->kategori == 'data scientist' ? 'selected' : '' }}>Data Scientist</option>
                                             <option value="game developer" {{ $loker->kategori == 'game developer' ? 'selected' : '' }}>Game Developer</option>
                                             <option value="it support" {{ $loker->kategori == 'it support' ? 'selected' : '' }}>IT Support</option>
@@ -93,7 +85,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Status</label>
+                                    <label class="col-sm-2 col-form-label pt-0">Status</label>
                                     <div class="col-sm-10">
                                         <div class="radio mb-3">
                                             <label>

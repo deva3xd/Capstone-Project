@@ -8,6 +8,9 @@
                 <div class="col-md-12">
                     <div class="block text-center">
                         <h1 class="text-capitalize mb-5 text-white text-lg">Profil</h1>
+                        <ul class="list-inline breadcumb-nav">
+                            <li class="list-inline-item"><a href="#" class="text-white">Profil</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

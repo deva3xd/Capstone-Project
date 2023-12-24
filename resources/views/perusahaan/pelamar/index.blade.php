@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@extends('layouts.dashboard.sidebar-admin')
+@extends('layouts.dashboard.sidebar-perusahaan')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Data Loker</h1>
+                    <h1 class="m-0 text-dark">Data Pelamar</h1>
                 </div>
                 <div class="col-sm-6">
                 </div>
@@ -27,27 +27,24 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama Perusahaan</th>
-                                        <th>Kategori</th>
+                                        <th>Kategori Loker</th>
                                         <th>Posisi</th>
-                                        <th>Batas Lamaran</th>
+                                        <th>Nama Pelamar</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($lokers as $loker)
+                                    @foreach ($datas as $data)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $loker->perusahaan->nama }}</td>
-                                            <td>{{ $loker->kategori }}</td>
-                                            <td>{{ $loker->posisi }}</td>
-                                            <td>{{ $loker->batas_lamaran }}</td>
-                                            <td>{{ $loker->status }}</td>
-                                            <td class="d-flex">
-                                                <a onclick="confirmDelete(this)"
-                                                    data-url="{{ route('adminDeleteLoker', ['id' => $loker->id]) }}"
-                                                    class="btn btn-danger btn-sm text-white border" role="button">Hapus</a>
+                                            <td>{{ $data->loker->kategori }}</td>
+                                            <td>{{ $data->loker->posisi }}</td>
+                                            <td>{{ $data->pelamar->nama }}</td>
+                                            <td>{{ $data->status }}</td>
+                                            <td>
+                                                <a href="{{ route('editPelamarPerusahaan', ['id' => $data->id]) }}"
+                                                    class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -61,7 +58,6 @@
     </div>
     <!-- Content body end -->
 @endsection
-
 @section('addJavascript')
     <script src="{{ asset('js/sweetalert.min.js') }}"></script>
     <script>

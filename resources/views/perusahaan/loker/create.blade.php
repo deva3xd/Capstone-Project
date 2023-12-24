@@ -25,16 +25,12 @@
                         <div class="basic-form">
                             <form action="{{ route('storeLoker') }}" method="POST">
                                 @csrf
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Nama Perusahaan</label>
-                                    <div class="col-sm-10">
-                                    <input type="hidden" name="id_perusahaan" name="id_perusahaan" value="{{ Auth::user()->id }}"/>
-                                    </div>
-                                </div>
+                                <input type="hidden" name="id_perusahaan" name="id_perusahaan" value="{{ Auth::user()->id }}"/>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Kategori</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="kategori" name="kategori">
+                                            <option value="">Pilih</option>
                                             <option value="data scientist">Data Scientist</option>
                                             <option value="game developer">Game Developer</option>
                                             <option value="it support">IT Support</option>

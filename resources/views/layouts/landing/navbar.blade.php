@@ -12,8 +12,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('Pelamar') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('Pelamar') }}#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
                     
                     <li class="nav-item dropdown">

@@ -83,12 +83,10 @@ class LokerController extends Controller
      */
     public function edit(Loker $loker)
     {
-        $perusahaans = Perusahaan::all();
         $title = 'Edit Loker';
         return view('perusahaan.loker.edit', [
             'loker' => $loker,
-            'title' => $title,
-            'perusahaans'=> $perusahaans
+            'title' => $title
         ]);
     }
 

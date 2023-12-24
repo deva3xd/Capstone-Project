@@ -13,10 +13,9 @@
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('Pelamar') }}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('LandingPage') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('Lowongan') }}">Lowongan</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-button border" href="{{ route('login') }}">Masuk</a>
                     </li>
@@ -96,7 +95,11 @@
                 <div class="col-md-12">
                     <div class="block text-center">
                         <h1 class="text-capitalize mb-5 text-lg text-white">Tentang Kami</h1>
-                        
+                        <ul class="list-inline breadcumb-nav">
+                            <li class="list-inline-item"><a href="#" class="text-white">Home</a></li>
+                            <li class="list-inline-item"><span class="text-white">/</span></li>
+                            <li class="list-inline-item"><span class="text-white-50">Tentang Kami</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -193,8 +196,4 @@
             </div>
         </div>
     </section>
-
-    
-
-    
 @endsection

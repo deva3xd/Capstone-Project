@@ -64,12 +64,16 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
 
     // wawancara
     Route::get('/perusahaan/wawancara', 'WawancaraController@index')->name('daftarWawancara');
-    Route::get('/perusahaan/wawancara/pdf', 'WawancaraController@pdf')->name('pdfWawancara');
     Route::get('/perusahaan/wawancara/create', 'WawancaraController@create')->name('createWawancara');
     Route::post('/perusahaan/wawancara/create', 'WawancaraController@store')->name('storeWawancara');
     Route::get('/perusahaan/wawancara/{wawancara}/edit', 'WawancaraController@edit')->name('editWawancara');
     Route::post('/perusahaan/wawancara/{wawancara}/edit', 'WawancaraController@update')->name('updateWawancara');
     Route::get('/perusahaan/wawancara/{wawancara}/delete', 'WawancaraController@destroy')->name('deleteWawancara');
+
+    // pelamar
+    Route::get('/perusahaan/pelamar', 'DataPelamarController@index')->name('daftarPelamarPerusahaan');
+    Route::get('/perusahaan/pelamar/{data}/edit', 'DataPelamarController@edit')->name('editPelamarPerusahaan');
+    Route::post('/perusahaan/pelamar/{data}/edit', 'DataPelamarController@update')->name('updatePelamarPerusahaan');
 });
 
 // admin
