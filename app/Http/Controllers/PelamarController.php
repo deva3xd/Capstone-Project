@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Loker;
 use App\DataPelamar;
 use App\Pelamar;
+use App\Perusahaan;
 
 class PelamarController extends Controller
 {
@@ -45,6 +46,7 @@ class PelamarController extends Controller
 
     public function detailLowongan($id) {
         $title = 'Detail Lowongan';
+        $perusahaan = Perusahaan::all();
         $loker = Loker::findOrFail($id);
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
         $dataPelamars = DataPelamar::where('status', 'pending')
@@ -60,7 +62,8 @@ class PelamarController extends Controller
         'day' => $day, 
         'month' => $month, 
         'year' => $year, 
-        'title' => $title
+        'title' => $title,
+        'perusahaan' => $perusahaan
     ]);
     }
     
@@ -69,8 +72,6 @@ class PelamarController extends Controller
     }
 
     public function applyPelamar($id, Request $request){
-    
-
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
         $loker = Loker::findOrFail($id);
         $status = 'Pending';  // Anda mungkin ingin menggunakan enum atau constant untuk nilai ini

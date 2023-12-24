@@ -30,8 +30,8 @@
                                 <div class="blog-item-content mt-4">
                                     <h2 class="mt-3 mb-3 text-md text-uppercase">{{ $loker->kategori }}</h2>
                                     <div class="blog-item-meta mb-5">
-                                        {{-- <span class="text-muted text-capitalize mr-3">{{ $loker->perusahaan->nama }}<i class="fa fa-building mr-2"></i> --}}
-                                        </span>
+                                        <span class="text-muted text-capitalize mr-3"><i class="fa fa-building mr-2"></i>
+                                        on progress</span>
                                         <span class="text-muted text-capitalize mr-3"><i
                                                 class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
                                         <span class="text-muted text-capitalize mr-3"><i
@@ -56,8 +56,8 @@
                     @endif
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
                     @if ($dataPelamars->isEmpty())
-                    <a onclick="confirmDelete(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                        class="text-white btn btn-small btn-success">Daftar</a>
+                    <button onclick="confirmDelete(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                        class="text-white btn btn-small btn-success">Daftar</button>
                     @else
                         <a class="text-white btn btn-small btn-warning disabled">Proses</a>
                     @endif
