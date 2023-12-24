@@ -41,8 +41,9 @@ class DashboardController extends Controller
     public function loker()
     {
         $lokers = Loker::all();
+        $perusahaan = Perusahaan::all();
         $title = 'Data Loker';
-        return view('admin.loker', ['title' => $title, 'lokers' => $lokers]);
+        return view('admin.loker', ['title' => $title, 'lokers' => $lokers, 'perusahaan' => $perusahaan]);
     }
 
     // perusahaan

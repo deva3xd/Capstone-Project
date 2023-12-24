@@ -66,10 +66,9 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Id Perusahaan</th>
+                                        <th>Nama Perusahaan</th>
                                         <th>Kategori</th>
                                         <th>Posisi</th>
-                                        <th>Lulusan</th>
                                         <th>Batas Lamaran</th>
                                     </tr>
                                 </thead>
@@ -80,7 +79,6 @@
                                             <td>{{ $active->perusahaan->nama }}</td>
                                             <td>{{ $active->kategori }}</td>
                                             <td>{{ $active->posisi }}</td>
-                                            <td>{{ $active->lulusan }}</td>
                                             <td>{{ $active->batas_lamaran }}</td>
                                         </tr>
                                     @endforeach

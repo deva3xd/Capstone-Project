@@ -27,13 +27,10 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
+                                        <th>Nama Perusahaan</th>
                                         <th>Kategori</th>
                                         <th>Posisi</th>
-                                        <th>Lulusan</th>
-                                        <th>Syarat</th>
-                                        <th>Deskripsi</th>
                                         <th>Batas Lamaran</th>
-                                        <th>Alamat</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -42,13 +39,10 @@
                                     @foreach ($lokers as $loker)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $loker->perusahaan->nama }}</td>
                                             <td>{{ $loker->kategori }}</td>
                                             <td>{{ $loker->posisi }}</td>
-                                            <td>{{ $loker->lulusan }}</td>
-                                            <td>{{ $loker->syarat }}</td>
-                                            <td>{{ $loker->deskripsi }}</td>
                                             <td>{{ $loker->batas_lamaran }}</td>
-                                            <td>{{ $loker->alamat }}</td>
                                             <td>{{ $loker->status }}</td>
                                             <td class="d-flex">
                                                 <a onclick="confirmDelete(this)"
