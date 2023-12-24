@@ -18,7 +18,6 @@ class RiwayatController extends Controller
         ->where('pelamar.id_user', auth()->user()->id)
         ->select('data_pelamar.*', 'loker.*', 'data_pelamar.created_at as data_pelamar_created_at') // Sesuaikan dengan kolom yang Anda butuhkan
         ->get();
-        $tgl_lamaran = DataPelamar::where('created_at', auth()->user()->id)->get();
         $riwayats = $dataPelamars ;
 
         // dd($riwayats);

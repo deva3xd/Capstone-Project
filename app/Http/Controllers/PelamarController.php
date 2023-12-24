@@ -47,12 +47,15 @@ class PelamarController extends Controller
         $title = 'Detail Lowongan';
         $loker = Loker::findOrFail($id);
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
-        $dataPelamars = DataPelamar::where('status', 'pending')
-            ->where('id_profil_pelamar', $pelamar->id)
-            ->get();
+        $dataPelamars = DataPelamar::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
+        ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
+        ->where('pelamar.id_user', auth()->user()->id)
+        ->select('data_pelamar.*', 'loker.*', 'data_pelamar.status as data_pelamar_status') // Sesuaikan dengan kolom yang Anda butuhkan
+        ->get();
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
+        // dd($dataPelamars);
         return view('pelamar.lowongan.detail-lowongan', [
         'pelamar' => $pelamar,
         'dataPelamars' => $dataPelamars ,

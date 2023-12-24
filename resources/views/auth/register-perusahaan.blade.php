@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="text-center mb-4">
                                         <h5>Daftar Akun Perusahaan</h5>
-                                </div
+                                </div>
                                 <form class="mt-5 mb-5 login-input" method="POST" action="{{ route('registerPerusahaan') }}">
                                 @csrf
                                     <div class="form-group">

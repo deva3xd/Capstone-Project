@@ -126,4 +126,14 @@ class WawancaraController extends Controller
         $wawancara->delete();
         return redirect(route('daftarWawancara'))->with('success', 'Data Berhasil Dihapus');
     }
+
+    public function Jadwalwawancara(){
+        $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
+        $wawancaras = Wawancara::join('pelamar', 'wawancara.id_pelamar', '=', 'pelamar.id')
+        ->join('loker', 'wawancara.id_loker', '=', 'loker.id') 
+        ->where('pelamar.id_user', auth()->user()->id)
+        ->select('wawancara.*', 'loker.*', 'wawancara.created_at as wawancara_created_at')
+        ->get();
+        dd($wawancaras);
+    }
 }

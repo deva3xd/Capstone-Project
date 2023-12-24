@@ -43,6 +43,7 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
     Route::get('/pelamar/{pelamar}/profil', 'ProfilController@edit')->name('Profiledit');
     Route::post('/pelamar/{pelamar}/profil/update', 'ProfilController@update')->name('Profilupdate');
     Route::get('/pelamar/profil/riwayatlamaran', 'RiwayatController@riwayatPelamar')->name('Riwayat');
+    Route::get('/pelamar/profil/jadwalwawancara', 'WawancaraController@Jadwalwawancara')->name('Jadwalwawancara');
     
 });
 

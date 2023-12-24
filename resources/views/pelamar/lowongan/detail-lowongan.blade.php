@@ -50,17 +50,13 @@
                             </div>
                         </div>
                     </div>
-                    @if ($dataPelamars->isEmpty())
-                    @else
-                    <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Sedang Diproses</p>
-                    @endif
-                    <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
-                    @if ($dataPelamars->isEmpty())
-                    <a onclick="confirmDelete(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                        class="text-white btn btn-small btn-success">Daftar</a>
-                    @else
-                        <a class="text-white btn btn-small btn-warning disabled">Proses</a>
-                    @endif
+                    @if (!$dataPelamars->where('id_loker', $loker->id)->isEmpty())
+                                    <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Sedang Diproses</p>
+                                @else
+                                    <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                                        class="text-white btn btn-small btn-success">Daftar</a>
+                                @endif
+                        <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
                 </div>
             </div>
         </div>
@@ -69,7 +65,7 @@
 @section('addJavascript')
     <script src="{{ asset('js/sweetalert.min.js') }}"></script>
     <script>
-        confirmDelete = function(button) {
+        confirm = function(button) {
             var url = $(button).data('url');
             swal({
                 'title': 'Konfirmasi Melamar Lowongan',
