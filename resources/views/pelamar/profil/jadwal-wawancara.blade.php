@@ -25,7 +25,7 @@
                             </div>
                         @else
                         @foreach ($wawancaras as $wawancara)
-                            <div class="col-lg-12 col-md-6 mb-3 px-0 border shadow m-3">
+                            <div class="col-lg-12 col-md-6 mb-3 px-0 border shadow">
                                 <div class="blog-item p-1 m4 mr-1">
                                     <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
                                     </div>
