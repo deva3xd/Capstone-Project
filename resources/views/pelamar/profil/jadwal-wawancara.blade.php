@@ -21,7 +21,7 @@
                     <div class="row">
                         @if ($wawancaras->isEmpty())
                             <div class="col-lg-6 col-md-6 mb-3 px-7 text-danger text-center">
-                                <p>Anda Belum Melamar Pekerjaan</p>
+                                <p>Jadwal wawancara anda belum keluar</p>
                             </div>
                         @else
                         @foreach ($wawancaras as $wawancara)

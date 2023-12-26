@@ -55,7 +55,7 @@ class DashboardController extends Controller
 
         $wawancara = Wawancara::count();
 
-        $pelamar = DataPelamar::where('status', 'LIKE', 'pending')
+        $pelamar = DataPelamar::where('status', 'pending')
         ->where('id_perusahaan', auth()->user()->id)
         ->count();
         

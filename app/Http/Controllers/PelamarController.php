@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Loker;
 use App\DataPelamar;
 use App\Pelamar;
+use App\Perusahaan;
 
 class PelamarController extends Controller
 {
@@ -73,8 +74,10 @@ class PelamarController extends Controller
 
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
         $loker = Loker::findOrFail($id);
+        $perusahaan = Perusahaan::findOrFail($loker->id_perusahaan);
         $status = 'Pending';  // Anda mungkin ingin menggunakan enum atau constant untuk nilai ini
         $dataPelamar = new DataPelamar();
+        $dataPelamar->id_perusahaan = $perusahaan->id;
         $dataPelamar->id_loker = $loker->id;  // Gunakan ID sebagai nilai
         $dataPelamar->id_profil_pelamar = $pelamar->id;  // Gunakan ID sebagai nilai
         $dataPelamar->status = $status;

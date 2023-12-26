@@ -10,6 +10,7 @@ class Pelamar extends Model
 
     protected $fillable = [
         'alamat',
+        'id_perusahaan',
         'ttl',
         'jk',
         'no_telp',

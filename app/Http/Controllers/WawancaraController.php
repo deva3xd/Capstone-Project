@@ -137,7 +137,8 @@ class WawancaraController extends Controller
         ->get();
         
         return view('pelamar.profil.jadwal-wawancara', [
-            'wawancaras' => $wawancaras
+            'wawancaras' => $wawancaras,
+            'title' => $title
         ]);
     }
 }

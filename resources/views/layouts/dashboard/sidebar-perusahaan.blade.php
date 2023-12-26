@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('ProfilePerusahaan', ['id' => Auth::user()->perusahaan->id])}}">
+                <a href="{{route('ProfilePerusahaan')}}">
                     <i class="icon-user"></i><span class="nav-text">Profile</span>
                 </a>
             </li>

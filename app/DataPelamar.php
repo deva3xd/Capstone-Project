@@ -10,6 +10,7 @@ class DataPelamar extends Model
 
     protected $fillable = [
         'id_loker', 
+        'id_perusahaan',
         'id_wawancara', 
         'id_profil_pelamar', 
         'status' 
@@ -28,5 +29,10 @@ class DataPelamar extends Model
     public function pelamar()
     {
         return $this->belongsTo(Pelamar::class, 'id_profil_pelamar');
+    }
+
+    public function perusahaan()
+    {
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan');
     }
 }
