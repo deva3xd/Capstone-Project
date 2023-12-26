@@ -17,7 +17,7 @@ class DataPelamarController extends Controller
     public function index()
     {
         $title = 'Data Pelamar';
-        $datas = DataPelamar::all();
+        $datas = DataPelamar::where('id_perusahaan', auth()->user()->id)->get();
         $pelamar = Pelamar::all();
         $loker = Loker::all();
         return view('perusahaan.pelamar.index', ['title' => $title, 'datas' => $datas, 'pelamar' => $pelamar, 'loker' => $loker]);

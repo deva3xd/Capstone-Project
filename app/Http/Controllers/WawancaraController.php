@@ -18,7 +18,7 @@ class WawancaraController extends Controller
     public function index()
     {
         $pelamar = Pelamar::all();
-        $wawancaras = Wawancara::all();
+        $wawancaras = Wawancara::where('id_perusahaan', auth()->user()->id)->get();
         $title = 'Data Wawancara';
         return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras, 'pelamar' => $pelamar]);
     }
