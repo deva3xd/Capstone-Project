@@ -30,12 +30,15 @@
                                     <div class="col-sm-10">
                                         <select class="form-control" name="id_data_pelamar" id="id_data_pelamar" required="required">
                                             <option value="">Pilih</option>
-                                            @foreach ($pelamars as $pelamar)
-                                                <option value="{{ $pelamar->id }}">{{ $pelamar->id }}</option>
+                                            @foreach ($datas as $data)
+                                                <option value="{{ $data->id }}">{{ $data->id }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
+                                @foreach ($datas as $data)
+                                    <input type="hidden" name="id_pelamar" value="{{ $data->id_profil_pelamar }}" />
+                                @endforeach
                                 <input type="hidden" name="id_perusahaan" value="{{ Auth::user()->id }}" />
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jadwal</label>

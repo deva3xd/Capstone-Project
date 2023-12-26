@@ -32,6 +32,9 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="id_perusahaan" value="{{Auth::user()->id}}" />
+                                @foreach ($datas as $data)
+                                    <input type="hidden" name="id_pelamar" value="{{ $data->id_profil_pelamar }}" />
+                                @endforeach                                
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jadwal</label>
                                     <div class="col-sm-10">

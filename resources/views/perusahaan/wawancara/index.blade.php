@@ -50,7 +50,7 @@
                                                     class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
                                                 <a onclick="confirmDelete(this)"
                                                     data-url="{{ route('deleteWawancara', ['id' => $wawancara->id]) }}"
-                                                    class="btn btn-danger btn-sm text-white" role="button border">Hapus</a>
+                                                    class="btn btn-danger btn-sm text-white border" role="button">Hapus</a>
                                             </td>
                                         </tr>
                                     @endforeach
