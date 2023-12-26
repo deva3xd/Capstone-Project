@@ -59,23 +59,22 @@ class PelamarController extends Controller
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
         return view('pelamar.lowongan.detail-lowongan', [
-        'pelamar' => $pelamar,
-        'dataPelamars' => $dataPelamars ,
-        'loker' => $loker, 
-        'day' => $day, 
-        'month' => $month, 
-        'year' => $year, 
-        'title' => $title
-    ]);
+            'pelamar' => $pelamar,
+            'dataPelamars' => $dataPelamars ,
+            'loker' => $loker, 
+            'day' => $day, 
+            'month' => $month, 
+            'year' => $year, 
+            'title' => $title
+        ]);
     }
     
     public function detailPerusahaan(){
         return view('pelamar.lowongan.detail-perusahaan');
     }
 
-    public function applyPelamar($id, Request $request){
-    
-
+    public function applyPelamar($id, Request $request)
+    {
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
         $loker = Loker::findOrFail($id);
         $perusahaan = Perusahaan::findOrFail($loker->id_perusahaan);
@@ -87,6 +86,6 @@ class PelamarController extends Controller
         $dataPelamar->status = $status;
         $dataPelamar->save();
 
-        return redirect(route('Pelamar'))->with('success', 'Lamaran Anda Sudah Dikirim');
+        return redirect(route('pelamarCariLowongan'))->with('success', 'Lamaran Anda Sudah Dikirim');
     }
 }

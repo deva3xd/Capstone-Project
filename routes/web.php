@@ -60,8 +60,6 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::get('/perusahaan/profile/akun/{perusahaan}', 'DashboardController@GantiPerusahaanpassword')->name('GantiPasswordPerusahaan');
     Route::post('/perusahaan/profile/akun/update/{perusahaan}', 'DashboardController@updatePerusahaanpassword')->name('UpdatePasswordPerusahaan');
 
-
-
     // loker
     Route::get('/perusahaan/loker', 'LokerController@index')->name('daftarLoker');
     Route::get('/perusahaan/loker/pdf', 'LokerController@pdf')->name('pdfLoker');
@@ -83,6 +81,7 @@ Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::get('/perusahaan/pelamar', 'DataPelamarController@index')->name('daftarPelamarPerusahaan');
     Route::get('/perusahaan/pelamar/{data}/edit', 'DataPelamarController@edit')->name('editPelamarPerusahaan');
     Route::post('/perusahaan/pelamar/{data}/edit', 'DataPelamarController@update')->name('updatePelamarPerusahaan');
+    Route::get('/perusahaan/pelamar/{data}/delete', 'DataPelamarController@destroy')->name('deletePelamarPerusahaan');
 });
 
 // admin

@@ -57,4 +57,10 @@ class DataPelamarController extends Controller
 
         return redirect(route('daftarPelamarPerusahaan'));
     }
+
+    public function destroy(DataPelamar $data)
+    {
+        $data->delete();
+        return redirect(route('daftarPelamarPerusahaan'))->with('success', 'Data Berhasil Dihapus');
+    }
 }

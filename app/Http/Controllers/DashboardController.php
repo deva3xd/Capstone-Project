@@ -52,8 +52,7 @@ class DashboardController extends Controller
         $loker = Loker::where('status', 'LIKE', 'aktif')->where('id_perusahaan', auth()->user()->id)->count();
         $wawancara = Wawancara::where('status','LIKE', 'diproses')->where('id_perusahaan', auth()->user()->id)->count();;
 
-        $pelamar = DataPelamar::where('status', 'pending')
-        ->where('id_perusahaan', auth()->user()->id)
+        $pelamar = DataPelamar::where('id_perusahaan', auth()->user()->id)
         ->count();
         
         $users = User::all();
@@ -96,7 +95,6 @@ class DashboardController extends Controller
             'perusahaan' => $perusahaan
         ]);
     }
-
 
     public function storeProfilePerusahaan(Request $request) {
         $validateData = validator($request->all(), [

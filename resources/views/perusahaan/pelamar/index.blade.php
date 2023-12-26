@@ -45,6 +45,9 @@
                                             <td>
                                                 <a href="{{ route('editPelamarPerusahaan', ['id' => $data->id]) }}"
                                                     class="btn btn-warning btn-sm text-white border" role="button">Edit</a>
+                                                <a onclick="confirmDelete(this)"
+                                                data-url="{{ route('deletePelamarPerusahaan', ['id' => $data->id]) }}"
+                                                class="btn btn-danger btn-sm text-white" role="button border">Hapus</a>
                                             </td>
                                         </tr>
                                     @endforeach

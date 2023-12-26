@@ -54,12 +54,6 @@
                                                         <h5>Email</h5>
                                                         <p class="text-muted">{{ $perusahaan->email }}</p>
                                                     </div>
-                                                    <a href="{{ route('EditProfilePerusahaan', ['perusahaan' => $perusahaan->id]) }}" class="btn btn-warning m-3">
-                                                        Edit Profil
-                                                    </a>
-                                                    <a href="{{ route('GantiPasswordPerusahaan', ['perusahaan' => $perusahaan->id]) }}" class="btn btn-warning m-3">
-                                                        Ganti Password
-                                                    </a>
                                                     @endforeach
                                                 </div>
                                             </div>
