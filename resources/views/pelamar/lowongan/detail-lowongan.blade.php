@@ -53,8 +53,8 @@
                     @if (!$dataPelamars->where('id_loker', $loker->id)->isEmpty())
                         <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Sedang Diproses</p>
                     @else
-                        <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                            class="text-white btn btn-small btn-success">Daftar</a>
+                        <button onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                            class="text-white btn btn-small btn-success">Daftar</button>
                     @endif
 
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>

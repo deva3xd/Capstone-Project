@@ -26,16 +26,20 @@
                             <form action="{{route('updatePelamarPerusahaan', ['id' => $data->id])}}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Id Loker</label>
+                                    <label class="col-sm-2 col-form-label">Kategori Loker</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="id_loker" id="id_loker" value="{{ $data->id_loker}}" readonly>
+                                        <select class="form-control" name="id_loker" id="id_loker">
+                                            <option value="{{$data->id_loker}}">{{ $data->loker->kategori}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Id Pelamar</label>
+                                    <label class="col-sm-2 col-form-label">Nama Pelamar</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="id_profil_pelamar" id="id_profil_pelamar" required="required" value="{{ $data->id_profil_pelamar}}" readonly>
+                                        <select class="form-control" name="id_profil_pelamar" id="id_profil_pelamar">
+                                            <option value="{{$data->id_profil_pelamar}}">{{ $data->pelamar->nama}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">

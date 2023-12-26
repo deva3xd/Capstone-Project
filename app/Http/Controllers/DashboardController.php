@@ -48,11 +48,19 @@ class DashboardController extends Controller
 
     // perusahaan
     public function perusahaan() {
-        $loker = Loker::count();
+        $loker = Loker::where('id_perusahaan', 'LIKE', auth()->user()->id)->count();
         $wawancara = Wawancara::count();
         $pelamar = Pelamar::count();
         $actives = Loker::where('status', 'LIKE', 'aktif')->get();
         $title = 'Dashboard';
+            $dataPelamars = DataPelamar::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
+            ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
+            ->where('pelamar.id_user', auth()->user()->id)
+            ->select('data_pelamar.*', 'loker.*', 'data_pelamar.created_at as data_pelamar_created_at')->get();
+            $wawancara = Wawancara::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
+            ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
+            ->where('pelamar.id_user', auth()->user()->id)
+            ->select('data_pelamar.*', 'loker.*', 'data_pelamar.created_at as data_pelamar_created_at')->get();
         return view('perusahaan.index', ['loker' => $loker, 'wawancara' => $wawancara, 'pelamar' => $pelamar, 'title' => $title, 'actives' => $actives]);
     }
 
