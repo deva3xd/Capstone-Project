@@ -67,10 +67,9 @@
                         @elseif ($dataPelamar->where('status', 'Pending'))
                             <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Untuk Pekerjaan Ini Sedang
                                 Diproses</p>
-                        @elseif ($dataPelamar->isEmpty())
+                        @else
                             <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
                                 class="text-white btn btn-small btn-success">Daftar</a>
-                        @else
                         @endif
                     @endforeach
                 </div>
