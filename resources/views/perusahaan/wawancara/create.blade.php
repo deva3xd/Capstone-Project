@@ -30,8 +30,8 @@
                                     <div class="col-sm-10">
                                         <select class="form-control" name="id_data_pelamar" id="id_data_pelamar" required="required">
                                             <option value="">Pilih</option>
-                                            @foreach ($datas as $data)
-                                                <option value="{{ $data->id }}">{{ $data->id }}</option>
+                                            @foreach ($pelamars as $pelamar)
+                                                <option value="{{ $pelamar->id }}">{{ $pelamar->id }}</option>
                                             @endforeach
                                         </select>
                                     </div>
