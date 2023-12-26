@@ -61,7 +61,7 @@ class AuthController extends Controller
         Auth::login($user);
 
         // Redirect ke halaman login dengan pesan sukses
-        return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please login.');;
+        return redirect(route('Profilcreate'))->with('success', 'Account created successfully! Please login.');
     }
 
     public function registerPerusahaan(Request $request)
@@ -88,8 +88,9 @@ class AuthController extends Controller
         $user->role = 'perusahaan';
         $user->save();
 
+        Auth::login($user);
         // Redirect ke halaman login dengan pesan sukses
-        return redirect(route('login'))->with('success', 'Account created successfully! Please input data.');;
+        return redirect(route('BuatProfilePerusahaan'))->with('success', 'Account created successfully! Please login.');
     }
 
     public function showRegistrationFormPelamar()

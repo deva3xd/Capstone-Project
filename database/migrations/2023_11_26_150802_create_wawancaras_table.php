@@ -16,6 +16,7 @@ class CreateWawancarasTable extends Migration
         Schema::create('wawancara', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_data_pelamar');
+            $table->integer('id_perusahaan');
             $table->date('jadwal');
             $table->string('catatan');
             $table->enum('status', ['diproses', 'diterima', 'ditolak'])->default('diproses');

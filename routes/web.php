@@ -50,8 +50,17 @@ Route::middleware(['auth', 'PelamarMiddleware'])->group(function () {
 // perusahaan
 Route::middleware(['auth', 'PerusahaanMiddleware'])->group(function () {
     Route::get('/perusahaan', 'DashboardController@perusahaan')->name('dashboardPerusahaan');
-    Route::get('/perusahaan/profile', 'DashboardController@profilePerusahaan')->name('profilePerusahaan');
-    Route::post('/perusahaan/profile', 'DashboardController@storeProfilePerusahaan')->name('storeProfilePerusahaan');
+    Route::get('/perusahaan/profile', 'DashboardController@profilePerusahaan')->name('ProfilePerusahaan');
+    Route::post('/perusahaan/profile/create/update/{perusahaan}', 'DashboardController@updateProfilePerusahaan')->name('UpdateProfilePerusahaan');
+    Route::get('/perusahaan/profile/create', 'DashboardController@profileBuatPerusahaan')->name('BuatProfilePerusahaan');
+    Route::post('/perusahaan/profile/create/store', 'DashboardController@storeProfilePerusahaan')->name('StoreProfilePerusahaan');
+    Route::get('/perusahaan/profile/edit/{perusahaan}', 'DashboardController@profileEditPerusahaan')->name('EditProfilePerusahaan');
+
+    //Akun
+    Route::get('/perusahaan/profile/akun/{perusahaan}', 'DashboardController@GantiPerusahaanpassword')->name('GantiPasswordPerusahaan');
+    Route::post('/perusahaan/profile/akun/update/{perusahaan}', 'DashboardController@updatePerusahaanpassword')->name('UpdatePasswordPerusahaan');
+
+
 
     // loker
     Route::get('/perusahaan/loker', 'LokerController@index')->name('daftarLoker');

@@ -14,7 +14,15 @@ class Perusahaan extends Model
         'updatedcont_at',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
     public function Loker() {
-        return $this->hasOne(Loker::class, 'id');
+        return $this->hasManny(Loker::class, 'id');
+    }
+    public function Wawancara() {
+        return $this->hasOne(Wawancara::class, 'id');
     }
 }

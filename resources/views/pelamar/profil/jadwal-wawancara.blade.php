@@ -2,44 +2,53 @@
 @extends('layouts.landing.navbar')
 
 @section('content')
-    <!-- Content body start -->
-    <section class="page-title bg-1">
-        <!-- ... kode lainnya ... -->
-    </section>
+<section class="page-title bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block text-center">
+                    <h1 class="text-capitalize mb-5 text-white text-lg">Jadwal Wawancara</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="section blog-wrap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        @if ($riwayats->isEmpty())
+                        @if ($wawancaras->isEmpty())
                             <div class="col-lg-6 col-md-6 mb-3 px-7 text-danger text-center">
                                 <p>Anda Belum Melamar Pekerjaan</p>
                             </div>
                         @else
-                        @foreach ($riwayats as $riwayat)
-                            <div class="col-lg-12 col-md-6 mb-3 px-0 border">
-                                <div class="blog-item p-1 mr-1">
+                        @foreach ($wawancaras as $wawancara)
+                            <div class="col-lg-12 col-md-6 mb-3 px-0 border shadow">
+                                <div class="blog-item p-1 m4 mr-1">
                                     <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
-                                        <img  src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
-                                            class="img-fluid rounded" width="180">
                                     </div>
-                                    <div class="blog-item-content pb-1" >
-                                        <h3 class="mt-3 mb-3 text-uppercase">{{ $riwayat->kategori }}</h3>
-                                        <div class="blog-item-meta mb-3">
+                                    <div class="blog-item-content pb-1 m-5" >
+                                        <h3 class="mt-3 mb-3 text-uppercase">{{ $wawancara->kategori }}</h3>
+                                        <div class="blog-item-meta mb-4">
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Nama Perusahaan:</b>
                                             </a></span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Posisi:</b>
-                                                </a>{{ $riwayat->posisi }}</span><br />
+                                                </a>{{ $wawancara->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Lamaran Dikirim:</b>
-                                                </a>{{ $riwayat->data_pelamar_created_at }}</span><br />
+                                                </a>{{ $wawancara->wawancara_created_at }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Alamat:</b>
-                                                </a>{{ $riwayat->alamat }}</span><br />
+                                                </a>{{ $wawancara->alamat }}</span><br />
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Jadwal Wawancara:</b>
+                                                </a>{{ $wawancara->jadwal }}</span><br />
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Catatan:</b>
+                                                </a>{{ $wawancara->catatan }}</span><br />
                                         </div>
-                                        @if ($riwayat->status == 'diterima')
-                                        <a class="btn btn-success text-white">Diterima</a>
+                                        @if ($wawancara->status == 'Diterima')
+                                        <a class="btn btn-success text-white mr-3">Diterima</a>
                                         @else
-                                        <a class="btn btn-warning text-white">Proses</a>
+                                        <a class="btn btn-warning text-white mr-3">Proses</a>
                                         @endif
                                     </div>
                                 </div>

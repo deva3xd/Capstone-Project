@@ -63,7 +63,7 @@
                                 <ul>
                                     @if (Auth::user()->role == 'perusahaan')
                                     <li>
-                                        <a href="{{route('profilePerusahaan')}}"><i class="icon-user"></i> <span>Profile</span></a>
+                                        <a href="{{route('ProfilePerusahaan')}}"><i class="icon-user"></i> <span>Profile</span></a>
                                         <hr class="my-2">
                                     </li>
                                     @endif

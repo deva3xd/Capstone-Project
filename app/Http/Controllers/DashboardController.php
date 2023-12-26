@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Loker;
 use App\Wawancara;
 use App\Pelamar;
+use App\DataPelamar;
 use App\Perusahaan;
 use App\User;
 
@@ -48,35 +49,72 @@ class DashboardController extends Controller
 
     // perusahaan
     public function perusahaan() {
-        $loker = Loker::where('id_perusahaan', 'LIKE', auth()->user()->id)->count();
+        $loker = Loker::where('status', 'LIKE', 'aktif')
+        ->where('id_perusahaan', auth()->user()->id)
+        ->count();
+
         $wawancara = Wawancara::count();
-        $pelamar = Pelamar::count();
-        $actives = Loker::where('status', 'LIKE', 'aktif')->get();
-        $title = 'Dashboard';
-            $dataPelamars = DataPelamar::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
-            ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
-            ->where('pelamar.id_user', auth()->user()->id)
-            ->select('data_pelamar.*', 'loker.*', 'data_pelamar.created_at as data_pelamar_created_at')->get();
-            $wawancara = Wawancara::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
-            ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
-            ->where('pelamar.id_user', auth()->user()->id)
-            ->select('data_pelamar.*', 'loker.*', 'data_pelamar.created_at as data_pelamar_created_at')->get();
-        return view('perusahaan.index', ['loker' => $loker, 'wawancara' => $wawancara, 'pelamar' => $pelamar, 'title' => $title, 'actives' => $actives]);
+
+        $pelamar = DataPelamar::where('status', 'LIKE', 'pending')
+        ->where('id_perusahaan', auth()->user()->id)
+        ->count();
+        
+        $users = User::all();
+        $perusahaan = Perusahaan::where('id_users', auth()->user()->id)->get();
+        $actives = Loker::where('status', 'LIKE', 'aktif')
+        ->where('id_perusahaan', auth()->user()->id)
+        ->get();
+        $title = 'Dashboard Perusahaan';
+        // dd($perusahaan);
+        return view('perusahaan.index', [
+            'perusahaan' => $perusahaan,
+            'loker' => $loker, 
+            'wawancara' => $wawancara, 
+            'pelamar' => $pelamar, 
+            'title' => $title, 
+            'actives' => $actives
+        ], compact('perusahaan'));
     }
 
-    public function profilePerusahaan() {
-        $perusahaan = Perusahaan::all();
-        $title = 'Profile';
-        return view('perusahaan.profile', ['title' => $title, 'perusahaan' => $perusahaan]);
+    public function profilePerusahaan(Perusahaan $perusahaan) {
+        $title = 'Profile Perusahaan';
+        $users = User::where('id', auth()->user()->id)->get();
+        $perusahaans = Perusahaan::where('id_users', auth()->user()->id)->get();
+        return view('perusahaan.profile.index', [
+            'title' => $title, 
+            'perusahaans' => $perusahaans,
+            'users' => $users
+        ]);
     }
+
+    public function profileBuatPerusahaan() {
+        $title = 'Buat Profil Perusahaan';
+        return view('perusahaan.profile.create', ['title' => $title]);
+        // $userId = auth()->user()->id;
+        // $nama = auth()->user()->name;
+        // $email = auth()->user()->email;
+
+        // dd($nama, $userId, $email);
+    }
+
+    public function profileEditPerusahaan(Perusahaan $perusahaan) {
+        $title = 'Edit Profil Perusahaan';
+        return view('perusahaan.profile.edit', [
+            'title' => $title,
+            'perusahaan' => $perusahaan
+        ]);
+        // $userId = auth()->user()->id;
+        // $nama = auth()->user()->name;
+        // $email = auth()->user()->email;
+
+        // dd($nama, $userId, $email);
+    }
+
 
     public function storeProfilePerusahaan(Request $request) {
         $validateData = validator($request->all(), [
-            'id_users' => 'required|string|max:255',
-            'nama' => 'required|string|max:255',
             'alamat' => 'required|string|max:255',
             'no_telp' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'npwp' => 'required|string|max:255',
             'logo' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
@@ -91,10 +129,57 @@ class DashboardController extends Controller
 		$tujuan_upload = 'dokumen/logo';
 		$file->move($tujuan_upload, $nama_file);
 
+        $userId = auth()->user()->id;
+        $nama = auth()->user()->name;
+        $email = auth()->user()->email;
+
+        // dd($nama, $userId, $email);
+
         $perusahaan = new Perusahaan($validateData);
+        $perusahaan->nama = $nama;
+        $perusahaan->id_users = $userId;
+        $perusahaan->logo = $nama_file;
+        $perusahaan->email = $email;
+        $perusahaan->save();
+
+        return redirect(route('ProfilePerusahaan'));
+    }
+
+    public function updateProfilePerusahaan(Request $request, Perusahaan $perusahaan) {
+        $validateData = validator($request->all(), [
+            'email' => 'required|string|email|max:255|unique:perusahaan,email',
+            'alamat' => 'required|string|max:255',
+            'no_telp' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'npwp' => 'required|string|max:255',
+            'logo' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+        ])->validate();
+
+       	// menyimpan data file yang diupload ke variabel $file
+		$file = $request->file('logo');
+
+		$nama_file = $file->getClientOriginalName();
+
+      	// isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'dokumen/logo';
+		$file->move($tujuan_upload, $nama_file);
+
+        $userId = auth()->user()->id;
+        $nama = auth()->user()->name;
+
+        // dd($nama, $userId, $email);
+
+        $perusahaan->alamat = $validateData['alamat'];
+        $perusahaan->no_telp = $validateData['no_telp'];
+        $perusahaan->deskripsi = $validateData['deskripsi'];
+        $perusahaan->npwp = $validateData['npwp'];
+        $perusahaan->logo = $validateData['logo'];
+        $perusahaan->email = $validateData['email'];
+        $perusahaan->nama = $nama;
+        $perusahaan->id_users = $userId;
         $perusahaan->logo = $nama_file;
         $perusahaan->save();
 
-        return redirect(route('profilePerusahaan'));
+        return redirect(route('ProfilePerusahaan'));
     }
 }
