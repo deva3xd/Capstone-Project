@@ -17,4 +17,7 @@ class Wawancara extends Model
     public function datapelamar() {
         return $this->belongsTo(DataPelamar::class, 'id_data_pelamar');
     }
+    public function perusahaan() {
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan');
+    }
 }

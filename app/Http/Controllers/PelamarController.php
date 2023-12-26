@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Loker;
 use App\DataPelamar;
 use App\Pelamar;
-use App\Perusahaan;
 
 class PelamarController extends Controller
 {
@@ -46,18 +45,14 @@ class PelamarController extends Controller
 
     public function detailLowongan($id) {
         $title = 'Detail Lowongan';
-        $perusahaan = Perusahaan::all();
         $loker = Loker::findOrFail($id);
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
-        $dataPelamars = DataPelamar::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
-        ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
-        ->where('pelamar.id_user', auth()->user()->id)
-        ->select('data_pelamar.*', 'loker.*', 'data_pelamar.status as data_pelamar_status') // Sesuaikan dengan kolom yang Anda butuhkan
-        ->get();
+        $dataPelamars = DataPelamar::where('status', 'pending')
+            ->where('id_profil_pelamar', $pelamar->id)
+            ->get();
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
-        // dd($dataPelamars);
         return view('pelamar.lowongan.detail-lowongan', [
         'pelamar' => $pelamar,
         'dataPelamars' => $dataPelamars ,
@@ -65,8 +60,7 @@ class PelamarController extends Controller
         'day' => $day, 
         'month' => $month, 
         'year' => $year, 
-        'title' => $title,
-        'perusahaan' => $perusahaan
+        'title' => $title
     ]);
     }
     
@@ -75,6 +69,8 @@ class PelamarController extends Controller
     }
 
     public function applyPelamar($id, Request $request){
+    
+
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
         $loker = Loker::findOrFail($id);
         $status = 'Pending';  // Anda mungkin ingin menggunakan enum atau constant untuk nilai ini

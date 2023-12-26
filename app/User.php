@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this->hasOne(Pelamar::class, 'id_user', 'id');
     }
 
+    public function perusahaan()
+    {
+        return $this->hasOne(Perusahaan::class, 'id_users', 'id');
+    }
+
     /**
      * Check if the user has a pelamar profile.
      *

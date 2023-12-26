@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Wawancara;
+use Mpdf\Mpdf;
 use App\Pelamar;
 use App\Loker;
-use App\DataPelamar;
 use Illuminate\Http\Request;
 
 class WawancaraController extends Controller
@@ -17,9 +17,17 @@ class WawancaraController extends Controller
      */
     public function index()
     {
+        $pelamar = Pelamar::all();
         $wawancaras = Wawancara::all();
         $title = 'Data Wawancara';
-        return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras]);
+        return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras, 'pelamar' => $pelamar]);
+    }
+
+    public function pdf() {
+        $mpdf = new Mpdf();
+        $wawancaras = Wawancara::all();
+        $mpdf->WriteHTML(view('perusahaan.wawancara.pdf', ['wawancaras' => $wawancaras]));
+        $mpdf->Output();
     }
 
     /**
@@ -29,9 +37,10 @@ class WawancaraController extends Controller
      */
     public function create()
     {
-        $datas = DataPelamar::where('status', 'LIKE', 'lanjut')->get();
+        $lokers = Loker::all();
+        $pelamars = Pelamar::all();
         $title = 'Tambah Wawancara';
-        return view('perusahaan.wawancara.create', ['title' => $title, 'datas' => $datas]);
+        return view('perusahaan.wawancara.create', ['title' => $title, 'lokers' => $lokers, 'pelamars' => $pelamars]);
     }
 
     /**
@@ -43,10 +52,10 @@ class WawancaraController extends Controller
     public function store(Request $request)
     {
         $validateData = validator($request->all(), [
-            'id_data_pelamar' => 'required|string|max:11',
+            'id_loker' => 'required|string|max:11',
+            'id_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
-            'status' => 'required|string',
         ])->validate();
 
         $wawancara = new Wawancara($validateData);
@@ -91,16 +100,16 @@ class WawancaraController extends Controller
     public function update(Request $request, Wawancara $wawancara)
     {
         $validateData = validator($request->all(), [
-            'id_data_pelamar' => 'required|string|max:11',
+            'id_loker' => 'required|string|max:11',
+            'id_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
-            'status' => 'required|string'
         ])->validate();
 
-        $wawancara->id_data_pelamar = $validateData['id_data_pelamar'];
+        $wawancara->id_loker = $validateData['id_loker'];
+        $wawancara->id_pelamar = $validateData['id_pelamar'];
         $wawancara->jadwal = $validateData['jadwal'];
         $wawancara->catatan = $validateData['catatan'];
-        $wawancara->status = $validateData['status'];
         $wawancara->save();
 
         return redirect(route('daftarWawancara'));
@@ -126,10 +135,8 @@ class WawancaraController extends Controller
         ->where('pelamar.id_user', auth()->user()->id)
         ->select('wawancara.*', 'loker.*', 'wawancara.created_at as wawancara_created_at')
         ->get();
-        // dd($wawancaras);
         
         return view('pelamar.profil.jadwal-wawancara', [
-            'title' => $title,
             'wawancaras' => $wawancaras
         ]);
     }
