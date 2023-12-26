@@ -58,10 +58,10 @@
                             <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Untuk Pekerjaan Ini
                                 Sedang Diproses</p>
                         @else
-                        <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                            class="text-white btn btn-small btn-success">Daftar</a>
                         @endif
                         @endforeach
+                        <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                            class="text-white btn btn-small btn-success">Daftar</a>
 
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
 
