@@ -127,7 +127,7 @@ class WawancaraController extends Controller
         $title = 'Jadwal Wawancara';
         $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
         $wawancaras = Wawancara::join('pelamar', 'wawancara.id_pelamar', '=', 'pelamar.id')
-        ->join('loker', 'wawancara.id_loker', '=', 'loker.id') 
+        ->join('loker', 'wawancara.id_perusahaan', '=', 'loker.id') 
         ->where('pelamar.id_user', auth()->user()->id)
         ->select('wawancara.*', 'loker.*', 'wawancara.created_at as wawancara_created_at')
         ->get();
