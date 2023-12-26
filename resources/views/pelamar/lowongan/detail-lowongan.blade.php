@@ -51,20 +51,18 @@
                         </div>
                     </div>
                     @foreach ($dataPelamars as $dataPelamar)
-                    @if ($dataPelamar->status == 'Diterima')
-                    <p><i class="fas fa-check-circle text-success m-1"></i>Lamaran Anda Untuk Loker Ini Sudah
-                        Diterima. Silakan Cek Jadwal Wawancara Anda</p>
-                        @elseif ($dataPelamar->status == 'Ditolak')
-                        <p><i class="fas fa-times-circle text-danger m-1"></i>Maaf Lamaran Anda Untuk Pekerjaan Ini
-                            Ditolak</p>
-                            @elseif ($dataPelamar->status == 'Pending')
+                        @if ($dataPelamar->status == 'Diterima' && $dataPelamar->id_loker == $loker->id)
+                            <p><i class="fas fa-check-circle text-success m-1"></i>Lamaran Anda Untuk Loker Ini Sudah
+                                Diterima. Silakan Cek Jadwal Wawancara Anda</p>
+                        @elseif ($dataPelamar->status == 'Pending' && $dataPelamar->id_loker == $loker->id)
                             <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Untuk Pekerjaan Ini
                                 Sedang Diproses</p>
-                                @else
-                                <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                                    class="text-white btn btn-small btn-success">Daftar</a>
+                        @else
+                            <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                                class="text-white btn btn-small btn-success">Daftar</a>
                         @endif
                     @endforeach
+
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
 
                 </div>
