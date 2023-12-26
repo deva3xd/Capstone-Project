@@ -49,13 +49,10 @@ class DashboardController extends Controller
 
     // perusahaan
     public function perusahaan() {
-        $loker = Loker::where('status', 'LIKE', 'aktif')
-        ->where('id_perusahaan', auth()->user()->id)
-        ->count();
+        $loker = Loker::where('status', 'LIKE', 'aktif')->where('id_perusahaan', auth()->user()->id)->count();
+        $wawancara = Wawancara::where('status','LIKE', 'diproses')->where('id_perusahaan', auth()->user()->id)->count();;
 
-        $wawancara = Wawancara::count();
-
-        $pelamar = DataPelamar::where('status', 'LIKE', 'pending')
+        $pelamar = DataPelamar::where('status', 'pending')
         ->where('id_perusahaan', auth()->user()->id)
         ->count();
         
@@ -90,11 +87,6 @@ class DashboardController extends Controller
     public function profileBuatPerusahaan() {
         $title = 'Buat Profil Perusahaan';
         return view('perusahaan.profile.create', ['title' => $title]);
-        // $userId = auth()->user()->id;
-        // $nama = auth()->user()->name;
-        // $email = auth()->user()->email;
-
-        // dd($nama, $userId, $email);
     }
 
     public function profileEditPerusahaan(Perusahaan $perusahaan) {
@@ -103,11 +95,6 @@ class DashboardController extends Controller
             'title' => $title,
             'perusahaan' => $perusahaan
         ]);
-        // $userId = auth()->user()->id;
-        // $nama = auth()->user()->name;
-        // $email = auth()->user()->email;
-
-        // dd($nama, $userId, $email);
     }
 
 
@@ -152,7 +139,7 @@ class DashboardController extends Controller
             'no_telp' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'npwp' => 'required|string|max:255',
-            'logo' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+            'logo' => 'file|image|mimes:jpeg,png,jpg|max:2048'
         ])->validate();
 
        	// menyimpan data file yang diupload ke variabel $file

@@ -16,7 +16,8 @@ class LokerController extends Controller
      */
     public function index()
     {
-        $lokers = Loker::all();
+        $lokers = Loker::where('id_perusahaan', auth()->user()->id)
+        ->get();
         $title = 'Data Loker';
         return view('perusahaan.loker.index', ['title' => $title, 'lokers' => $lokers]);
     }

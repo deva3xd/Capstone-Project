@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Edit Loker</h1>
+                    <h1 class="m-0 text-dark">Edit Wawancara</h1>
                 </div>
                 <div class="col-sm-6">
                 </div>
@@ -31,6 +31,7 @@
                                         <input type="number" class="form-control" placeholder="Kategori Loker" name="id_data_pelamar" id="id_data_pelamar" value="{{ $wawancara->id_data_pelamar}}" readonly>
                                     </div>
                                 </div>
+                                <input type="hidden" name="id_perusahaan" value="{{Auth::user()->id}}" />
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jadwal</label>
                                     <div class="col-sm-10">
@@ -47,12 +48,6 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label pt-0">Status</label>
                                     <div class="col-sm-10">
-                                        <div class="radio mb-3">
-                                            <label>
-                                                <input type="radio" name="status" id="status" value="diproses"
-                                                    checked> Diproses
-                                            </label>
-                                        </div>
                                         <div class="radio mb-3">
                                             <label>
                                                 <input type="radio" name="status" id="status" value="diterima"> Diterima

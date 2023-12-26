@@ -71,7 +71,7 @@
                                 <label class="col-sm-2 col-form-label">Logo</label>
                                 <div class="col-sm-10">
                                     <input type="file" class="form-control" name="logo"
-                                        id="logo" required />
+                                        id="logo" />
                                 </div>
                             </div>
                             <div class="text-right">

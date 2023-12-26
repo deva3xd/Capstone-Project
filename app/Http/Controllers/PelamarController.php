@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Loker;
 use App\DataPelamar;
 use App\Pelamar;
+use App\Perusahaan;
 
 class PelamarController extends Controller
 {
@@ -47,9 +48,11 @@ class PelamarController extends Controller
         $title = 'Detail Lowongan';
         $loker = Loker::findOrFail($id);
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
-        $dataPelamars = DataPelamar::where('status', 'pending')
-            ->where('id_profil_pelamar', $pelamar->id)
-            ->get();
+        $dataPelamars = DataPelamar::join('pelamar', 'data_pelamar.id_profil_pelamar', '=', 'pelamar.id')
+        ->join('loker', 'data_pelamar.id_loker', '=', 'loker.id')
+        ->where('pelamar.id_user', auth()->user()->id)
+        ->select('data_pelamar.*', 'loker.*', 'data_pelamar.created_at as data_pelamar_created_at', 'data_pelamar.status as data_pelamar_status') // Sesuaikan dengan kolom yang Anda butuhkan
+        ->get();
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
@@ -73,8 +76,10 @@ class PelamarController extends Controller
 
         $pelamar = Pelamar::where('id_user', auth()->user()->id)->first();
         $loker = Loker::findOrFail($id);
+        $perusahaan = Perusahaan::findOrFail($loker->id_perusahaan);
         $status = 'Pending';  // Anda mungkin ingin menggunakan enum atau constant untuk nilai ini
         $dataPelamar = new DataPelamar();
+        $dataPelamar->id_perusahaan = $perusahaan->id;
         $dataPelamar->id_loker = $loker->id;  // Gunakan ID sebagai nilai
         $dataPelamar->id_profil_pelamar = $pelamar->id;  // Gunakan ID sebagai nilai
         $dataPelamar->status = $status;

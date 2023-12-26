@@ -36,6 +36,7 @@
                                         </select>
                                     </div>
                                 </div>
+                                <input type="hidden" name="id_perusahaan" value="{{ Auth::user()->id }}" />
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jadwal</label>
                                     <div class="col-sm-10">
@@ -48,28 +49,6 @@
                                     <div class="col-sm-10">
                                         <textarea h-150px" rows="6" class="form-control" placeholder="Catatan" name="catatan"
                                             id="catatan" required="required"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label pt-0">Status</label>
-                                    <div class="col-sm-10">
-                                        <div class="radio mb-3">
-                                            <label>
-                                                <input type="radio" name="status" id="status" value="diproses"
-                                                    checked> Diproses
-                                            </label>
-                                        </div>
-                                        <div class="radio mb-3">
-                                            <label>
-                                                <input type="radio" name="status" id="status" value="diterima"> Diterima
-                                            </label>
-                                        </div>
-                                        <div class="radio mb-3">
-                                            <label>
-                                                <input type="radio" name="status" id="status"
-                                                    value="ditolak"> Ditolak
-                                            </label>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="text-right">

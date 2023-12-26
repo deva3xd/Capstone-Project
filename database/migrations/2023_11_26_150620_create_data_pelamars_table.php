@@ -19,7 +19,7 @@ class CreateDataPelamarsTable extends Migration
             $table->integer('id_perusahaan');
             $table->integer('id_wawancara')->nullable();
             $table->integer('id_profil_pelamar');
-            $table->string('status');
+            $table->enum('status', ['lanjut', 'berhenti', 'Pending']);
             $table->timestamps();
         });
     }

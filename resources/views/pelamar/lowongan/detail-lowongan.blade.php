@@ -31,7 +31,7 @@
                                     <h2 class="mt-3 mb-3 text-md text-uppercase">{{ $loker->kategori }}</h2>
                                     <div class="blog-item-meta mb-5">
                                         <span class="text-muted text-capitalize mr-3"><i class="fa fa-building mr-2"></i>
-                                            on progress</span>
+                                            {{ $loker->perusahaan->nama }}</span>
                                         <span class="text-muted text-capitalize mr-3"><i
                                                 class="ti-pencil-alt mr-2"></i>{{ $loker->posisi }}</span>
                                         <span class="text-muted text-capitalize mr-3"><i
@@ -56,8 +56,23 @@
                         <button onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
                             class="text-white btn btn-small btn-success">Daftar</button>
                     @endif
-
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
+                    @foreach ($dataPelamars as $dataPelamar)
+                        @if ($dataPelamar->where('status', 'Diterima'))
+                            <p><i class="fas fa-check-circle text-success m-1"></i>Lamaran Anda Untuk Loker Ini Sudah
+                                Diterima. Silakan Cek Jadwal Wawancara Anda</p>
+                        @elseif ($dataPelamar->where('status', 'Ditolak'))
+                            <p><i class="fas fa-times-circle text-danger m-1"></i>Maaf Lamaran Anda Untuk Pekerjaan Ini
+                                Ditolak</p>
+                        @elseif ($dataPelamar->where('status', 'Pending'))
+                            <p><i class="far fa-clock m-1" style="color: orange"></i>Lamaran Anda Untuk Pekerjaan Ini Sedang
+                                Diproses</p>
+                        @elseif ($dataPelamar->isEmpty())
+                            <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
+                                class="text-white btn btn-small btn-success">Daftar</a>
+                        @else
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -69,7 +84,7 @@
         confirm = function(button) {
             var url = $(button).data('url');
             swal({
-                'title': 'Konfirmasi Melamar Lowongan',
+                'title': 'Melamar Lowongan Pekerjaan Ini',
                 'text': 'Apakah Kamu Yakin Ingin Mendaftar Lamaran Pekerjaan Ini?',
                 'dangermode': true,
                 'buttons': true

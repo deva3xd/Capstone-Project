@@ -24,12 +24,8 @@
                     <div class="card-body">
                         <!-- Nav tabs -->
                         <div class="default-tab">
-                            <ul class="nav nav-tabs mb-3" role="tablist">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-                                </li>
-                            </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel">
+                                <div class="tab-pane fade show active">
                                     <div class="p-t-15">
                                         <div class="card">
                                             <div class="card-body">
