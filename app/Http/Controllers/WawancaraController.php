@@ -47,6 +47,7 @@ class WawancaraController extends Controller
         $validateData = validator($request->all(), [
             'id_data_pelamar' => 'required|string|max:11',
             'id_perusahaan' => 'required|string|max:11',
+            'id_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
             'status' => 'diproses'
@@ -77,10 +78,12 @@ class WawancaraController extends Controller
      */
     public function edit(Wawancara $wawancara)
     {
+        $datas = DataPelamar::where('status', 'LIKE', 'lanjut')->get();
         $title = 'Edit Wawancara';
         return view('perusahaan.wawancara.edit', [
-            'wawancara' => $wawancara,
-            'title' => $title
+            'title' => $title,
+            'datas' => $datas,
+            'wawancara' => $wawancara
         ]);
     }
 
@@ -96,6 +99,7 @@ class WawancaraController extends Controller
         $validateData = validator($request->all(), [
             'id_data_pelamar' => 'required|string|max:11',
             'id_perusahaan' => 'required|string|max:11',
+            'id_pelamar' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
             'status' => 'required|string'
@@ -103,6 +107,7 @@ class WawancaraController extends Controller
 
         $wawancara->id_data_pelamar = $validateData['id_data_pelamar'];
         $wawancara->id_perusahaan = $validateData['id_perusahaan'];
+        $wawancara->id_pelamar = $validateData['id_pelamar'];
         $wawancara->jadwal = $validateData['jadwal'];
         $wawancara->catatan = $validateData['catatan'];
         $wawancara->status = $validateData['status'];
