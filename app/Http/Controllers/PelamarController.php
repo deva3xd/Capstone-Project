@@ -55,6 +55,9 @@ class PelamarController extends Controller
     ->select('data_pelamar.*', 'loker.id', 'data_pelamar.created_at as data_pelamar_created_at', 'data_pelamar.status as data_pelamar_status') 
     ->get();
 
+    $filteredData = $dataPelamars;
+
+    // dd($filteredData);
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
@@ -65,7 +68,8 @@ class PelamarController extends Controller
             'day' => $day, 
             'month' => $month, 
             'year' => $year, 
-            'title' => $title
+            'title' => $title,
+            'filteredData' => $filteredData
         ]);
     }
     
