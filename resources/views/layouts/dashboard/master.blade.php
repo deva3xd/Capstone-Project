@@ -9,6 +9,7 @@
     <!-- theme meta -->
     <meta name="theme-name" content="quixlab" /> <!-- Data Table -->
     <link rel="icon" type="image/x-icon" href="{{ asset('landing/images/favicon.png') }}" />
+    <link rel="stylesheet" href="{{ asset('landing/plugins/fontawesome/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/plugins/tables/css/datatable/dataTables.bootstrap4.min.css') }}">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">

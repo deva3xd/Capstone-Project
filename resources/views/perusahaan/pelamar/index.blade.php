@@ -29,7 +29,7 @@
                                         <th>No.</th>
                                         <th>Kategori Loker</th>
                                         <th>Posisi</th>
-                                        <th>Nama Pelamar</th>
+                                        <th>CV Pelamar</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -40,7 +40,15 @@
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $data->loker->kategori }}</td>
                                             <td>{{ $data->loker->posisi }}</td>
-                                            <td>{{ $data->pelamar->nama }}</td>
+                                            <td>
+                                                    @if ($data->pelamar->cv)
+                                                        <a class="btn btn-danger" href="{{ asset('path/to/cv/' . $data->pelamar->cv) }}" download>
+                                                            <i class="fas fa-arrow-circle-down"></i> Download CV
+                                                        </a>
+                                                    @else
+                                                        CV tidak tersedia
+                                                    @endif
+                                                </td>
                                             <td>{{ $data->status }}</td>
                                             <td>
                                                 <a href="{{ route('editPelamarPerusahaan', ['id' => $data->id]) }}"

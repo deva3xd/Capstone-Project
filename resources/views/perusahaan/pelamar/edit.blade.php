@@ -47,14 +47,14 @@
                                     <div class="col-sm-10">
                                         <div class="radio mb-3">
                                             <label>
-                                                <input type="radio" name="status" id="status" value="lanjut"
-                                                    checked> Lanjut
+                                                <input type="radio" name="status" id="status" value="Diterima"
+                                                    checked> Diterima
                                             </label>
                                         </div>
                                         <div class="radio mb-3">
                                             <label>
                                                 <input type="radio" name="status" id="status"
-                                                    value="berhenti"> Berhenti
+                                                    value="Ditolak"> Berhenti
                                             </label>
                                         </div>
                                     </div>
