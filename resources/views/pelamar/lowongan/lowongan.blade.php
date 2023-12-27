@@ -36,7 +36,7 @@
                                                 </a>{{ $loker->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Batas Lamaran:</b>
                                                 </a>{{ $loker->batas_lamaran }}</span><br />
-                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Deskripsi:</b>
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Alamat:</b>
                                                 </a>{{ $loker->alamat }}</span><br />
                                         </div>
                                         <a href="{{ route('pelamarDetailLowongan', ['id' => $loker->id]) }}"
