@@ -16,7 +16,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
                     
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-button border rounded" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link nav-link-button border text-lowercase" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('Profilindex') }}"><i

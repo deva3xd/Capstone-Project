@@ -43,7 +43,7 @@
                                             <td>
                                                     @if ($data->pelamar->cv)
                                                         <a class="btn btn-danger" href="{{ asset('path/to/cv/' . $data->pelamar->cv) }}" download>
-                                                            <i class="fas fa-arrow-circle-down"></i> Download CV
+                                                            <i class="fas fa-arrow-circle-down"></i> Download
                                                         </a>
                                                     @else
                                                         CV tidak tersedia

@@ -47,11 +47,11 @@
                                                         class="text-dark mr-1"><b>Alamat:</b>
                                                     </a>{{ $riwayat->alamat }}</span><br />
                                             </div>
-                                            @if ($riwayat->data_pelamar_status == 'Diterima')
-                                                <a class="btn btn-success text-white">Diterima</a>
-                                            @elseif ($riwayat->data_pelamar_status == 'Ditolak')
-                                                <a class="btn btn-danger text-white">Ditolak</a>
-                                            @elseif ($riwayat->data_pelamar_status == 'Pending')
+                                            @if ($riwayat->data_pelamar_status == 'lanjut')
+                                                <a class="btn btn-success text-white">Lanjut</a>
+                                            @elseif ($riwayat->data_pelamar_status == 'berhenti')
+                                                <a class="btn btn-danger text-white">Berhenti</a>
+                                            @elseif ($riwayat->data_pelamar_status == 'pending')
                                                 <a class="btn btn-warning text-white">Proses</a>
                                             @else
                                                 <span class="badge badge-secondary">Status Tidak Dikenal</span>

@@ -40,12 +40,11 @@ class LandingPageController extends Controller
 
     public function detailLowongan($id) {
         $title = 'Detail Lowongan';
-        $perusahaan = Perusahaan::all();
         $loker = Loker::findOrFail($id);
         $day = $loker->created_at->day;
         $month = $loker->created_at->month;
         $year = $loker->created_at->year;
-        return view('landing.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year, 'title' => $title, 'perusahaan' => $perusahaan]);
+        return view('landing.detail-lowongan', ['loker' => $loker, 'day' => $day, 'month' => $month, 'year' => $year, 'title' => $title]);
     }
     
     public function perusahaan(){

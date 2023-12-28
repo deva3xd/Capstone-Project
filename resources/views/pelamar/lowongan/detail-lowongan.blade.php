@@ -50,11 +50,11 @@
                             </div>
                         </div>
                     </div>
-                    @foreach ($filteredData as $dataPelamar)
-                        @if ($dataPelamar->status == 'Diterima' && $dataPelamar->id_loker == $loker->id && $dataPelamar->id_profil_pelamar == $pelamar->id)
+                    @foreach ($dataPelamars as $dataPelamar)
+                        @if ($dataPelamar->status == 'lanjut' && $dataPelamar->id_loker == $loker->id && $dataPelamar->id_profil_pelamar == $pelamar->id)
                             <p><i class="fas fa-check-circle text-success m-1"></i>
                                 Selamat, anda lanjut ke tahap wawancara</p>
-                        @elseif ($dataPelamar->status == 'Ditolak' && $dataPelamar->id_loker == $loker->id && $dataPelamar->id_profil_pelamar == $pelamar->id)
+                        @elseif ($dataPelamar->status == 'berhenti' && $dataPelamar->id_loker == $loker->id && $dataPelamar->id_profil_pelamar == $pelamar->id)
                             <p><i class="text-danger ti-na m-1" style="color: orange"></i>
                                 Maaf, lamaran anda ditolak</p>
                         @else
@@ -62,7 +62,7 @@
                                 Lamaran anda sedang diproses</p>
                         @endif
                     @endforeach
-                    @if (!$dataPelamar->id_loker)
+                    @if (!$dataPelamar)
                         <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
                             class="text-white btn btn-small btn-success">Daftar</a>
                     @endif

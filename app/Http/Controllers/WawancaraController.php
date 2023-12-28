@@ -17,7 +17,7 @@ class WawancaraController extends Controller
      */
     public function index()
     {
-        $pelamar = Pelamar::all();
+        $pelamar = DataPelamar::all();
         $wawancaras = Wawancara::where('id_perusahaan', auth()->user()->id)->get();
         $title = 'Data Wawancara';
         return view('perusahaan.wawancara.index', ['title' => $title, 'wawancaras' => $wawancaras, 'pelamar' => $pelamar]);
@@ -131,12 +131,11 @@ class WawancaraController extends Controller
     public function Jadwalwawancara(){
         $title = 'Jadwal Wawancara';
         $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
-        $wawancaras = Wawancara::join('pelamar', 'wawancara.id_pelamar', '=', 'pelamar.id')
-        ->join('loker', 'wawancara.id_perusahaan', '=', 'loker.id') 
+        $wawancaras = Wawancara::join('pelamar', 'pelamar.id', '=', 'wawancara.id_pelamar')
+        ->join('loker', 'loker.id', '=', 'wawancara.id_perusahaan') 
         ->where('pelamar.id_user', auth()->user()->id)
         ->select('wawancara.*', 'loker.*', 'wawancara.created_at as wawancara_created_at')
         ->get();
-        
         return view('pelamar.profil.jadwal-wawancara', [
             'wawancaras' => $wawancaras,
             'title' => $title

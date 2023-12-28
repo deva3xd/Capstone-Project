@@ -19,7 +19,7 @@
                                 <form class="login-input" method="POST" action="{{ route('registerPelamar') }}">
                                 @csrf
                                     <div class="form-group border-bottom">
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama" required />
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama (max: 10)" maxlength="10" required />
                                     </div>
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
