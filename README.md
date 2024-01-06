@@ -1,7 +1,7 @@
 
 # Job Managemet System
 
-Dibuat untuk memenuhi tugas akhir program kampus merdeka (study independent) di Gamelab.id
+Dibuat untuk tugas akhir program studi independen di Gamelab.id
 
 
 ## Features
@@ -24,7 +24,7 @@ Admin
 
 ## Tech Stack
 
-**Client:** Laravel, Bootstrap
-
-**Server:** MySQL
+- Laravel
+- Bootstrap
+- MySQL
 
