@@ -55,6 +55,9 @@
                                                         <p class="text-muted">{{ $perusahaan->email }}</p>
                                                     </div>
                                                     @endforeach
+                                                    <a href="{{ route('EditProfilePerusahaan', ['id' => $perusahaan->id]) }}" class="btn btn-warning m-3">
+                                                        Edit Profil
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

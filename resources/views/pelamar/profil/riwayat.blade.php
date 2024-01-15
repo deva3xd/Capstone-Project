@@ -54,7 +54,7 @@
                                             @elseif ($riwayat->data_pelamar_status == 'pending')
                                                 <a class="btn btn-warning text-white">Proses</a>
                                             @else
-                                                <span class="badge badge-secondary">Status Tidak Dikenal</span>
+                                            <a class="btn btn-warning text-white">Proses</a>
                                             @endif
                                         </div>
                                     </div>

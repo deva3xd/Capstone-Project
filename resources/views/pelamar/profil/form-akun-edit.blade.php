@@ -28,7 +28,7 @@
                             @csrf
                             <div class="form-group m-3">
                                 <label for="password" class="p-1">Password</label>
-                                <input name="password" id="password" required type="text" value="" placeholder="masukkan password baru"
+                                <input name="password" id="password" required type="text" value="" placeholder="masukkan password baru Min 10 Char"
                                     class="form-control password @error('password')is-invalid  @enderror">
                                     @error('password')
                                 <div class="invalid-feedback">

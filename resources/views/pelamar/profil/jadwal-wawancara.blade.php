@@ -45,12 +45,10 @@
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Catatan:</b>
                                                 </a>{{ $wawancara->catatan }}</span><br />
                                         </div>
-                                        @if ($wawancara->status == 'diterima')
-                                            <a class="btn btn-success text-white mr-3">Diterima</a>
-                                        @elseif ($wawancara->status == 'ditolak')
-                                            <a class="btn btn-danger text-white mr-3">Ditolak</a>
+                                        @if ($wawancara->status == 'Diterima')
+                                        <a class="btn btn-success text-white mr-3">Diterima</a>
                                         @else
-                                            <a class="btn btn-warning text-white mr-3">Diproses</a>
+                                        <a class="btn btn-warning text-white mr-3">Proses</a>
                                         @endif
                                         error get value: {{$wawancara->status}}
                                     </div>

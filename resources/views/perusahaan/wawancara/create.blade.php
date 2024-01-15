@@ -26,18 +26,20 @@
                             <form action="{{ route('storeWawancara') }}" method="POST">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Id Data Pelamar</label>
+                                    <label class="col-sm-2 col-form-label">Nama Pelamar</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="id_data_pelamar" id="id_data_pelamar" required="required">
                                             <option value="">Pilih</option>
                                             @foreach ($datas as $data)
-                                                <option value="{{ $data->id }}">{{ $data->id }}</option>
+                                                {{-- Menggunakan relasi pelamar untuk mendapatkan nama --}}
+                                                <option value="{{ $data->pelamar->id }}">{{ $data->pelamar->nama }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 @foreach ($datas as $data)
-                                    <input type="hidden" name="id_pelamar" value="{{ $data->id_profil_pelamar }}" />
+                                    <input type="hidden" name="id_pelamar" value="{{ $data->pelamar->id }}" />
+                                    <input type="hidden" name="id_loker" value="{{ $data->loker->id }}" />
                                 @endforeach
                                 <input type="hidden" name="id_perusahaan" value="{{ Auth::user()->id }}" />
                                 <div class="form-group row">

@@ -65,7 +65,6 @@
                     @if (!$dataPelamar)
                         <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
                             class="text-white btn btn-small btn-success">Daftar</a>
-                    @endif
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
                 </div>
             </div>

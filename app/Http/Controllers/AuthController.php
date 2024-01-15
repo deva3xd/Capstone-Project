@@ -85,12 +85,10 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->role = 'perusahaan';
+        $user->role = 'admin';
         $user->save();
-
-        Auth::login($user);
         // Redirect ke halaman login dengan pesan sukses
-        return redirect(route('BuatProfilePerusahaan'))->with('success', 'Account created successfully! Please login.');
+        return redirect(route('login'))->with('success', 'Account created successfully! Please login.');
     }
 
     public function showRegistrationFormPelamar()
