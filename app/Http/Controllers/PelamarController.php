@@ -12,12 +12,14 @@ class PelamarController extends Controller
 {
     public function index(){
         $title = 'Home';
+        $pelamar = Pelamar::where('id_user', auth()->user()->id)->get();
         $loker = Loker::where('status', 'LIKE', 'aktif')->count();
         $perusahaan = Perusahaan::all()->count();
         return view('pelamar.index', [
             'title' => $title, 
             'loker'=> $loker,
-            'perusahaan' => $perusahaan
+            'perusahaan' => $perusahaan,
+            'pelamar' => $pelamar
         ]);
     }
 
