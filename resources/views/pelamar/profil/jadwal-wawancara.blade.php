@@ -28,16 +28,12 @@
                             <div class="col-lg-12 col-md-6 mb-3 px-0 border shadow">
                                 <div class="blog-item p-1 m4 mr-1">
                                     <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
-                                        <img src="{{ asset('dokumen/logo/' . $riwayat->perusahaan->logo) }}" alt="logo"
-                                            class="img-fluid rounded" width="150">
-                                    </div>
-                                    <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
                                     </div>
                                     <div class="blog-item-content pb-1 m-5" >
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $wawancara->kategori }}</h3>
                                         <div class="blog-item-meta mb-4">
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Nama Perusahaan:</b>
-                                                </a></span><br />
+                                                </a>{{$wawancara->perusahaan->nama}}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Posisi:</b>
                                                 </a>{{ $wawancara->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Lamaran Dikirim:</b>
@@ -49,14 +45,13 @@
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Catatan:</b>
                                                 </a>{{ $wawancara->catatan }}</span><br />
                                         </div>
-                                        @if ($wawancara->w_st == 'diterima')
-                                        <a class="btn btn-success text-white mr-3">Diterima</a>
-                                        @elseif ($wawancara->w_st == 'ditolak')
-                                        <a class="btn btn-danger text-white mr-3">Ditolak</a>
-                                        @else 
-                                        <a class="btn btn-warning text-white mr-3">Proses</a>
+                                        @if ($wawancara->status == 'diterima')
+                                            <a class="btn btn-success text-white mr-3">Diterima</a>
+                                        @elseif ($wawancara->status == 'ditolak')
+                                            <a class="btn btn-danger text-white mr-3">Ditolak</a>
+                                        @else
+                                            <a class="btn btn-warning text-white mr-3">Diproses</a>
                                         @endif
-                                        error get value: {{$wawancara->status}}
                                     </div>
                                 </div>
                             </div>
