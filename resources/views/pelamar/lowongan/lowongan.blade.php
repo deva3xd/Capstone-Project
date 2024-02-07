@@ -23,15 +23,17 @@
                 <div class="col-lg-8">
                     <div class="row">
                         @foreach ($lokers as $loker)
-                            <div class="col-lg-12 col-md-6 mb-3 px-0 border">
+                            <div class="col-lg-12 col-md-6 mb-3 px-0 shadow-lg p-1 mb-5 rounded mr-3">
                                 <div class="blog-item p-1 mr-1">
                                     <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
-                                        <img  src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
-                                            class="img-fluid rounded" width="180">
+                                        <img  src="{{ asset('dokumen/logo/' . $loker->perusahaan->logo) }}" alt="logo"
+                                            class="img-fluid rounded" width="150">
                                     </div>
-                                    <div class="blog-item-content pb-1" >
+                                    <div class="blog-item-content pb-2 m-2" >
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>
                                         <div class="blog-item-meta mb-3">
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Perusahaan:</b>
+                                            </a>{{ $loker->perusahaan->nama }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Posisi:</b>
                                                 </a>{{ $loker->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Batas Lamaran:</b>
@@ -48,8 +50,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="sidebar-widget search  mb-3 ">
+                <div class="col-lg-2 ml-3">
+                    <div class="sidebar-widget search mb-3">
                         <h5>Cari Perusahaan</h5>
                         <label><input type="search" class="form-control form-control-sm" placeholder="Cari Nama Perusahaan" id="search" name="search" onfocus="this.value=''"></label>
                     </div>

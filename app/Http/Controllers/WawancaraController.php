@@ -134,8 +134,9 @@ class WawancaraController extends Controller
         $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
         $wawancaras = Wawancara::join('pelamar', 'pelamar.id', '=', 'wawancara.id_pelamar')
         ->join('loker', 'loker.id', '=', 'wawancara.id_perusahaan') 
+        ->join('perusahaan', 'loker.id_perusahaan', '=', 'perusahaan.id')
         ->where('pelamar.id_user', auth()->user()->id)
-        ->select('wawancara.*', 'loker.*', 'wawancara.status as w_st')
+        ->select('wawancara.*', 'loker.*', 'perusahaan.logo as logo_perusahaan', 'perusahaan.nama as nama_perusahaan', 'wawancara.status as w_st')
         ->get();
         return view('pelamar.profil.jadwal-wawancara', [
             'wawancaras' => $wawancaras,

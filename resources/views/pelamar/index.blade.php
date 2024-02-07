@@ -18,8 +18,13 @@
                     <li class="nav-item"><a class="nav-link" href="#tentang_kami">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('pelamarCariLowongan') }}">Lowongan</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-button border rounded text-lowercase" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        <a class="nav-link rounded text-lowercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="user-avatar">
+                                <img src="{{ asset('path/to/user-image.jpg') }}" class="rounded-circle img-fluid">
+                            </div>
+                            {{ Auth::user()->name }}
+                        </a>
+                                <hr class="my-2">
                         <div class="dropdown-menu border rounded" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('Profilindex') }}"><i
                                     class="fas fa-user m-1"></i>Profil</a>
@@ -123,14 +128,14 @@
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="counter-item counter--style text-center mb-5 mb-lg-0">
                                 <i class="fas fa-briefcase"></i>
-                                <h2 class="mb-0 mt-3"><span class="counter-stat font-weight-bold">1000</span> +</h2>
+                                <h2 class="mb-0 mt-3"><span class="counter-stat font-weight-bold">{{ $loker }}</span> +</h2>
                                 <p>Lowongan Pekerjaan</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="counter-item counter--style text-center mb-5 mb-lg-0">
                                 <i class="fas fa-building"></i>
-                                <h2 class="mb-0 mt-3"><span class="counter-stat font-weight-bold">100</span> +</h2>
+                                <h2 class="mb-0 mt-3"><span class="counter-stat font-weight-bold">{{ $perusahaan }}</span> +</h2>
                                 <p>Perusahaan</p>
                             </div>
                         </div>

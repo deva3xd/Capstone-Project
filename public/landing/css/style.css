@@ -1547,6 +1547,18 @@ ul.dropdown-menu li {
   background: #FF715B;
 }
 
+.user-avatar {
+  width: 40px; /* Sesuaikan ukuran yang diinginkan */
+  height: 40px; /* Sesuaikan ukuran yang diinginkan */
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: auto;
+}
+
 .search-form {
   position: relative;
 }

@@ -50,14 +50,17 @@
                             </div>
                         </div>
                     </div>
+                    @php $foundPending = false; @endphp
                     @foreach ($dataPelamars as $dataPelamar)
                         @if ($dataPelamar->status == 'Pending' && $dataPelamar->id_loker == $loker->id && $dataPelamar->id_profil_pelamar == $pelamar->id)
-                            <p><i class="far fa-clock m-1" style="color: orange"></i>
-                                Lamaran anda sedang diproses</p>
-                                @endif
-                                @endforeach
-                                <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}"
-                                    class="text-white btn btn-small btn-success">Daftar</a>                            
+                            @php $foundPending = true; @endphp
+                            <p><i class="far fa-clock m-1" style="color: orange"></i> Lamaran anda sedang diproses</p>
+                        @endif
+                    @endforeach
+                    
+                    @if (!$foundPending)
+                        <a onclick="confirm(this)" data-url="{{ route('PelamarDaftarLoker', ['id' => $loker->id]) }}" class="text-white btn btn-small btn-success">Daftar</a>
+                    @endif           
                     <a href="{{ route('pelamarCariLowongan') }}" class="btn btn-small btn-danger">Kembali</a>
                 </div>
             </div>

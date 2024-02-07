@@ -12,7 +12,13 @@ class PelamarController extends Controller
 {
     public function index(){
         $title = 'Home';
-        return view('pelamar.index', ['title' => $title]);
+        $loker = Loker::where('status', 'LIKE', 'aktif')->count();
+        $perusahaan = Perusahaan::all()->count();
+        return view('pelamar.index', [
+            'title' => $title, 
+            'loker'=> $loker,
+            'perusahaan' => $perusahaan
+        ]);
     }
 
     public function cariLowongan(){
