@@ -37,7 +37,7 @@
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $wawancara->kategori }}</h3>
                                         <div class="blog-item-meta mb-4">
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Nama Perusahaan:</b>
-                                                </a>{{$wawancara->perusahaan->nama}}</span><br />
+                                                </a></span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Posisi:</b>
                                                 </a>{{ $wawancara->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Lamaran Dikirim:</b>
@@ -56,6 +56,7 @@
                                         @else 
                                         <a class="btn btn-warning text-white mr-3">Proses</a>
                                         @endif
+                                        error get value: {{$wawancara->status}}
                                     </div>
                                 </div>
                             </div>
