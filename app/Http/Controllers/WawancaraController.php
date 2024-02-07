@@ -30,8 +30,8 @@ class WawancaraController extends Controller
      */
     public function create()
     {
-        $lokers = Loker::where('id_perusahaan', auth()->user()->id)->first();
-        $datas = DataPelamar::where('status', 'LIKE', 'Lanjut')->get();
+        $lokers = Loker::all();
+        $datas = DataPelamar::where('status', 'LIKE', 'lanjut')->get();
         $title = 'Tambah Wawancara';
         return view('perusahaan.wawancara.create', ['title' => $title, 'lokers' => $lokers, 'datas' => $datas]);
     }
@@ -48,7 +48,6 @@ class WawancaraController extends Controller
             'id_data_pelamar' => 'required|string|max:11',
             'id_perusahaan' => 'required|string|max:11',
             'id_pelamar' => 'required|string|max:11',
-            'id_loker' => 'required|string|max:11',
             'jadwal' => 'required|date',
             'catatan' => 'required|string',
             'status' => 'diproses'
@@ -134,9 +133,8 @@ class WawancaraController extends Controller
         $pelamars = Pelamar::where('id_user', auth()->user()->id)->get();
         $wawancaras = Wawancara::join('pelamar', 'pelamar.id', '=', 'wawancara.id_pelamar')
         ->join('loker', 'loker.id', '=', 'wawancara.id_perusahaan') 
-        ->join('perusahaan', 'loker.id_perusahaan', '=', 'perusahaan.id')
         ->where('pelamar.id_user', auth()->user()->id)
-        ->select('wawancara.*', 'loker.*', 'perusahaan.logo as logo_perusahaan', 'perusahaan.nama as nama_perusahaan', 'wawancara.status as w_st')
+        ->select('wawancara.*', 'loker.*', 'wawancara.created_at as wawancara_created_at')
         ->get();
         return view('pelamar.profil.jadwal-wawancara', [
             'wawancaras' => $wawancaras,
