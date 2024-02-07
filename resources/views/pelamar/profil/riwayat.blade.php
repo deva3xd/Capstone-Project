@@ -28,7 +28,7 @@
                                 <div class="col-lg-12 col-md-6 mb-3 px-0 border">
                                     <div class="blog-item p-1 mr-1">
                                         <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
-                                            <img src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
+                                            <img src="{{ asset('dokumen/logo/' . $riwayat->perusahaan->logo) }}" alt="logo"
                                                 class="img-fluid rounded" width="180">
                                         </div>
                                         <div class="blog-item-content pb-1">
@@ -36,23 +36,20 @@
                                             <div class="blog-item-meta mb-3">
                                                 <span class="text-muted text-capitalize mr-3"><a
                                                         class="text-dark mr-1"><b>Nama Perusahaan:</b>
-                                                    </a></span><br />
+                                                    </a>{{ $riwayat->perusahaan->nama }}</span><br />
                                                 <span class="text-muted text-capitalize mr-3"><a
                                                         class="text-dark mr-1"><b>Posisi:</b>
                                                     </a>{{ $riwayat->posisi }}</span><br />
                                                 <span class="text-muted text-capitalize mr-3"><a
                                                         class="text-dark mr-1"><b>Lamaran Dikirim:</b>
-                                                    </a>{{ $riwayat->data_pelamar_created_at }}</span><br />
-                                                <span class="text-muted text-capitalize mr-3"><a
-                                                        class="text-dark mr-1"><b>Alamat:</b>
-                                                    </a>{{ $riwayat->alamat }}</span><br />
+                                                    </a>{{ $riwayat->data_pelamar_created_at }}</span>
                                             </div>
                                             @if ($riwayat->data_pelamar_status == 'lanjut')
-                                                <a class="btn btn-success text-white">Lanjut</a>
+                                                <a class="btn btn-success text-white ml-1">Lanjut</a>
                                             @elseif ($riwayat->data_pelamar_status == 'berhenti')
-                                                <a class="btn btn-danger text-white">Berhenti</a>
+                                                <a class="btn btn-danger text-white ml-1">Berhenti</a>
                                             @elseif ($riwayat->data_pelamar_status == 'pending')
-                                                <a class="btn btn-warning text-white">Proses</a>
+                                                <a class="btn btn-warning text-white ml-1">Proses</a>
                                             @else
                                                 <span class="badge badge-secondary">Status Tidak Dikenal</span>
                                             @endif

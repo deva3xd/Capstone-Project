@@ -25,22 +25,22 @@
                         @foreach ($lokers as $loker)
                             <div class="col-lg-12 col-md-6 mb-3 px-0 border">
                                 <div class="blog-item p-1 mr-1">
-                                    <div class="blog-thumb mr-0 py-2 d-flex justify-content-center">
-                                        <img  src="{{ asset('landing/images/blog/blog-5.jpg') }}" alt="logo"
+                                    <div class="blog-thumb ml-0 mr-0 py-2 d-flex justify-content-center">
+                                        <img  src="{{ asset('dokumen/logo/' . $loker->perusahaan->logo) }}" alt="logo"
                                             class="img-fluid rounded" width="180">
                                     </div>
                                     <div class="blog-item-content pb-1" >
                                         <h3 class="mt-3 mb-3 text-uppercase">{{ $loker->kategori }}</h3>
                                         <div class="blog-item-meta mb-3">
+                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Nama Perusahaan:</b>
+                                                </a>{{ $loker->perusahaan->nama }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Posisi:</b>
                                                 </a>{{ $loker->posisi }}</span><br />
                                             <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Batas Lamaran:</b>
-                                                </a>{{ $loker->batas_lamaran }}</span><br />
-                                            <span class="text-muted text-capitalize mr-3"><a class="text-dark mr-1"><b>Alamat:</b>
-                                                </a>{{ $loker->alamat }}</span><br />
+                                                </a>{{ $loker->batas_lamaran }}</span>
                                         </div>
                                         <a href="{{ route('pelamarDetailLowongan', ['id' => $loker->id]) }}"
-                                            class="btn btn-small btn-main">Info Detail</a>
+                                            class="btn btn-small btn-main ml-1">Info Detail</a>
                                     </div>
                                 </div>
                             </div>
